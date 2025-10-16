@@ -3,6 +3,7 @@ import globals from "globals";
 import js from "@eslint/js";
 import json from "@eslint/json";
 import css from "@eslint/css";
+import markdown from "@eslint/markdown";
 
 export default defineConfig([
   // lint JS files
@@ -49,6 +50,13 @@ export default defineConfig([
       "css/use-baseline": "warn",
       "css/no-invalid-properties": "off",
     },
+  },
+  // lint Markdown files
+  {
+    plugins: {
+      markdown,
+    },
+    extends: ["markdown/recommended"],
   },
   // Project-level override: enable Node env for Eleventy and other build/config files
   {
