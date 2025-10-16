@@ -6,3 +6,5 @@ tags: project 1
 ---
 
 Project numero 1.
+
+<i class="fa-regular fa-user"></i>
