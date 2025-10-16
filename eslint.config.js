@@ -2,6 +2,7 @@ import { defineConfig } from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
 import json from "@eslint/json";
+import css from "@eslint/css";
 
 export default defineConfig([
   // lint JS files
@@ -34,6 +35,20 @@ export default defineConfig([
     plugins: { json },
     language: "json/json5",
     extends: ["json/recommended"],
+  },
+  // lint CSS files
+  {
+    files: ["**/*.css"],
+    language: "css/css",
+    languageOptions: {
+      tolerant: true,
+    },
+    plugins: { css },
+    extends: ["css/recommended"],
+    rules: {
+      "css/use-baseline": "warn",
+      "css/no-invalid-properties": "off",
+    },
   },
   // Project-level override: enable Node env for Eleventy and other build/config files
   {
