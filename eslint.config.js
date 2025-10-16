@@ -1,4 +1,4 @@
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import js from "@eslint/js";
 import json from "@eslint/json";
@@ -14,7 +14,7 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
-      globals: globals.browser
+      globals: globals.browser,
     },
   },
   // lint JSON files
@@ -62,13 +62,23 @@ export default defineConfig([
   },
   // Project-level override: enable Node env for Eleventy and other build/config files
   {
-    files: ["**/eleventy.config.js", "**/*.config.js", "build/**", "scripts/**"],
+    files: [
+      "**/eleventy.config.js",
+      "**/*.config.js",
+      "build/**",
+      "scripts/**",
+    ],
     languageOptions: {
       globals: {
         ...globals.node,
       },
     },
   },
+  // Ignore files and directories
+  globalIgnores([
+    "node_modules/**", // ignore node_modules directory
+    "_site/**", // ignore generated site
+  ]),
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,
 ]);
