@@ -1,6 +1,6 @@
 ---
 title: PomoBar
-description: PomoBar is a minimalist Pomodoro timer that lives in your Obsidian status bar.
+description: Minimalist Pomodoro timer that lives in your Obsidian status bar.
 date: 2024-09-08
 tags:
   - obsidian
