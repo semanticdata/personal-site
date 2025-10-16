@@ -353,3 +353,12 @@ header {
   flex-grow: 1;
   min-width: 0;
 }
+
+.projectlist-tag {
+  color: goldenrod;
+  /* font-style: italic; */
+  text-transform: capitalize;
+}
+.projectlist-tag::before {
+  content: "#";
+}

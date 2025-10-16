@@ -19,7 +19,30 @@
 		{% else %}
 		<code>{{ project.url }}</code>
 		{% endif %}
-		<div class="projectlist-description">{{ project.data.description }}</div>
+		<div class="projectlist-description">
+			{{ project.data.description }}
+
+			{% if project and project.data.tags %}
+			{% set _src = project.data.tags %}
+			{% else %}
+			{% set _src = tags %}
+			{% endif %}
+
+			{% if _src is string %}
+			{% set tagList = [_src] %}
+			{% else %}
+			{% set tagList = _src or [] %}
+			{% endif %}
+
+			{% if project.data.tags %}
+				<br />
+			    {%- for tag in tagList | filterTagList %}
+				{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+				<span class="projectlist-tag">{{ tag }}</span>
+				{# <span class="projectlist-tag">{{ tag }}</span>{%- if not loop.last %}, {% endif %} #}
+				{%- endfor %}
+			{% endif %}
+		</div>
 		</div>
 		</a>
 	
