@@ -10,7 +10,7 @@ import pluginFilters from "./src/_config/filters.js";
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
 	// Drafts, see also _data/eleventyDataSchema.js
-	eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+	eleventyConfig.addPreprocessor("drafts", "*", (data) => {
 		if (data.draft) {
 			data.title = `${data.title} (draft)`;
 		}
