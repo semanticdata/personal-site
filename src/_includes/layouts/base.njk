@@ -8,7 +8,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+		- <meta name="generator" content="{{ eleventy.generator }}">
 
 		{#-
 		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -22,7 +22,7 @@
 		#}
 
 		{#- Add CSS to the bundle #}
-		<style>/* This is an arbitrary CSS string added to the bundle */</style>
+		{# <style>/* This is an arbitrary CSS string added to the bundle */</style> #}
 
 		{#- Add the contents of a file to the bundle #}
 		<style>{% include "src/css/index.css" %}</style>
@@ -35,6 +35,12 @@
 
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+
+		{# Favicons #}
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
 
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
 		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
