@@ -18,13 +18,25 @@ layout: layouts/base.njk
   {% set tagList = _src or [] %}
 {% endif %}
 
+
+<div class="project-metadata">
+<span>Tags:</span>
 <ul class="post-metadata">
-    <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+    {# <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li> #}
+    
     {%- for tag in tagList | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
     {%- endfor %}
 </ul>
+
+{% if iconLabel %}
+<div>
+  <span>Repository:</span>
+  {% icon "fab:" + iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
+</div>
+{% endif %}
+</div>
 
 {{ content | safe }}
 

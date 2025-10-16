@@ -1,8 +1,30 @@
-<ol class="postlist" style="--postlist-index: {{ (postslistCounter or projectlist.length) + 1 }}">
+{# Only include the Font Awesome CSS on project pages, included with the CSS per-page bundle #}
+<style>{% include "src/css/font-awesome.css" %}</style>
+
+<ul class="projectlist" style="--projectlist-index: {{ (postslistCounter or projectlist.length) + 1 }}">
 {%- for project in projectlist %}
-	<li class="postlist-item{% if project.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ project.url }}" class="postlist-link">{% if project.data.title %}{{ project.data.title }}{% else %}<code>{{ project.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ project.date | htmlDateString }}">{{ project.date | readableDate("LLLL yyyy") }}</time>
+	<li class="projectlist-item{% if project.url == url %} projectlist-item-active{% endif %}">
+
+		<a target="_blank" href="{{ project.data.iconUrl }}" class="projectlist-link">
+		
+		<div class="projectlist-icon-container">
+			{% if project.data.iconLabel %}
+			{% icon "fab:" + project.data.iconLabel %}
+			{% endif %}
+		</div>
+		
+		<div class="projectlist-text-content">
+		{% if project.data.title %}
+		<span class="projectlist-title">{{ project.data.title }}</span>
+		{% else %}
+		<code>{{ project.url }}</code>
+		{% endif %}
+		<div class="projectlist-description">{{ project.data.description }}</div>
+		</div>
+		</a>
+	
 	</li>
 {%- endfor %}
-</ol>
+</ul>
+
+{% getBundle "fontawesome" %}

@@ -10,6 +10,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
 
 import pluginFilters from "./src/_config/filters.js";
+// import pluginShortcodes from "./src/_config/shortcodes.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -65,7 +66,10 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
-  eleventyConfig.addPlugin(fontAwesomePlugin);
+  eleventyConfig.addPlugin(fontAwesomePlugin, {
+    transform: false, // disable the Eleventy transform
+    shortcode: "icon",
+  });
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom", // or "rss", "json"
@@ -122,6 +126,10 @@ export default async function (eleventyConfig) {
     // selector: "h1,h2,h3,h4,h5,h6", // default
   });
 
+  // Shortcodes
+  // eleventyConfig.addPlugin(pluginShortcodes);
+
+  // A useful shortcode to output the current build date.
   eleventyConfig.addShortcode("currentBuildDate", () => {
     return new Date().toISOString();
   });
