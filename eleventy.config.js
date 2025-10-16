@@ -10,7 +10,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
 
 import pluginFilters from "./src/_config/filters.js";
-// import pluginShortcodes from "./src/_config/shortcodes.js";
+import pluginShortcodes from "./src/_config/shortcodes.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -40,6 +40,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/**/*.css");
   // Watch images for the image pipeline.
   eleventyConfig.addWatchTarget("src/content/**/*.{svg,webp,png,jpg,jpeg,gif}");
+  // Watch MArkdown, Nunjucks, and 11ty.js files.
+  eleventyConfig.addWatchTarget("src/content/**/*.{md,njk,11ty.js}");
 
   // Per-page bundles, see https://github.com/11ty/eleventy-plugin-bundle
   // Bundle <style> content and adds a {% css %} paired shortcode
@@ -126,13 +128,10 @@ export default async function (eleventyConfig) {
     // selector: "h1,h2,h3,h4,h5,h6", // default
   });
 
-  // Shortcodes
-  // eleventyConfig.addPlugin(pluginShortcodes);
-
   // A useful shortcode to output the current build date.
-  eleventyConfig.addShortcode("currentBuildDate", () => {
-    return new Date().toISOString();
-  });
+  // eleventyConfig.addShortcode("currentBuildDate", () => {
+  //   return new Date().toISOString();
+  // });
 
   // Features to make your build faster (when you need them)
 
@@ -141,6 +140,9 @@ export default async function (eleventyConfig) {
   // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
+  // Shortcodes
+  eleventyConfig.addPlugin(pluginShortcodes);
 }
 
 export const config = {
