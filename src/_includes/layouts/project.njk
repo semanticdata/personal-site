@@ -1,8 +1,6 @@
 ---
 layout: layouts/base.njk
 ---
-{# Only include the Font Awesome CSS on project pages, included with the CSS per-page bundle #}
-<style>{% include "src/css/font-awesome.css" %}</style>
 <h1>{{ title }}</h1>
 
 {# Prefer page.tags over directory data tags. Normalize string -> array #}
@@ -50,5 +48,3 @@ layout: layouts/base.njk
 </ul>
 {%- endif %}
 {%- endif %}
-
-{% getBundle "fontawesome" %}

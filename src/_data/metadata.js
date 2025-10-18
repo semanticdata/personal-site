@@ -9,4 +9,8 @@ export default {
     email: "contact@miguelpimentel.do",
     url: "https://miguelpimentel.do/about/",
   },
+  social: [
+    { icon: "fas:rss", url: "/feed/feed.xml" },
+    { icon: "fab:github", url: "https://github.com/semanticdata" },
+  ],
 };

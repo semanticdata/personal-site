@@ -59,7 +59,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  max-width: 80ch;
+  max-width: min(80ch, 100% - 4rem);
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -116,13 +116,17 @@ a[href]:active {
   color: var(--text-color-link-active);
 }
 
-main,
 footer {
-  padding: 1rem;
+  border-top: 1px dashed var(--color-gray-20);
+  padding-block: 1em;
+  margin-block-start: 3em;
 }
-main :first-child {
+footer p {
+  margin-block-start: 0;
+}
+/* main :first-child {
   margin-top: 0;
-}
+} */
 
 header {
   border-bottom: 1px dashed var(--color-gray-20);
@@ -200,7 +204,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding-block: 1rem;
 }
 .home-link {
   flex-grow: 1;
@@ -218,6 +222,7 @@ header {
   padding: 0;
   margin: 0;
   list-style: none;
+  flex-wrap: wrap;
 }
 .nav-item {
   display: inline-block;
@@ -227,6 +232,13 @@ header {
 }
 .nav a[href][aria-current="page"] {
   text-decoration: underline;
+}
+.footer-links {
+  display: flex;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* Posts list */
@@ -361,4 +373,25 @@ header {
 }
 .projectlist-tag::before {
   content: "#";
+}
+
+@media (max-width: 400px) {
+  body {
+    max-width: min(80ch, 100% - 2rem);
+  }
+  pre {
+    width: 100vw;
+    transform: translateX(-1rem);
+  }
+  img {
+    max-width: 100vw;
+    transform: translateX(-1rem);
+  }
+  .projectlist-description {
+    font-size: var(--step--1);
+  }
+  footer svg:has(use) {
+    width: 1.25em;
+    height: 1.25em;
+  }
 }
