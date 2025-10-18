@@ -33,7 +33,7 @@ layout: layouts/base.njk
 {% if iconLabel %}
 <div>
   <span>Repository:</span>
-  {% icon "fab:" + iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
+  {% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
 </div>
 {% endif %}
 </div>

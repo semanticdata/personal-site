@@ -59,7 +59,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  max-width: 40em;
+  max-width: 80ch;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -204,7 +204,7 @@ header {
 }
 .home-link {
   flex-grow: 1;
-  font-size: 1em; /* 16px /16 */
+  /* font-size: var(--step-1); */
   font-weight: 700;
 }
 .home-link:link:not(:hover) {
@@ -253,14 +253,14 @@ header {
 }
 .postlist-date,
 .postlist-item:before {
-  font-size: 0.8125em; /* 13px /16 */
+  font-size: var(--step--1);
   color: var(--color-gray-90);
 }
 .postlist-date {
   word-spacing: -0.5px;
 }
 .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
+  /* font-size: 1.1875em; */
   font-weight: 700;
   flex-basis: calc(100% - 1.5rem);
   padding-left: 0.25em;
@@ -355,9 +355,9 @@ header {
 }
 
 .projectlist-tag {
-  color: goldenrod;
+  color: palegreen;
   /* font-style: italic; */
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 .projectlist-tag::before {
   content: "#";

@@ -6,7 +6,7 @@ tags:
   - python
   - streamlit
   - plotly
-iconLabel: github
+iconLabel: fas:traffic-light
 iconUrl: https://github.com/semanticdata/traffic-studies
 repoLabel: semanticdata/traffic-studies
 ---

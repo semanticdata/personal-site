@@ -5,7 +5,7 @@ date: 2025-03-07
 tags:
   - firefox
   - new-tab
-iconLabel: firefox-browser
+iconLabel: fab:firefox-browser
 iconUrl: https://github.com/semanticdata/notekeeper
 repoLabel: semanticdata/notekeeper
 ---

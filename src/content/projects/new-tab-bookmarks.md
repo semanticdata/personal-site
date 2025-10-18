@@ -6,7 +6,7 @@ tags:
   - firefox
   - new-tab
   - bookmarks
-iconLabel: firefox-browser
+iconLabel: fab:firefox-browser
 iconUrl: https://github.com/semanticdata/new-tab-bookmarks
 repoLabel: semanticdata/new-tab-bookmarks
 ---
