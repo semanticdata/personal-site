@@ -32,4 +32,4 @@ With over 10 years of experience in construction, I have amassed several unique 
 
 Nevertheless, today I thrive having experience in not only public infrastructure, but technology, electrical, rail, and bus related projects as well. In the past, you could also find me working as a volunteer/on-call Firefighter for the City of Bloomington. If interested, take a look at my [resume](https://api.raindrop.io/v2/raindrop/1035560421/file?type=application/pdf).
 
-<img src="/assets/pfp.webp" alt="Profile picture of Miguel Pimentel" />
+<img src="/assets/img/pfp.webp" alt="Profile picture of Miguel Pimentel" />
