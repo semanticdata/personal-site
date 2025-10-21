@@ -30,9 +30,6 @@
 		<style>{% include "src/assets/css/typography.css" %}</style>
 		<style>{% include "src/assets/css/font-awesome.css" %}</style>
 
-		{#- Or you can add from node_modules #}
-		{# <style>{% include "node_modules/something.css" %}</style> #}
-
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
 
@@ -52,18 +49,25 @@
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+			{# <img width="24px" height="24px" src="/assets/img/atom.svg" alt="Atom icon" class="atom" /> #}
+			<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+			<div class="social-links">
+				{% for entry in metadata.social %}
+					<a target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %} {% if entry.label %}<span class="desktop-only"> {{ entry.label }}</span>{% endif %}</a>
+				{% endfor %}
+			</div>
+			</header>
+
+		{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+		<nav aria-label="Main navigation" class="main-nav">
+			<h2 class="visually-hidden">Top level navigation menu</h2>
+			<div class="nav">
+			{%- for entry in collections.all | eleventyNavigation %}
+				<a class="nav-item" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+			{%- endfor %}
+			</div>
+		</nav>
 
 		{% set isPost = collections.posts | getCollectionItem(page) %}
 		<main id="main" {% if isPost %}class="prose"{% endif %}>
@@ -77,14 +81,14 @@
 				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
 			</p>
 			<ul class="footer-links">
-				{% for entry in metadata.social %}
-					<li><a target="_blank" href="{{ entry.url }}">{% icon entry.icon %}</a></li>
+				{% for entry in metadata.footer %}
+					<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>
 				{% endfor %}
 			</ul>
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
 	</body>
 </html>
 
