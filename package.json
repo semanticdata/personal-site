@@ -36,7 +36,7 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@10.17.1",
+  "packageManager": "pnpm@10.19.0",
   "bugs": {
     "url": "https://github.com/semanticdata/personal-site/issues"
   },
@@ -48,15 +48,15 @@
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@eslint/css": "^0.13.0",
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.38.0",
     "@eslint/json": "^0.13.2",
-    "@eslint/markdown": "^7.4.0",
+    "@eslint/markdown": "^7.4.1",
     "cross-env": "10.1.0",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
-    "luxon": "^3.6.1",
+    "luxon": "^3.7.2",
     "prettier": "3.6.2",
     "prismjs": "^1.30.0",
     "zod": "^4.1.12",
@@ -64,6 +64,6 @@
   },
   "dependencies": {
     "@11ty/font-awesome": "^1.0.0",
-    "@zachleat/heading-anchors": "^1.0.3"
+    "@zachleat/heading-anchors": "^1.0.5"
   }
 }
