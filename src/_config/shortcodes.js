@@ -11,7 +11,7 @@ export default function (eleventyConfig) {
       // Construct the full public path to the gif
       const src = `/assets/img/gifs/${filename}`;
       // Return the HTML <img> tag
-      return `<img src="${src}" width="88" height="31" alt="${alt}" loading="lazy" decoding="async">`;
+      return `<img src="${src}" width="88px" height="31px" alt="${alt}" loading="lazy" decoding="async">`;
     },
   );
 }
