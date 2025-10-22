@@ -1,10 +1,10 @@
 /* Defaults */
 :root {
   --font-family: -apple-system, system-ui, sans-serif;
-  --font-family-monospace:
-    Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console,
-    Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-    Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+    Courier, monospace;
 }
 
 /* Theme colors */
@@ -14,6 +14,7 @@
   --color-gray-90: #333;
 
   --background-color: #fff;
+  --accent-color: darkorange;
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
@@ -35,6 +36,7 @@
     --text-color-link-visited: #a6a6f8;
 
     --background-color: #15202b;
+    --accent-color: darkorange;
   }
 }
 
@@ -214,7 +216,7 @@ header {
   margin-inline-end: 0.25rem;
 }
 .the-dot {
-  color: rebeccapurple;
+  color: var(--accent-color);
 }
 
 /* Nav */
@@ -428,6 +430,12 @@ header {
 }
 .projectlist-tag::before {
   content: "#";
+}
+
+/* Prose */
+
+.prose img {
+  margin-inline: auto;
 }
 
 /* Font Awesome */
