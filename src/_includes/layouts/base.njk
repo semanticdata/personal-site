@@ -28,7 +28,6 @@
 		<style>{% include "src/assets/css/reset.css" %}</style>
 		<style>{% include "src/assets/css/index.css" %}</style>
 		<style>{% include "src/assets/css/typography.css" %}</style>
-		<style>{% include "src/assets/css/font-awesome.css" %}</style>
 
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
@@ -77,14 +76,18 @@
 		</main>
 
 		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
-			</p>
 			<ul class="footer-links">
 				{% for entry in metadata.footer %}
 					<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>
 				{% endfor %}
 			</ul>
+
+			<div class="footer-gifs">
+				{% for entry in metadata.gifs %}
+				{% if entry.url %}<a href="{{ entry.url }}">{% 88x31 entry.gif, entry.alt %}</a>
+				{% else %}{% 88x31 entry.gif, entry.alt %}{% endif %}
+				{% endfor %}
+			</div>
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
