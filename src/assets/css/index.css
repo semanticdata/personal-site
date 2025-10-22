@@ -437,7 +437,7 @@ svg:has(use) {
   /* display: inline-block; */
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   body {
     max-width: min(80ch, 100% - 2rem);
   }
