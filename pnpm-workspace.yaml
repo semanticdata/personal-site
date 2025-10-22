@@ -2,4 +2,4 @@ packages:
   - "*"
 onlyBuiltDependencies:
   - sharp
-verifyDepsBeforeRun:: install
+verifyDepsBeforeRun: install

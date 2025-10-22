@@ -14,9 +14,7 @@
     "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "11ty",
@@ -53,11 +51,8 @@
     "@eslint/markdown": "^7.4.1",
     "cross-env": "10.1.0",
     "eslint": "^9.38.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
     "luxon": "^3.7.2",
-    "prettier": "3.6.2",
     "prismjs": "^1.30.0",
     "zod": "^4.1.12",
     "zod-validation-error": "^4.0.2"

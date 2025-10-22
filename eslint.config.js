@@ -4,8 +4,6 @@ import js from "@eslint/js";
 import json from "@eslint/json";
 import css from "@eslint/css";
 import markdown from "@eslint/markdown";
-// import eslintConfigPrettier from "eslint-config-prettier/flat";
-// import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default defineConfig([
   // lint JS files
@@ -79,6 +77,4 @@ export default defineConfig([
     "node_modules/**", // ignore node_modules directory
     "_site/**", // ignore generated site
   ]),
-  // eslintConfigPrettier,
-  // eslintPluginPrettierRecommended,
 ]);
