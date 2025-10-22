@@ -40,7 +40,7 @@ export default {
       alt: "Built with Eleventy",
     },
     {
-      gif: "omglol.svg",
+      gif: "omglol.png",
       url: "https://database.omg.lol/",
       alt: "OMG.LOL",
     },
