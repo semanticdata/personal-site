@@ -6,6 +6,15 @@ date: 2025-09-15
 # imageAlt: Photo by K O on Unsplash.
 ---
 
+> [!note]
+> This is a note callout
+
+> [!warning]
+> This is a warning callout
+
+> [!tip]
+> This is a tip callout
+
 A few weeks ago, I got the kind of news that should've made me feel great but instead left me with a familiar knot in my stomach. The bids for our 2025 Sewer Rehabilitation Project had come in, and my estimates were high. Way high.
 
 I'd estimated $65 per linear foot for the sewer liner work. The winning contractor came in at $42.90. The second-place bid was $51.31. In the project management world, being off by that much feels like failure, even when it's not.
