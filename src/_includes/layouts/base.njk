@@ -36,9 +36,9 @@
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
 		{# Favicons #}
-		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
@@ -58,7 +58,6 @@
 			</div>
 			</header>
 
-		{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 		<nav aria-label="Main navigation" class="main-nav">
 			<h2 class="visually-hidden">Top level navigation menu</h2>
 			<div class="nav">
@@ -78,7 +77,7 @@
 		<footer>
 			<ul class="footer-links">
 				{% for entry in metadata.footer %}
-					<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>
+					<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>{% if not loop.last %}<li aria-hidden="true">·</li>{% endif %}
 				{% endfor %}
 			</ul>
 
