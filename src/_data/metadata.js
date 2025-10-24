@@ -25,12 +25,16 @@ export default {
   ],
   footer: [
     {
-      label: "uses",
-      url: "/uses/",
+      label: "colophon",
+      url: "/colophon/",
     },
     {
-      label: "meta",
-      url: "/meta/",
+      label: "contact",
+      url: "/contact/",
+    },
+    {
+      label: "uses",
+      url: "/uses/",
     },
   ],
   gifs: [
