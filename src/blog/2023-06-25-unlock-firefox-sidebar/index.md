@@ -86,6 +86,4 @@ Change its value to `true`.
 
 Finally, restart Firefox for the changes to take effect.
 
----
-
 [^1]: In Windows, `%appdata%` is equivalent to: `C:\Users\your-username\AppData\Roaming`.

@@ -60,6 +60,7 @@
   "dependencies": {
     "@11ty/font-awesome": "^1.0.0",
     "@zachleat/heading-anchors": "^1.0.5",
+    "markdown-it-footnote": "^4.0.0",
     "markdown-it-obsidian-callouts": "^0.3.2"
   }
 }

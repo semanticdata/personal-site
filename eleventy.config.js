@@ -12,6 +12,7 @@ import fontAwesomePlugin from "@11ty/font-awesome";
 import pluginFilters from "./src/_config/filters.js";
 import pluginShortcodes from "./src/_config/shortcodes.js";
 import markdownItObsidianCallouts from "markdown-it-obsidian-callouts";
+import markdownItFootnote from "markdown-it-footnote";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -99,6 +100,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.use(markdownItObsidianCallouts);
+    mdLib.use(markdownItFootnote);
   });
 }
 
