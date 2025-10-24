@@ -473,4 +473,7 @@ svg:has(use) {
   .nav {
     gap: 0.5rem;
   }
+  .social-links a {
+    padding: 0.25rem;
+  }
 }
