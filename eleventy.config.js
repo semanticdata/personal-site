@@ -13,6 +13,7 @@ import pluginFilters from "./src/_config/filters.js";
 import pluginShortcodes from "./src/_config/shortcodes.js";
 import markdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import markdownItFootnote from "markdown-it-footnote";
+import metadata from "./src/_data/metadata.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -30,11 +31,13 @@ export default async function (eleventyConfig) {
       "./public/": "/",
     })
     .addPassthroughCopy("src/feed/pretty-atom-feed.xsl")
-    .addPassthroughCopy("src/assets/", "/assets/");
+    eleventyConfig.addPassthroughCopy("src/assets/css/", "/assets/css/");
+    eleventyConfig.addPassthroughCopy("src/assets/js/", "/assets/js/");
+    // .addPassthroughCopy("src/assets/", "/assets/");
 
   eleventyConfig.addWatchTarget("src/assets/css/**/*.css");
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpg,jpeg,gif}");
-  eleventyConfig.addWatchTarget("src/**/*.{md,njk,11ty.js}");
+  // eleventyConfig.addWatchTarget("src/**/*.{md,njk,11ty.js}");
 
   eleventyConfig.addBundle("css", {
     toFileDirectory: "dist",
@@ -54,7 +57,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
   eleventyConfig.addPlugin(fontAwesomePlugin, {
-    transform: false,
+    transform: true,
     shortcode: "icon",
   });
 
@@ -67,12 +70,12 @@ export default async function (eleventyConfig) {
       limit: 10,
     },
     metadata: {
-      language: "en",
-      title: "Blog Title",
-      subtitle: "This is a longer description about your blog.",
-      base: "https://miguelpimentel.do/",
+      language: metadata.language,
+      title: metadata.title,
+      subtitle: metadata.description,
+      base: metadata.url,
       author: {
-        name: "Miguel Pimentel",
+        name: metadata.author.name,
       },
     },
   });
