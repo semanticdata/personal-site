@@ -24,18 +24,27 @@
 		{#- Add CSS to the bundle #}
 		{# <style>/* This is an arbitrary CSS string added to the bundle */</style> #}
 
-		{#- Add the contents of a file to the bundle #}
+		{#- Add CSS files to the bundle without outputting them directly #}
 		{%- css -%}
-			{%- include "src/assets/css/reset.css" -%}
-			{%- include "src/assets/css/index.css" -%}
-			{%- include "src/assets/css/typography.css" -%}
+		  {# Base styles and variables #}
+		  {%- include "src/assets/css/base/_reset.css" -%}
+		  {%- include "src/assets/css/base/_variables.css" -%}
+		  {%- include "src/assets/css/base/_global.css" -%}
+		  {%- include "src/assets/css/base/_typography.css" -%}
+
+		  {# Component styles #}
+		  {%- include "src/assets/css/components/_header.css" -%}
+		  {%- include "src/assets/css/components/_nav.css" -%}
+		  {%- include "src/assets/css/components/_postlist.css" -%}
+		  {%- include "src/assets/css/components/_projectlist.css" -%}
+		  {%- include "src/assets/css/components/_footer.css" -%}
+
+		  {# Responsive styles should come last #}
+		  {%- include "src/assets/css/base/_responsive.css" -%}
 		{%- endcss -%}
 
-		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
-
-		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
-		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+		{#- Link to the generated CSS bundle. The browser can cache this file. #}
+		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 
 		{# Favicons #}
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

@@ -1,0 +1,27 @@
+footer {
+  border-top: 1px dashed var(--color-gray-20);
+  padding-block: 1em;
+  margin-block-start: 3em;
+}
+footer p {
+  margin-block-start: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  margin-block-end: 1em;
+}
+.footer-gifs {
+  display: flex;
+  gap: 0.2em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-gifs img {
+  max-width: unset;
+}
