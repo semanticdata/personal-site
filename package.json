@@ -5,13 +5,12 @@
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
+    "build:nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+    "build:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
     "dev": "npx @11ty/eleventy --serve --quiet",
-    "start": "npx @11ty/eleventy --serve --quiet",
-    "start-ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/ --serve --quiet",
+    "dev:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/ --serve --quiet",
     "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
-    "debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "debug:start": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
     "benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -40,27 +39,25 @@
   },
   "homepage": "https://github.com/semanticdata/personal-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/font-awesome": "^1.0.0",
     "@eslint/css": "^0.13.0",
     "@eslint/js": "^9.38.0",
     "@eslint/json": "^0.13.2",
     "@eslint/markdown": "^7.4.1",
+    "@zachleat/heading-anchors": "^1.0.5",
     "cross-env": "10.1.0",
     "eslint": "^9.38.0",
     "globals": "^16.4.0",
     "luxon": "^3.7.2",
-    "prismjs": "^1.30.0",
-    "zod": "^4.1.12",
-    "zod-validation-error": "^4.0.2"
-  },
-  "dependencies": {
-    "@11ty/font-awesome": "^1.0.0",
-    "@zachleat/heading-anchors": "^1.0.5",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-obsidian-callouts": "^0.3.2"
+    "markdown-it-obsidian-callouts": "^0.3.2",
+    "prismjs": "^1.30.0",
+    "zod-validation-error": "^4.0.2",
+    "zod": "^4.1.12"
   }
 }

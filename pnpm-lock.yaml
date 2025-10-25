@@ -7,19 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@11ty/font-awesome':
-        specifier: ^1.0.0
-        version: 1.0.0(posthtml@0.16.7)
-      '@zachleat/heading-anchors':
-        specifier: ^1.0.5
-        version: 1.0.5
-      markdown-it-footnote:
-        specifier: ^4.0.0
-        version: 4.0.0
-      markdown-it-obsidian-callouts:
-        specifier: ^0.3.2
-        version: 0.3.2(markdown-it@14.1.0)
     devDependencies:
       '@11ty/eleventy':
         specifier: ^3.1.2
@@ -36,6 +23,9 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ^5.0.2
         version: 5.0.2
+      '@11ty/font-awesome':
+        specifier: ^1.0.0
+        version: 1.0.0(posthtml@0.16.7)
       '@eslint/css':
         specifier: ^0.13.0
         version: 0.13.0
@@ -48,6 +38,9 @@ importers:
       '@eslint/markdown':
         specifier: ^7.4.1
         version: 7.4.1
+      '@zachleat/heading-anchors':
+        specifier: ^1.0.5
+        version: 1.0.5
       cross-env:
         specifier: 10.1.0
         version: 10.1.0
@@ -60,6 +53,12 @@ importers:
       luxon:
         specifier: ^3.7.2
         version: 3.7.2
+      markdown-it-footnote:
+        specifier: ^4.0.0
+        version: 4.0.0
+      markdown-it-obsidian-callouts:
+        specifier: ^0.3.2
+        version: 0.3.2(markdown-it@14.1.0)
       prismjs:
         specifier: ^1.30.0
         version: 1.30.0
