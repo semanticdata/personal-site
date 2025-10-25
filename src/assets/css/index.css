@@ -59,6 +59,7 @@ body {
 }
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 body {
   max-width: min(80ch, 100% - 4rem);
@@ -149,7 +150,7 @@ footer p {
   display: flex;
   justify-content: space-between;
   gap: 0.5em 1em;
-  list-style: "";
+  list-style: "none";
   border-top: 1px dashed var(--color-gray-20);
   padding: 1em 0;
 }
