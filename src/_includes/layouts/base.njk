@@ -25,12 +25,14 @@
 		{# <style>/* This is an arbitrary CSS string added to the bundle */</style> #}
 
 		{#- Add the contents of a file to the bundle #}
-		<style>{% include "src/assets/css/reset.css" %}</style>
-		<style>{% include "src/assets/css/index.css" %}</style>
-		<style>{% include "src/assets/css/typography.css" %}</style>
+		{%- css -%}
+			{%- include "src/assets/css/reset.css" -%}
+			{%- include "src/assets/css/index.css" -%}
+			{%- include "src/assets/css/typography.css" -%}
+		{%- endcss -%}
 
 		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
-		<style>{% getBundle "css" %}</style>
+		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
