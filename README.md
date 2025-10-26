@@ -1,17 +1,10 @@
 # Personal Site
 
-Repository with the source code for my personal site built with the [Eleventy](https://www.11ty.dev/) site generator (using the [v3.0 release](https://github.com/11ty/eleventy/releases/tag/v3.0.0)).
+Repository with the source code for my personal site built with the [Eleventy](https://www.11ty.dev/) static site generator.
 
 ## Features
 
 - Using [Eleventy v3](https://github.com/11ty/eleventy/releases/tag/v3.0.0) with zero-JavaScript output.
-  - Content is exclusively pre-rendered (this is a static site).
-  - Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
-  - All URLs are decoupled from the content’s location on the file system.
-  - Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-- **Performance focused**: four-hundos Lighthouse score out of the box!
-  - _0 Cumulative Layout Shift_
-  - _0ms Total Blocking Time_
 - Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
 - Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
 - Fully automated [Image optimization](https://www.11ty.dev/docs/plugins/image/)
@@ -39,21 +32,32 @@ Repository with the source code for my personal site built with the [Eleventy](h
 
 ### Implementation Notes
 
-- Based on [Eleventy Base Blog Starter](https://github.com/11ty/eleventy-base-blog).
-- `content/about/index.md` is an example of a content page.
-- `content/blog/` has the blog posts but really they can live in any directory. They need only the `posts` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/).
-- Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
-- Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
-- The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
-- This project uses three [Eleventy Layouts](https://www.11ty.dev/docs/layouts/):
-  - `_includes/layouts/base.njk`: the top level HTML structure
-  - `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-  - `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
-
-#### Content Security Policy
-
 If your site enforces a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (as public-facing sites should), you have a few choices (pick one):
 
 1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
 2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
+
+## Changes from Upstream
+
+This project is based on [11ty/eleventy-base-blog](https://github.com/11ty/eleventy-base-blog). Here's a non-inclusive list of changes made on top:
+
+- Refactored codebase into single `src` directory.
+- Projects collection with icon support.
+- Colophon, Uses, Contact, Now (redirect) pages.
+- ESLint now covers CSS, JS, JSON, and Markdown files.
+- VS Code extension recommendations.
+- Favicons, site webmanifest.
+- Fluid typography using `clamp()`.
+- Bleed effects for images.
+- 88x31 support via shortcode.
+- Themed colors based on HSL values.
+- Support for footnotes and Obsidian callouts.
+- Social links in `<header>`.
+- Styled `<table>` and `<blockquote>`.
+- Refactored CSS styles to be more modular.
+
+## Special Thanks
+
+- [11ty](https://www.11ty.dev/)
+- [ESLint](https://eslint.org/)
+- [Utopia](https://utopia.fyi/)
