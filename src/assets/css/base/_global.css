@@ -12,8 +12,8 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: var(--font-family);
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--text);
+  background-color: var(--bg);
 }
 html {
   overflow-y: scroll;
@@ -67,22 +67,22 @@ li {
 }
 
 a[href] {
-  color: var(--text-color-link);
+  color: var(--link);
 }
 a[href]:visited {
-  color: var(--text-color-link-visited);
+  color: var(--link-visited);
 }
 a[href]:hover,
 a[href]:active {
-  color: var(--text-color-link-active);
+  color: var(--link-active);
 }
 
 #skip-link {
   text-decoration: none;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--bg);
+  color: var(--text);
   padding: 0.5rem 1rem;
-  border: 1px solid var(--color-gray-90);
+  border: 1px solid var(--border-strong);
   border-radius: 2px;
 }
 
@@ -100,7 +100,7 @@ a[href]:active {
   justify-content: space-between;
   gap: 0.5em 1em;
   list-style: "none";
-  border-top: 1px dashed var(--color-gray-20);
+  border-top: 1px dashed var(--border-subtle);
   padding: 1em 0;
 }
 .links-nextprev > * {

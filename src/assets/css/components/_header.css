@@ -22,7 +22,7 @@ header {
   margin-inline-end: 0.25rem;
 }
 .the-dot {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 
 .social-links {
@@ -37,13 +37,13 @@ header {
   font-weight: 600;
 }
 .social-links a[href="/feed/feed.xml"] svg {
-  color: darkorange;
+  color: var(--accent);
 }
 .social-links a[href="https://github.com/semanticdata"] svg
 {
-  color: var(--text-color);
+  color: var(--text);
 }
 .social-links a[href="https://social.lol/@database"] svg
 {
-  color: #8373e7;
+  color: var(--social-mastodon);
 }

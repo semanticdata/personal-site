@@ -1,41 +1,59 @@
-/* Defaults */
+/* === Raw Color Palette === */
+/* Not themed. Don't use these directly in components. */
 :root {
+  --brand: darkorange;
+  --social-mastodon: #8373e7;
+  --tag: goldenrod;
+
+  --link-light: #082840;
+  --link-light-v: #17050f;
+  --link-light-a: #5f2b48;
+  --link-dark: #1493fb;
+  --link-dark-v: #a6a6f8;
+  --link-dark-a: #6969f7;
+
+  --bg-light: #fff;
+  --bg-dark: #15202b;
+
+  --gray-100: #e0e0e0; /* Lightest */
+  --gray-200: #c0c0c0;
+  --gray-300: #dad8d8; /* Light text for dark mode */
+  --gray-700: #333;    /* Dark text for light mode */
+
   --font-family: -apple-system, system-ui, sans-serif;
   --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
     Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
     Courier, monospace;
-}
-
-/* Theme colors */
-:root {
-  --color-gray-20: #e0e0e0;
-  --color-gray-50: #c0c0c0;
-  --color-gray-90: #333;
-
-  --background-color: #fff;
-  --accent-color: darkorange;
-
-  --text-color: var(--color-gray-90);
-  --text-color-link: #082840;
-  --text-color-link-active: #5f2b48;
-  --text-color-link-visited: #17050f;
-
   --syntax-tab-size: 2;
 }
 
+
+/* === Themes === */
+
+/* --- Light Theme (Default) --- */
+:root {
+  --bg: var(--bg-light);
+  --text: var(--gray-700);
+  --accent: var(--brand);
+  --border-subtle: var(--gray-100);
+  --border-strong: var(--gray-700);
+
+  --link: var(--link-light);
+  --link-visited: var(--link-light-v);
+  --link-active: var(--link-light-a);
+}
+
+/* --- Dark Theme --- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-gray-20: #e0e0e0;
-    --color-gray-50: #c0c0c0;
-    --color-gray-90: #dad8d8;
+    --bg: var(--bg-dark);
+    --text: var(--gray-300);
+    --border-subtle: var(--gray-700);
+    --border-strong: var(--gray-300);
 
-    /* --text-color is assigned to --color-gray-_ above */
-    --text-color-link: #1493fb;
-    --text-color-link-active: #6969f7;
-    --text-color-link-visited: #a6a6f8;
-
-    --background-color: #15202b;
-    --accent-color: darkorange;
+    --link: var(--link-dark);
+    --link-visited: var(--link-dark-v);
+    --link-active: var(--link-dark-a);
   }
 }

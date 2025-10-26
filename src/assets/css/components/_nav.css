@@ -10,7 +10,7 @@
 .nav-item {
   /* display: inline-block; */
   font-size: var(--step--1);
-  border: dashed 1px var(--color-gray-90);
+  border: dashed 1px var(--border-strong);
   border-radius: 5px;
   padding: 0.5rem 0;
   flex: 1 1 auto;
@@ -34,6 +34,6 @@
 }
 .main-nav {
   width: 100%;
-  border-bottom: 1px dashed var(--color-gray-20);
+  border-bottom: 1px dashed var(--border-subtle);
   padding-block-end: 1rem;
 }
