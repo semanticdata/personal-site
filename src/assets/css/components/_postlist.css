@@ -23,7 +23,7 @@
 .postlist-date,
 .postlist-item:before {
   font-size: var(--step--1);
-  color: var(--text);
+  color: var(--text-muted);
 }
 .postlist-date {
   word-spacing: -0.5px;
@@ -65,4 +65,5 @@
 }
 .post-metadata time {
   margin-right: 1em;
+  color: var(--text-muted);
 }

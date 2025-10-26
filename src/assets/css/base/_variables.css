@@ -1,12 +1,21 @@
-/* === Raw Color Palette === */
-/* Not themed. Don't use these directly in components. */
-:root {
-  /* Hues */
-  --hue-purple: 280;
-  --hue-orange: 30; /* approx for darkorange */
+/* === INK & PAPER THEME === */
+/* Desert Light + Ink Dark - Terracotta light mode, Ink blue dark mode */
 
-  /* Brand Colors (kept for reference) */
-  --brand-orange: hsl(var(--hue-orange), 100%, 50%); /* darkorange */
+:root {
+  /* Desert Hues (for light mode) */
+  --hue-terracotta: 15; /* Burnt orange/red */
+  --hue-sand: 40;       /* Warm beige */
+  --hue-clay: 25;       /* Reddish clay */
+  --hue-cactus: 120;    /* Muted green */
+
+  /* Ink Hues (for dark mode) */
+  --hue-ink: 220;       /* Blue-black ink */
+  --hue-rust: 20;       /* Rusty orange */
+  --hue-sepia: 35;      /* Warm sepia */
+  --hue-sage: 130;      /* Muted sage */
+
+  /* Brand Colors (preserved for RSS and social icons) */
+  --brand-orange: hsl(var(--hue-clay), 85%, 60%);  /* Clay orange for RSS */
   --social-mastodon: #8373e7;
   --tag: var(--brand-orange);
 
@@ -19,43 +28,52 @@
   --syntax-tab-size: 2;
 }
 
-
 /* === Themes === */
 
-/* --- Light Theme (Default) --- */
+/* --- Light Theme (Desert colors) --- */
 :root {
-  --bg: hsl(var(--hue-purple), 20%, 98%);
-  --text: hsl(var(--hue-purple), 15%, 15%);
-  --accent: hsl(var(--hue-purple), 70%, 55%);
-  --border-subtle: hsl(var(--hue-purple), 20%, 90%);
-  --border-strong: hsl(var(--hue-purple), 15%, 40%);
+  --bg: hsl(var(--hue-sand), 30%, 96%);           /* Warm cream background */
+  --text: hsl(var(--hue-terracotta), 30%, 18%);   /* Deep brown text */
+  --accent: hsl(var(--hue-terracotta), 65%, 50%); /* Terracotta accent */
+  --border-subtle: hsl(var(--hue-sand), 25%, 88%);
+  --border-strong: hsl(var(--hue-terracotta), 45%, 45%);
 
   --link: var(--accent);
-  --link-visited: hsl(var(--hue-purple), 30%, 45%);
-  --link-active: hsl(var(--hue-purple), 80%, 65%);
+  --link-visited: hsl(var(--hue-cactus), 40%, 40%);
+  --link-active: hsl(var(--hue-terracotta), 75%, 60%);
 
-  --blockquote-bg: hsl(var(--hue-purple), 20%, 95%);
-  --blockquote-text: hsl(var(--hue-purple), 15%, 35%);
-  --table-header-bg: hsl(var(--hue-purple), 20%, 92%);
-  --table-row-stripe-bg: hsl(var(--hue-purple), 20%, 96%);
+  --blockquote-bg: hsl(var(--hue-sand), 30%, 93%);
+  --blockquote-text: hsl(var(--hue-terracotta), 30%, 28%);
+  --table-header-bg: hsl(var(--hue-sand), 30%, 90%);
+  --table-row-stripe-bg: hsl(var(--hue-sand), 28%, 94%);
+
+  /* Semantic colors for typography */
+  --text-heading: hsl(var(--hue-terracotta), 65%, 45%);  /* Terracotta headings */
+  --text-muted: hsl(var(--hue-sand), 25%, 55%);          /* Warm sand dates */
+  --text-emphasis: hsl(var(--hue-cactus), 45%, 45%);
 }
 
 /* --- Dark Theme --- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: hsl(var(--hue-purple), 15%, 10%);
-    --text: hsl(var(--hue-purple), 25%, 85%);
-    --accent: hsl(var(--hue-purple), 80%, 75%);
-    --border-subtle: hsl(var(--hue-purple), 15%, 20%);
-    --border-strong: hsl(var(--hue-purple), 25%, 70%);
+    --bg: hsl(var(--hue-ink), 28%, 12%);           /* Deep ink background */
+    --text: hsl(var(--hue-sepia), 30%, 88%);       /* Warm off-white text */
+    --accent: hsl(var(--hue-rust), 75%, 65%);      /* Bright rust accent */
+    --border-subtle: hsl(var(--hue-ink), 25%, 22%);
+    --border-strong: hsl(var(--hue-rust), 55%, 60%);
 
     --link: var(--accent);
-    --link-visited: hsl(var(--hue-purple), 50%, 80%);
-    --link-active: hsl(var(--hue-purple), 90%, 85%);
+    --link-visited: hsl(var(--hue-sage), 45%, 65%);
+    --link-active: hsl(var(--hue-rust), 85%, 75%);
 
-    --blockquote-bg: hsl(var(--hue-purple), 15%, 15%);
-    --blockquote-text: hsl(var(--hue-purple), 25%, 70%);
-    --table-header-bg: hsl(var(--hue-purple), 15%, 20%);
-    --table-row-stripe-bg: hsl(var(--hue-purple), 15%, 12%);
+    --blockquote-bg: hsl(var(--hue-ink), 28%, 16%);
+    --blockquote-text: hsl(var(--hue-sepia), 30%, 82%);
+    --table-header-bg: hsl(var(--hue-ink), 28%, 18%);
+    --table-row-stripe-bg: hsl(var(--hue-ink), 28%, 14%);
+
+    /* Semantic colors for typography */
+    --text-heading: hsl(var(--hue-rust), 75%, 70%);   /* Warm rust headings */
+    --text-muted: hsl(var(--hue-sepia), 25%, 60%);    /* Soft sepia dates */
+    --text-emphasis: hsl(var(--hue-sage), 50%, 70%);
   }
 }

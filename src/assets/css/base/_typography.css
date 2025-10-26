@@ -33,6 +33,10 @@ body {
   font-size: var(--step-0);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
 blockquote {
   margin-inline: 2em;
   padding: 0.5em 1em;
