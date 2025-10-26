@@ -99,7 +99,7 @@ a[href]:active {
   display: flex;
   justify-content: space-between;
   gap: 0.5em 1em;
-  list-style: "none";
+  list-style: none;
   border-top: 1px dashed var(--border-subtle);
   padding: 1em 0;
 }
@@ -111,11 +111,25 @@ a[href]:active {
 }
 
 table {
-  margin: 1em 0;
+  width: 100%;
+  margin: 2em 0;
+  border-collapse: collapse;
+  text-align: left;
 }
-table td,
+
+table th,
+table td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 table th {
-  padding-right: 1em;
+  background-color: var(--table-header-bg);
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--table-row-stripe-bg);
 }
 
 pre,
@@ -153,4 +167,10 @@ svg:has(use) {
   height: 1em;
   width: 1em;
   /* display: inline-block; */
+}
+
+/* -- Selection Styles -- */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
 }
