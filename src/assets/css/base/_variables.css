@@ -33,6 +33,11 @@
   --link: var(--accent);
   --link-visited: hsl(var(--hue-purple), 30%, 45%);
   --link-active: hsl(var(--hue-purple), 80%, 65%);
+
+  --blockquote-bg: hsl(var(--hue-purple), 20%, 95%);
+  --blockquote-text: hsl(var(--hue-purple), 15%, 35%);
+  --table-header-bg: hsl(var(--hue-purple), 20%, 92%);
+  --table-row-stripe-bg: hsl(var(--hue-purple), 20%, 96%);
 }
 
 /* --- Dark Theme --- */
@@ -47,5 +52,10 @@
     --link: var(--accent);
     --link-visited: hsl(var(--hue-purple), 50%, 80%);
     --link-active: hsl(var(--hue-purple), 90%, 85%);
+
+    --blockquote-bg: hsl(var(--hue-purple), 15%, 15%);
+    --blockquote-text: hsl(var(--hue-purple), 25%, 70%);
+    --table-header-bg: hsl(var(--hue-purple), 15%, 20%);
+    --table-row-stripe-bg: hsl(var(--hue-purple), 15%, 12%);
   }
 }

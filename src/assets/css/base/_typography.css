@@ -32,3 +32,12 @@ h6 {
 body {
   font-size: var(--step-0);
 }
+
+blockquote {
+  margin-inline: 2em;
+  padding: 0.5em 1em;
+  border-inline-start: 4px solid var(--accent);
+  background-color: var(--blockquote-bg);
+  color: var(--blockquote-text);
+  font-style: italic;
+}
