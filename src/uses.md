@@ -1,4 +1,4 @@
-## Uses
+# Uses
 
 This page is inspired by many other [/uses](https://uses.tech/) pages. It's a non-comprehensive list of the hardware and software I use on a day-to-day basis.
 
