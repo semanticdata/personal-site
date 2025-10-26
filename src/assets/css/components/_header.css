@@ -22,7 +22,7 @@ header {
   margin-inline-end: 0.25rem;
 }
 .the-dot {
-  color: var(--accent);
+  color: var(--brand-orange);
 }
 
 .social-links {
@@ -37,7 +37,7 @@ header {
   font-weight: 600;
 }
 .social-links a[href="/feed/feed.xml"] svg {
-  color: var(--accent);
+  color: var(--brand-orange);
 }
 .social-links a[href="https://github.com/semanticdata"] svg
 {

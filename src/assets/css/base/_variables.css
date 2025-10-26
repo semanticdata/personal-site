@@ -1,25 +1,16 @@
 /* === Raw Color Palette === */
 /* Not themed. Don't use these directly in components. */
 :root {
-  --brand: darkorange;
+  /* Hues */
+  --hue-purple: 280;
+  --hue-orange: 30; /* approx for darkorange */
+
+  /* Brand Colors (kept for reference) */
+  --brand-orange: hsl(var(--hue-orange), 100%, 50%); /* darkorange */
   --social-mastodon: #8373e7;
-  --tag: goldenrod;
+  --tag: var(--brand-orange);
 
-  --link-light: #082840;
-  --link-light-v: #17050f;
-  --link-light-a: #5f2b48;
-  --link-dark: #1493fb;
-  --link-dark-v: #a6a6f8;
-  --link-dark-a: #6969f7;
-
-  --bg-light: #fff;
-  --bg-dark: #15202b;
-
-  --gray-100: #e0e0e0; /* Lightest */
-  --gray-200: #c0c0c0;
-  --gray-300: #dad8d8; /* Light text for dark mode */
-  --gray-700: #333;    /* Dark text for light mode */
-
+  /* Font Families & Syntax */
   --font-family: -apple-system, system-ui, sans-serif;
   --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
     Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
@@ -33,27 +24,28 @@
 
 /* --- Light Theme (Default) --- */
 :root {
-  --bg: var(--bg-light);
-  --text: var(--gray-700);
-  --accent: var(--brand);
-  --border-subtle: var(--gray-100);
-  --border-strong: var(--gray-700);
+  --bg: hsl(var(--hue-purple), 20%, 98%);
+  --text: hsl(var(--hue-purple), 15%, 15%);
+  --accent: hsl(var(--hue-purple), 70%, 55%);
+  --border-subtle: hsl(var(--hue-purple), 20%, 90%);
+  --border-strong: hsl(var(--hue-purple), 15%, 40%);
 
-  --link: var(--link-light);
-  --link-visited: var(--link-light-v);
-  --link-active: var(--link-light-a);
+  --link: var(--accent);
+  --link-visited: hsl(var(--hue-purple), 30%, 45%);
+  --link-active: hsl(var(--hue-purple), 80%, 65%);
 }
 
 /* --- Dark Theme --- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: var(--bg-dark);
-    --text: var(--gray-300);
-    --border-subtle: var(--gray-700);
-    --border-strong: var(--gray-300);
+    --bg: hsl(var(--hue-purple), 15%, 10%);
+    --text: hsl(var(--hue-purple), 25%, 85%);
+    --accent: hsl(var(--hue-purple), 80%, 75%);
+    --border-subtle: hsl(var(--hue-purple), 15%, 20%);
+    --border-strong: hsl(var(--hue-purple), 25%, 70%);
 
-    --link: var(--link-dark);
-    --link-visited: var(--link-dark-v);
-    --link-active: var(--link-dark-a);
+    --link: var(--accent);
+    --link-visited: hsl(var(--hue-purple), 50%, 80%);
+    --link-active: hsl(var(--hue-purple), 90%, 85%);
   }
 }
