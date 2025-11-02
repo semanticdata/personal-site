@@ -78,11 +78,11 @@ export default {
     },
     {
       gif: "banner2.gif",
-      alt: "Banner 2",
+      alt: "",
     },
     {
       gif: "wow_wow.gif",
-      alt: "Wow Wow",
+      alt: "",
     },
     {
       gif: "upallnight.gif",
