@@ -19,19 +19,9 @@
 		<div class="projectlist-description">
 			{{ project.data.description }}
 
-			{% if project and project.data.tags %}
-			{% set _src = project.data.tags %}
-			{% else %}
-			{% set _src = tags %}
-			{% endif %}
+			{% set tagList = (project.data.tags or tags) | normalizeToArray %}
 
-			{% if _src is string %}
-			{% set tagList = [_src] %}
-			{% else %}
-			{% set tagList = _src or [] %}
-			{% endif %}
-
-			{% if project.data.tags %}
+			{% if tagList | length %}
 				<br />
 			    {%- for tag in tagList | filterTagList %}
 				{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}

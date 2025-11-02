@@ -3,18 +3,7 @@ layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
 
-{# Prefer page.tags over directory data tags. Normalize string -> array #}
-{% if page and page.tags %}
-  {% set _src = page.tags %}
-{% else %}
-  {% set _src = tags %}
-{% endif %}
-
-{% if _src is string %}
-  {% set tagList = [_src] %}
-{% else %}
-  {% set tagList = _src or [] %}
-{% endif %}
+{% set tagList = (page.tags or tags) | normalizeToArray %}
 
 
 <div class="project-metadata">

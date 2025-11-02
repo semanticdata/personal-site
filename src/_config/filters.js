@@ -52,4 +52,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("getFilteredCollection", (collection, tag) => {
     return collection.filter(item => item.data.tags && item.data.tags.includes(tag));
   });
+
+  eleventyConfig.addFilter("normalizeToArray", (value) => {
+    if (typeof value === 'string') {
+      return [value];
+    }
+    if (Array.isArray(value)) {
+      return value;
+    }
+    return [];
+  });
 }
