@@ -2,6 +2,12 @@
 title: "Blogging to Tame the Monkey Mind"
 description: "The last 18 months have changed me profoundly, and I feel like I need to write these feelings down."
 date: 2023-04-11
+tags:
+    - blogging
+    - writing
+    - mental-health
+    - pkm
+    - learning
 # image: ./cover-image.webp
 # imageAlt: Pensive Monkey by Reubx.
 ---

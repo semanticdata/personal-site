@@ -2,6 +2,13 @@
 title: "PomoBar for Obsidian"
 description: "The story behind creating a minimalist Pomodoro timer plugin for Obsidian that lives in your status bar."
 date: 2025-08-17
+tags:
+    - obsidian
+    - typescript
+    - javascript
+    - pomodoro
+    - productivity
+    - adhd
 # image: ./cover-image.jpg
 # imageAlt: Photo by Ngo Ngoc Khai Huyen on Unsplash.
 ---
