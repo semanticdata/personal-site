@@ -21,7 +21,7 @@ const eleventyComputed = {
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
-{% set postslist = collections[ tag ] %}
+{% set postslist = collections.posts | getFilteredCollection(tag) %}
 {% include "postslist.njk" %}
 
 <p>See <a href="tags.njk">all tags</a>.</p>

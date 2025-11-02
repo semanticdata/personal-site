@@ -44,4 +44,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("sortAlphabetically", (strings) =>
     (strings || []).sort((b, a) => b.localeCompare(a)),
   );
+
+  eleventyConfig.addFilter("unique", (array) => {
+    return Array.from(new Set(array));
+  });
+
+  eleventyConfig.addFilter("getFilteredCollection", (collection, tag) => {
+    return collection.filter(item => item.data.tags && item.data.tags.includes(tag));
+  });
 }
