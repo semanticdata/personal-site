@@ -53,10 +53,15 @@ export default defineConfig([
   },
   // lint Markdown files
   {
+    files: ["**/*.md"],
     plugins: {
       markdown,
     },
-    extends: ["markdown/recommended"],
+    // extends: ["markdown/recommended"],
+    language: "markdown/gfm",
+    languageOptions: {
+      frontmatter: "yaml",
+    },
   },
   // Project-level override: enable Node env for Eleventy and other build/config files
   {
