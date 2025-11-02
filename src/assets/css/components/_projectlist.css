@@ -42,7 +42,7 @@
 
 .projectlist-icon-container {
   flex-shrink: 0;
-  font-size: 2.5em;
+  /* font-size: var(--step-3); */
   line-height: 1;
 }
 .projectlist-icon-container > svg {
@@ -69,13 +69,16 @@
 	gap: 1.5rem;
 	margin-bottom: 2rem;
 }
-.projectlist-icon-container {
-	font-size: 2rem;
-	flex-shrink: 0;
-}
 .projectlist-title {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 	margin-top: 0;
 	margin-bottom: 0.5rem;
+}
+.projectlist-title svg {
+    font-size: var(--step-2);
+    flex-shrink: 0;
 }
 .projectlist-title a {
 	text-decoration: none;
