@@ -1,3 +1,7 @@
+---
+title: Colophon
+---
+
 # Colophon
 
 > Another way to say 'how this site was made'

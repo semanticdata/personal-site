@@ -1,4 +1,5 @@
 ---
+title: About me
 eleventyNavigation:
   key: About
   order: 2

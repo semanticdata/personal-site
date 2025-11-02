@@ -1,4 +1,5 @@
 ---
+title: Now
 eleventyNavigation:
   key: Now
   order: 4

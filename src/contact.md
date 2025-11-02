@@ -1,3 +1,7 @@
+---
+title: Contact
+---
+
 # Contact
 
 - For quick and simple communication, [Mastodon](https://social.lol/@database) is the best avenue.
