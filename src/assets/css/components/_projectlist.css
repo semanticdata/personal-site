@@ -10,6 +10,8 @@
 }
 .projectlist .projectlist-item:not(:last-child) {
   margin-bottom: 1em;
+  padding-block-end: 1rem;
+  border-bottom: 1px dashed var(--border-subtle);
 }
 .projectlist-link {
   display: flex;
@@ -60,4 +62,37 @@
 }
 .projectlist-tag::before {
   content: "#";
+}
+
+.projectlist-item {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 2rem;
+}
+.projectlist-icon-container {
+	font-size: 2rem;
+	flex-shrink: 0;
+}
+.projectlist-title {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
+.projectlist-title a {
+	text-decoration: none;
+}
+.projectlist-description {
+	margin-bottom: 0.75rem;
+}
+.projectlist-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+.projectlist-links a {
+	margin-right: 1rem;
+}
+.projectlist {
+  list-style: none;
+  padding-left: 0;
 }
