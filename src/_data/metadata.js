@@ -14,7 +14,7 @@ export default {
       label: "subscribe",
       icon: "fas:rss",
       url: "/feed/feed.xml",
-      ariaLabel: "RSS Feed",
+      ariaLabel: "Subscribe via RSS",
     },
     {
       label: "mastodon",
