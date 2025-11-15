@@ -2,9 +2,9 @@
 title: PomoBar
 description: Minimalist Pomodoro timer that lives in your Obsidian status bar.
 date: 2024-09-08
-tags:
-  - obsidian
-  - pomodoro
+tagss:
+  - Obsidian
+  - Pomodoro
 iconLabel: fab:github
 iconUrl: https://github.com/semanticdata/obsidian-pomodoro
 repoLabel: semanticdata/obsidian-pomodoro

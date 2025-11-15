@@ -3,27 +3,25 @@ layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
 
-{% set tagList = (page.tags or tags) | normalizeToArray %}
+{% set tagList = (page.tags or tagss) | normalizeToArray %}
 
 
 <div class="project-metadata">
-<span>Tags:</span>
-<ul class="post-metadata">
-    {# <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li> #}
-    
+  {% if iconLabel %}
+  <div>
+    {% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
+  </div>
+  {% endif %}
+  <span>Tags:</span>
+  <ul class="post-metadata">
     {%- for tag in tagList | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+    {# <li><a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li> #}
+    <li>#{{ tag }}</li>
     {%- endfor %}
-</ul>
+  </ul>
+</div>
 
-{% if iconLabel %}
-<div>
-  <span>Repository:</span>
-  {% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
-</div>
-{% endif %}
-</div>
 
 {{ content | safe }}
 
@@ -32,8 +30,10 @@ layout: layouts/base.njk
 {%- set nextProject = collections.projects | getNextCollectionItem %}
 {%- if nextProject or previousProject %}
 <ul class="links-nextprev">
-	{%- if previousProject %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousProject.url }}">{{ previousProject.data.title }}</a></li>{% endif %}
-	{%- if nextProject %}<li class="links-nextprev-next">Next →<br><a href="{{ nextProject.url }}">{{ nextProject.data.title }}</a></li>{% endif %}
+  {%- if previousProject %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousProject.url }}">{{
+      previousProject.data.title }}</a></li>{% endif %}
+  {%- if nextProject %}<li class="links-nextprev-next">Next →<br><a href="{{ nextProject.url }}">{{
+      nextProject.data.title }}</a></li>{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}

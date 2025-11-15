@@ -3,11 +3,11 @@ title: Building in Silence
 description: "The last year has been about creating rather than documenting. While that focus led to some projects I'm genuinely proud of, it also created documentation debt that I'm only now realizing I need to pay back."
 date: 2025-07-31
 tags:
-    - writing
-    - blogging
-    - productivity
-    - obsidian
-    - python
+    - Writing
+    - Blogging
+    - Productivity
+    - Obsidian
+    - Python
 # image: ./cover-image.webp
 # imageAlt: Computer keyboard by Dongsh.
 ---

@@ -3,9 +3,9 @@ title: "Comparing SSD and NVMe Technologies"
 description: "The main goal of this post was to aid in selecting SSD, and NVMe drives during a Micro Center sale."
 date: 2023-07-27
 tags:
-  - hardware
-  - ssd
-  - nvme
+  - Hardware
+  - SSD
+  - NVME
 # image: ./cover-image.webp
 # imageAlt: SSD NVME by Marc PEZIN.
 ---

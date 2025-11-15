@@ -44,15 +44,15 @@
 
 /* Tags */
 .post-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: capitalize;
+  /* display: inline-flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-transform: capitalize; */
   font-style: italic;
 }
-.postlist-item > .post-tag {
+/* .postlist-item > .post-tag {
   align-self: center;
-}
+} */
 
 /* Tags list */
 .post-metadata {
@@ -64,6 +64,6 @@
   margin: 0;
 }
 .post-metadata time {
-  margin-right: 1em;
+  /* margin-right: 1em; */
   color: var(--text-muted);
 }
