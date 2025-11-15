@@ -11,6 +11,42 @@ tags:
 # imageAlt: Photo by K O on Unsplash.
 ---
 
+```mermaid
+gantt
+    title 2024 Crystal Mill & Overlay Project
+    dateFormat  YYYY-MM-DD
+    axisFormat %m-%d
+    excludes    weekends
+    todayMarker stroke-width:3px,stroke:inherit,opacity:0.5
+    section Old Workshop
+    %% Under Construction      :2024-09-23, 3w %%
+    Sawcutting              :2024-09-24, 1d
+    Break Concrete pad      :2024-09-26, 1d
+    Reclaim                 :a, 2024-09-30, 4d
+    Grading and Base        :b, after a, 4d
+    Utility adjustments     :after a, 2d
+    Concrete pour           :c, after b, 3d
+    Asphalt pavement        :after c, 3d
+```
+
+```mermaid
+gantt
+    title 2025 Crystal Mill & Overlay Project
+    dateFormat  YYYY-MM-DD
+    axisFormat %m-%d
+    excludes    weekends
+    todayMarker stroke-width:3px,opacity:0.5
+    section Old Workshop
+    %% Under Construction      :2025-09-23, 3w %%
+    Sawcutting              :2025-09-24, 1d
+    Break Concrete pad      :2025-09-26, 1d
+    Reclaim                 :a, 2025-09-30, 4d
+    Grading and Base        :b, after a, 4d
+    Utility adjustments     :after a, 2d
+    Concrete pour           :c, after b, 3d
+    Asphalt pavement        :after c, 3d
+```
+
 > [!note]
 > This is a note callout
 
@@ -69,3 +105,5 @@ When I plan extra time for a task and finish early, that's not poor time managem
 The fear of being wrong can actually prevent us from being usefully wrong. If I'd tried to estimate exactly what contractors would bid, I might've aimed for $45 per linear foot and left no room for additional work when the opportunity arose. The "mistake" of overestimating created possibilities that precision would've eliminated.
 
 Sometimes the best thing you can be is strategically, beneficially wrong. Sometimes building in buffers serves everyone better than trying to hit bullseyes. And sometimes the thing that makes you feel like you failed is actually the thing that made everything work.
+
+{% mermaid_js %}

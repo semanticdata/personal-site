@@ -61,5 +61,8 @@
     "rimraf": "^6.1.0",
     "zod": "^4.1.12",
     "zod-validation-error": "^4.0.2"
+  },
+  "dependencies": {
+    "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1"
   }
 }

@@ -14,6 +14,7 @@ import pluginShortcodes from "./src/_config/shortcodes.js";
 import markdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import markdownItFootnote from "markdown-it-footnote";
 import metadata from "./src/_data/metadata.js";
+import pluginMermaid from "@kevingimbel/eleventy-plugin-mermaid";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -100,6 +101,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin, {});
   eleventyConfig.addPlugin(pluginShortcodes);
+  eleventyConfig.addPlugin(pluginMermaid);
 
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.use(markdownItObsidianCallouts);

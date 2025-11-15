@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@kevingimbel/eleventy-plugin-mermaid':
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@11ty/eleventy':
         specifier: ^3.1.2
@@ -359,6 +363,9 @@ packages:
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
+
+  '@kevingimbel/eleventy-plugin-mermaid@3.0.1':
+    resolution: {integrity: sha512-p++zth8mdVroiZp5vspqU9KCNC81shKRgr2Vf8+3kAbcmJHZU+SFnTthsqwTI+R6R3K79JmCBBScIKWkUyEivA==}
 
   '@rgrove/parse-xml@4.2.0':
     resolution: {integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==}
@@ -806,6 +813,10 @@ packages:
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
+
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
 
   htmlparser2@7.2.0:
     resolution: {integrity: sha512-H7MImA4MS6cw7nbyURtLPO1Tms7C5H602LRETv95z1MxO/7CP7rDVROehUYeYBUYEON94NXXDEPmZuq+hX4sog==}
@@ -1841,6 +1852,10 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
+  '@kevingimbel/eleventy-plugin-mermaid@3.0.1':
+    dependencies:
+      he: 1.2.0
+
   '@rgrove/parse-xml@4.2.0': {}
 
   '@sindresorhus/slugify@2.2.1':
@@ -2257,6 +2272,8 @@ snapshots:
       strip-bom-string: 1.0.0
 
   has-flag@4.0.0: {}
+
+  he@1.2.0: {}
 
   htmlparser2@7.2.0:
     dependencies:
