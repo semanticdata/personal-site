@@ -30,7 +30,7 @@
 }
 .postlist-link {
   /* font-size: 1.1875em; */
-  font-weight: 700;
+  font-weight: bold;
   flex-basis: calc(100% - 1.5rem);
   padding-left: 0.25em;
   padding-right: 0.5em;

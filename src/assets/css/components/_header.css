@@ -10,7 +10,7 @@ header {
 .home-link {
   flex-grow: 1;
   font-size: var(--step-1);
-  font-weight: 700;
+  font-weight: bold;
   align-items: center;
 }
 .home-link:link:not(:hover) {
@@ -34,7 +34,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.1rem;
-  font-weight: 600;
+  font-weight: bold;
 }
 .social-links a[href="/feed/feed.xml"] svg {
   color: var(--brand-orange);
