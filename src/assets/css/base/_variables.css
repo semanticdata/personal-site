@@ -34,7 +34,7 @@
 :root {
   --bg: hsl(var(--hue-sand), 30%, 96%);           /* Warm cream background */
   --text: hsl(var(--hue-terracotta), 30%, 18%);   /* Deep brown text */
-  --accent: hsl(var(--hue-terracotta), 65%, 50%); /* Terracotta accent */
+  --accent: hsl(var(--hue-terracotta), 65%, 45%); /* Terracotta accent */
   --border-subtle: hsl(var(--hue-sand), 25%, 88%);
   --border-strong: hsl(var(--hue-terracotta), 45%, 45%);
 
