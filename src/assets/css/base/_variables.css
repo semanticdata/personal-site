@@ -39,8 +39,8 @@
   --border-strong: hsl(var(--hue-terracotta), 45%, 45%);
 
   --link-visited: var(--accent);
-  --link: hsl(var(--hue-cactus), 40%, 40%);
-  --link-active: hsl(var(--hue-terracotta), 55%, 40%);
+  --link: hsl(var(--hue-cactus), 41%, 26%);
+  --link-active: hsl(var(--hue-terracotta), 65%, 33%);
 
   --blockquote-bg: hsl(var(--hue-sand), 30%, 93%);
   --blockquote-text: hsl(var(--hue-terracotta), 30%, 28%);
@@ -49,7 +49,7 @@
 
   /* Semantic colors for typography */
   --text-heading: hsl(var(--hue-terracotta), 65%, 45%);  /* Terracotta headings */
-  --text-muted: hsl(var(--hue-sand), 25%, 40%);          /* Warm sand dates */
+  --text-muted: hsl(var(--hue-sand), 25%, 29%);          /* Warm sand dates */
   --text-emphasis: hsl(var(--hue-cactus), 45%, 45%);
 }
 
