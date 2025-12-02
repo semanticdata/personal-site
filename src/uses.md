@@ -27,8 +27,6 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) – Opinionated Code Formatter.
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) – Markdown Support.
-- [Markwhen](https://marketplace.visualstudio.com/items?itemName=Markwhen.markwhen) – View/Edit Markwhen documents.
-- [Markmap](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode) – Preview markdown files as Markmap.
 - [GistPad](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gistfs) – Edit GitHub Gists and Repositories remotely.
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager) – Easily change current Project/Folder.
 - [shift shift](https://marketplace.visualstudio.com/items?itemName=ahgood.shift-shift) – Provides shortcuts for `shift + shift` and `ctrl + ctrl`.
@@ -39,7 +37,7 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 - [Contextual Typography](https://github.com/mgmeyers/obsidian-contextual-typography) – Allows for custom insertion of code at the block level.
 - [DoubleShift](https://github.com/Qwyntex/doubleshift) – Provides shortcuts for `shift + shift` and `ctrl + ctrl`.
 - [Editor Shortcuts](https://github.com/timhor/obsidian-editor-shortcuts) – Adds shortcuts usually found in Code Editors.
-- [GitHub Publisher](https://github.com/ObsidianPublisher/obsidian-github-publisher) – Publish your notes to a preconfigured repository.
+- [Enveloppe](https://github.com/Enveloppe/obsidian-enveloppe) – Publish your notes to a preconfigured repository.
 - [Linter](https://github.com/platers/obsidian-linter) – Customizable Markdown Linter similar to Prettier.
 - [Natural Language Dates](https://github.com/argenos/nldates-obsidian) – Adds `@today` format to dates.
 - [Obsidian Git](https://github.com/denolehov/obsidian-git) – Run Git commands from Obsidian.
@@ -49,16 +47,5 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 
 - [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) – Volume control, multi-channel discovery, default playback device management.
 - [Everything](https://www.voidtools.com/) – Locate files and folders by name instantly.
-- [Material Files](https://github.com/zhanghai/MaterialFiles) – Material Design file manager for Android.
 - [PDFsam](https://github.com/torakiki/pdfsam) – Desktop application to split, merge, mix, rotate PDF files and extract pages.
 - [PowerToys](https://github.com/microsoft/PowerToys) – Windows system utilities to maximize productivity.
-- [QuickLook](https://github.com/QL-Win/QuickLook) – Bring macOS "Quick Look" feature to Windows.
-- [TaskbarX](https://github.com/ChrisAnd1998/TaskbarX) – Center Windows taskbar icons with a variety of animations and options.
-
-### Tools & Technologies
-
-- [Alpine.js](https://github.com/alpinejs/alpine) – A rugged, minimal framework for composing JavaScript behavior in your markup.
-- [Eleventy](https://github.com/11ty/eleventy) – A simpler site generator. Transforms a directory of templates (of varying types) into HTML.
-- [Nunjucks](https://github.com/mozilla/nunjucks) – A powerful templating engine with inheritance, asynchronous control. Made by Mozilla.
-- [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) – Utility CSS framework without the predefined classes for elements.
-- [Vite](https://github.com/vitejs/vite) – Next generation frontend tooling. It's fast!

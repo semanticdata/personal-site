@@ -32,8 +32,12 @@ I also maintain accurate project records, review as-built plans, and oversee rig
 
 With over 10 years of experience in construction, I have amassed several unique projects and experiences that cover many different fields. It all started when I got my first job as a Civil Engineering Technician for a contracting company near my university. I was at the time attending INTEC while pursuing a bachelor's in civil engineering. Unfortunately, I was unable to finish my college education due to personal reasons.
 
-Nevertheless, today I thrive having experience in not only public infrastructure, but technology, electrical, rail, and bus related projects as well. In the past, you could also find me working as a volunteer/on-call Firefighter for the City of Bloomington. If interested, take a look at my [resume](https://api.raindrop.io/v2/raindrop/1035560421/file?type=application/pdf).
+Nevertheless, today I thrive having experience in not only public infrastructure, but technology, electrical, rail, and bus related projects as well. In the past, you could also find me working as a volunteer/on-call Firefighter for the City of Bloomington. If interested, take a look at my [resume](https://api.raindrop.io/v2/raindrop/1439319340/file?type=application/pdf).
 
 ## What I Look Like
 
 <img src="/assets/img/pfp.webp" alt="Profile picture of Miguel Pimentel" />
+
+## Supporting My Work
+
+If you'd like to support my work, you can [Buy Me A Coffee](https://buymeacoffee.com/semanticdata). Thank you for your consideration!
