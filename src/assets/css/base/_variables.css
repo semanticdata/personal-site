@@ -38,9 +38,9 @@
   --border-subtle: hsl(var(--hue-sand), 25%, 88%);
   --border-strong: hsl(var(--hue-terracotta), 45%, 45%);
 
-  --link: var(--accent);
-  --link-visited: hsl(var(--hue-cactus), 40%, 40%);
-  --link-active: hsl(var(--hue-terracotta), 75%, 42%);
+  --link-visited: var(--accent);
+  --link: hsl(var(--hue-cactus), 40%, 40%);
+  --link-active: hsl(var(--hue-terracotta), 55%, 40%);
 
   --blockquote-bg: hsl(var(--hue-sand), 30%, 93%);
   --blockquote-text: hsl(var(--hue-terracotta), 30%, 28%);
@@ -62,9 +62,9 @@
     --border-subtle: hsl(var(--hue-ink), 25%, 22%);
     --border-strong: hsl(var(--hue-rust), 55%, 60%);
 
-    --link: var(--accent);
-    --link-visited: hsl(var(--hue-sage), 45%, 65%);
-    --link-active: hsl(var(--hue-rust), 85%, 75%);
+    --link-visited: var(--accent);
+    --link: hsl(var(--hue-sage), 45%, 65%);
+    --link-active: hsl(var(--hue-rust), 85%, 60%);
 
     --blockquote-bg: hsl(var(--hue-ink), 28%, 16%);
     --blockquote-text: hsl(var(--hue-sepia), 30%, 82%);
