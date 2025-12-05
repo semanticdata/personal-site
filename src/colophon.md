@@ -6,7 +6,7 @@ title: Colophon
 
 > "an inscription at the end of a book or manuscript usually with facts about its production"
 
-This website is built with [Eleventy](https://www.11ty.dev/), a static site generator, and hosted on Vercel. The source code is available on [GitHub](https://github.com/semanticdata/personal-site).
+This website is built with [Eleventy](https://www.11ty.dev/), a static site generator, and hosted on [Vercel](https://vercel.com/). The source code is available on [GitHub](https://github.com/semanticdata/personal-site).
 
 In the past I've used [Jekyll](https://jekyllrb.com/), [Hugo](https://gohugo.io/), [Zola](https://www.getzola.org/), and [Astro](https://astro.build/) for [previous versions](https://github.com/semanticdata/semanticdata.github.io) of the site.
 
