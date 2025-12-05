@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
 
-{% set tagList = (page.tags or tagss) | normalizeToArray %}
+{% set tagList = (page.tags or tags) | normalizeToArray %}
 
 
 <div class="project-metadata">
@@ -16,7 +16,7 @@ layout: layouts/base.njk
   <ul class="post-metadata">
     {%- for tag in tagList | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    {# <li><a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li> #}
+    <li><a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
     <li>#{{ tag }}</li>
     {%- endfor %}
   </ul>

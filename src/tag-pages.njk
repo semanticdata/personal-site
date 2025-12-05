@@ -22,6 +22,8 @@ const eleventyComputed = {
 <h1>Tagged “{{ tag }}”</h1>
 
 {% set postslist = collections.posts | getFilteredCollection(tag) %}
+{% set projectslist = collections.projects | getFilteredCollection(tag) %}
+
 <ul reversed class="taglist">
 {%- for post in postslist | reverse %}
 	<li class="taglist-item">
@@ -30,10 +32,7 @@ const eleventyComputed = {
 		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
 	</li>
 {%- endfor %}
-</ul>
 
-{% set projectslist = collections.projects | getFilteredCollection(tag) %}
-<ul reversed class="taglist">
 {%- for post in projectslist | reverse %}
 	<li class="taglist-item">
 		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
