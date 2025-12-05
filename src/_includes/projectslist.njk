@@ -13,35 +13,33 @@
 			<p class="projectlist-description">
 				{{ project.data.description }}
 			</p>
-			<div class="projectlist-metadata"> {# New div for metadata #}
-				{% if project.data.iconUrl %} {# Assuming iconUrl is the repo URL #}
-				<div> {# New div for repository #}
-					<span>Repository:</span> {# "Repository:" label #}
+			<div class="projectlist-metadata">
+				{% if project.data.iconUrl %}
+				<div>
+					<span>Repository:</span>
 					<a href="{{ project.data.iconUrl }}" target="_blank" rel="noopener noreferrer">{{
-						project.data.repoLabel or "Repository" }}</a> {# Icon and repoLabel #}
+						project.data.repoLabel or "Repository" }}</a>
 				</div>
 				{% endif %}
 
 				{% set tagList = (project.data.tagss or tags) | normalizeToArray %}
 				{% if tagList | length %}
-				<span>Tags:</span> {# "Tags:" label #}
-				<ul class="post-metadata"> {# ul with post-metadata class #}
+				<span>Tags:</span>
+				<ul class="post-metadata">
 					{%- for tag in tagList | filterTagList %}
 					{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-					{# <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li> #}
 					<li>#{{ tag }}</li>
-					{# li and comma #}
 					{%- endfor %}
 				</ul>
 				{% endif %}
 
-				{% if project.data.websiteUrl %} {# Separate for website/live demo #}
+				{% if project.data.websiteUrl %}
 				<div>
 					<span>Website:</span>
 					<a href="{{ project.data.websiteUrl }}" target="_blank" rel="noopener noreferrer">Live Demo</a>
 				</div>
 				{% endif %}
-			</div> {# End projectlist-metadata #}
+			</div>
 		</div>
 	</li>
 	{%- endfor %}

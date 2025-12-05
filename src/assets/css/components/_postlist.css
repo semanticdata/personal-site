@@ -42,6 +42,15 @@
   font-weight: bold;
 }
 
+.taglist {
+  /* list-style: square; */
+  padding-left: 1.5rem;
+}
+/* .taglist-item {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
 /* Tags */
 .post-tag {
   /* display: inline-flex; */
@@ -56,7 +65,7 @@
 
 /* Tags list */
 .post-metadata {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
   list-style: none;
