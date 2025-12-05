@@ -7,4 +7,5 @@ tags:
 iconLabel: fab:github
 iconUrl: https://github.com/semanticdata/svelte-tools
 repoLabel: semanticdata/svelte-tools
+draft: true
 ---

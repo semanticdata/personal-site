@@ -8,6 +8,7 @@ tags:
 iconLabel: fab:github
 iconUrl: https://github.com/semanticdata/obsidian-pomodoro
 repoLabel: semanticdata/obsidian-pomodoro
+featured: true
 ---
 
 **_The Minimalist Pomodoro Timer for [Obsidian](https://obsidian.md/)._**
