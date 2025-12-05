@@ -4,7 +4,9 @@ title: Colophon
 
 # Colophon
 
+<!--
 > "an inscription at the end of a book or manuscript usually with facts about its production"
+-->
 
 This website is built with [Eleventy](https://www.11ty.dev/), a static site generator, and hosted on [Vercel](https://vercel.com/). The source code is available on [GitHub](https://github.com/semanticdata/personal-site).
 
