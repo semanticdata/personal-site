@@ -39,10 +39,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-navigation": "^1.0.4",
+    "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@11ty/font-awesome": "^1.0.0",
+    "@11ty/font-awesome": "^1.0.1",
     "@eslint/css": "^0.14.1",
     "@eslint/js": "^9.39.1",
     "@eslint/json": "^0.14.0",
@@ -53,10 +53,10 @@
     "globals": "^16.5.0",
     "luxon": "^3.7.2",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-obsidian-callouts": "^0.3.2",
+    "markdown-it-obsidian-callouts": "^0.3.3",
     "prismjs": "^1.30.0",
-    "rimraf": "^6.1.0",
-    "zod": "^4.1.12",
+    "rimraf": "^6.1.2",
+    "zod": "^4.1.13",
     "zod-validation-error": "^5.0.0"
   }
 }
