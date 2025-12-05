@@ -1,17 +1,23 @@
 ---
 # eleventyNavigation:
-#   key: Home
-#   order: 1
+# key: Home
+# order: 1
 numberOfLatestPostsToShow: 3
 ---
 <h2>Hi, I'm Miguel!</h2>
-<p>I’m a problem solver, hobby developer, music enthusiast, and public infrastructure advocate based in Minnesota, US. I’m passionate about using technology and creative thinking to tackle challenges, whether it's building better websites or designing efficient urban systems.</p>
-<p>With a background in engineering project management and a self-taught love for coding, I enjoy blending my technical knowledge with curiosity-driven side projects. When I’m not working, you’ll find me learning new programming languages, experimenting with web development, or digging into the latest trends in public infrastructure.</p>
-<p>I think a lot, work hard, occasionally have existential crises, and know just enough about making websites to make things interesting. While I love writing, coding, and listening to music, my true motivation lies in finding elegant solutions to complex problems.</p>
+<p class="subtitle">I build systems—digital and physical.</p>
+<p>I’m an Engineering Project Manager in Minnesota, focused on delivering critical public infrastructure, like roads and
+    utilities. My curiosity doesn't stop at the construction site, though. I am a self-taught hobby developer who
+    believes the strict discipline of engineering should be applied to technology and everyday problem-solving.</p>
+
+<p>This site is my public workshop: a place to document the process of learning. I think a lot, work hard, and
+    occasionally have existential crises, but my constant motivation is finding elegant, practical solutions to complex
+    problems. You'll find me documenting how I connect contract management with coding, all while working with a
+    meticulously curated music playlist in the background. Check out my latest explorations below.</p>
 
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h2>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h2>
+<h3>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h3>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
