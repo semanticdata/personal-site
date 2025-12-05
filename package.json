@@ -4,7 +4,7 @@
   "description": "Latest version of my personal web site using the Eleventy site generator.",
   "type": "module",
   "scripts": {
-    "build": "rimraf ./_site/ && npx @11ty/eleventy",
+    "build": "rimraf ./_site/ && cross-env NODE_ENV=production npx @11ty/eleventy",
     "build:nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
     "build:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
     "clean": "rimraf ./_site/",

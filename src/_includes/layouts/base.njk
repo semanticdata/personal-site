@@ -78,6 +78,9 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 
+	{# Umami Analytics #}
+	{% umamiCounter %}
+
 	{#- Add the heading-anchors web component to the JavaScript bundle #}
 	<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
 </head>

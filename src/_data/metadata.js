@@ -9,6 +9,10 @@ export default {
     email: "contact@miguelpimentel.do",
     url: "https://miguelpimentel.do/about/",
   },
+  analytics: {
+    umamiWebsiteId: "YOUR WEBSITE ID HERE",
+    umamiScriptUrl: "YOUR UMAMI URL HERE",
+  },
   social: [
     {
       label: "subscribe",
