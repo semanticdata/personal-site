@@ -61,7 +61,7 @@ html[data-theme="dark"] #app {
   border-radius: var(--callout-radius);
   margin: 1em 0;
   mix-blend-mode: var(--callout-blend-mode);
-  background-color: rgba(var(--callout-color), 0.1);
+  background-color: rgba(var(--callout-color), 0.08);
   padding: var(--callout-padding);
   --callout-color: var(--callout-default);
   --callout-icon: lucide-pencil;
