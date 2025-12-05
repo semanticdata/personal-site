@@ -5,7 +5,7 @@ date: 2023-04-11
 tags:
     - Blogging
     - Writing
-    - Mental-Health
+    - MentalHealth
     - PKM
     - Learning
 # image: ./cover-image.webp

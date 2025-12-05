@@ -5,8 +5,8 @@ date: 2025-09-09
 tags:
     - ADHD
     - Productivity
-    - Mental-Health
-    - Problem-Solving
+    - MentalHealth
+    - ProblemSolving
 # image: ./cover-image.jpg
 # imageAlt: Photo by Javier Allegue Barros on Unsplash.
 ---

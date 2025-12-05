@@ -3,7 +3,7 @@ title: "10 Fun Facts About the Dominican Republic"
 description: "Rediscovering my homeland after 8 years away - sharing the Dominican Republic through the eyes of someone who grew down there."
 date: 2024-09-12
 tags:
-    - Dominican-Republic
+    - DominicanRepublic
     - Travel
     - Culture
     - History

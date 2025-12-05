@@ -3,10 +3,11 @@ title: "When Being Wrong Goes Right"
 description: "A few weeks ago, I got the kind of news that should've made me feel great but instead left me with a familiar knot in my stomach. The bids for our 2025 Sewer Rehabilitation Project had come in, and my estimates were high. Way high."
 date: 2025-09-15
 tags:
-    - Project-Management
-    - ADHD
-    - RSD
-    - Life-Lessons
+  - ProjectManagement
+  - ADHD
+  - RSD
+  - LifeLessons
+wordCount: 992
 # image: ./cover-image.jpg
 # imageAlt: Photo by K O on Unsplash.
 ---
@@ -19,6 +20,8 @@ tags:
 
 > [!tip]
 > This is a tip callout
+
+> This is a blockquote.
 
 A few weeks ago, I got the kind of news that should've made me feel great but instead left me with a familiar knot in my stomach. The bids for our 2025 Sewer Rehabilitation Project had come in, and my estimates were high. Way high.
 
