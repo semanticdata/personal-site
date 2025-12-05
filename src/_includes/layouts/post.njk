@@ -8,17 +8,15 @@ layout: layouts/base.njk
 
 <h1>{{ title }}</h1>
 
-<div class="project-metadata">
-	<div>
-		<span><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
+<div class="post-metadata">
+		<span>{% icon "calendar" %} <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
 
 		<p style="margin-block-end: 0;">
 			{%- for tag in tags | filterTagList %}
 			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>{% if not loop.last %}, {% endif %}
+			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
 			{%- endfor %}
 		</p>
-	</div>
 </div>
 
 {{ content | safe }}

@@ -66,11 +66,16 @@
 /* Tags list */
 .post-metadata {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  flex-direction: column;
+  border: 1px dashed var(--border-subtle);
+  border-radius: 5px;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* gap: 0.5em; */
+  /* list-style: none; */
+  /* margin: 1rem; */
 }
 .post-metadata time {
   /* margin-right: 1em; */
