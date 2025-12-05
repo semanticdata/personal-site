@@ -59,6 +59,11 @@ export default {
       alt: "RSS Feed",
     },
     {
+      gif: "buymeacoffee.svg",
+      url: "https://buymeacoffee.com/semanticdata",
+      alt: "Buy Me a Coffee",
+    },
+    {
       gif: "library88x31.png",
       url: "https://hillhouse.neocities.org/cliques/library/",
       alt: "Little Pixel Library",
