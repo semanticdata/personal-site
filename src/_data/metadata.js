@@ -15,12 +15,14 @@ export default {
       icon: "fas:rss",
       url: "/feed/feed.xml",
       ariaLabel: "Subscribe via RSS",
+      cta: "Subscribe with RSS",
     },
     {
       label: "mastodon",
       icon: "fab:mastodon",
       url: "https://social.lol/@database",
       ariaLabel: "Mastodon Profile",
+      cta: "Follow me on Mastodon",
     },
   ],
   footer: [

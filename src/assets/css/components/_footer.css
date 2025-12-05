@@ -1,7 +1,7 @@
 footer {
   border-top: 1px dashed var(--border-subtle);
   padding-block: 1em;
-  margin-block-start: 3em;
+  margin-block-start: 2rem;
 }
 footer p {
   margin-block-start: 0;

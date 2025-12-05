@@ -47,9 +47,31 @@ header {
 {
   color: var(--social-mastodon);
 }
-.desktop-only {
+.social-links-cta {
+  display: flex;
+  gap: 1em;
+}
+.social-links-cta a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-weight: bold;
+}
+.social-links-cta a[href="/feed/feed.xml"] svg {
+  color: var(--brand-orange);
+}
+.social-links-cta a[href="https://github.com/semanticdata"] svg
+{
   color: var(--text);
 }
-.desktop-only:hover {
+.social-links-cta a[href="https://social.lol/@database"] svg
+{
+  color: var(--social-mastodon);
+}
+.desktop-only-cta {
+  color: var(--text);
+}
+.desktop-only-cta:hover {
   color: var(--link-active);
 }

@@ -100,8 +100,8 @@ a[href]:active {
   justify-content: space-between;
   gap: 0.5em 1em;
   list-style: none;
-  border-top: 1px dashed var(--border-subtle);
-  padding: 1em 0;
+  /* border-top: 1px dashed var(--border-subtle); */
+  padding: 0;
 }
 .links-nextprev > * {
   flex-grow: 1;
@@ -173,4 +173,16 @@ svg:has(use) {
 ::selection {
   background-color: var(--link-visited);
   color: var(--bg);
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--border-subtle);
+  margin: 2rem 0;
+}
+
+.post-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

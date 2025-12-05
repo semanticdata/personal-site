@@ -27,6 +27,10 @@
   .social-links a {
     padding: 0.25rem;
   }
+  .social-links-cta {
+    display: flex;
+    flex-direction: column;
+  }
 
   /* Make tables scrollable on small screens */
   table {
