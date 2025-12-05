@@ -185,3 +185,8 @@ hr {
   flex-direction: column;
   align-items: center;
 }
+
+.subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+}
