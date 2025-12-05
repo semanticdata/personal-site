@@ -70,6 +70,7 @@ export default defineConfig([
       "**/*.config.js",
       "build/**",
       "scripts/**",
+      "src/_config/shortcodes.js",
     ],
     languageOptions: {
       globals: {
