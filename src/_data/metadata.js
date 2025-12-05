@@ -61,7 +61,7 @@ export default {
       alt: "RSS Feed",
     },
     {
-      gif: "buymeacoffee.svg",
+      gif: "buymeacoffee.png",
       url: "https://buymeacoffee.com/semanticdata",
       alt: "Buy Me a Coffee",
     },
