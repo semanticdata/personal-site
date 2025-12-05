@@ -15,6 +15,8 @@ import markdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import markdownItFootnote from "markdown-it-footnote";
 import metadata from "./src/_data/metadata.js";
 
+console.log("Current NODE_ENV:", process.env.NODE_ENV);
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
   eleventyConfig.addPreprocessor("drafts", "*", (data) => {
@@ -99,7 +101,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin, {});
-  eleventyConfig.addPlugin(pluginShortcodes);
+  eleventyConfig.addPlugin(pluginShortcodes(metadata));
 
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.use(markdownItObsidianCallouts);
