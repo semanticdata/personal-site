@@ -3,27 +3,22 @@ layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
 
-{% set tagList = (page.tags or tags) | normalizeToArray %}
-
-
 <div class="project-metadata">
   {% if iconLabel %}
-  <div>
-    {% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a>
-  </div>
+  <span>{% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a></span>
   {% endif %}
-  <span>Tags:</span>
-  <ul class="post-metadata">
-    {%- for tag in tagList | filterTagList %}
+
+  <p style="margin-block-end: 0;">
+    {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li><a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-    <li>#{{ tag }}</li>
+    <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
     {%- endfor %}
-  </ul>
+  </p>
 </div>
 
-
 {{ content | safe }}
+
+<hr />
 
 {%- if collections.projects %}
 {%- set previousProject = collections.projects | getPreviousCollectionItem %}

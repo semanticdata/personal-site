@@ -69,6 +69,12 @@ header {
 {
   color: var(--social-mastodon);
 }
+.desktop-only {
+  color: var(--text);
+}
+.desktop-only:hover {
+  color: var(--link-active);
+}
 .desktop-only-cta {
   color: var(--text);
 }
