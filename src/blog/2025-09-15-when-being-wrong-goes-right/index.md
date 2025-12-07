@@ -8,8 +8,6 @@ tags:
   - RSD
   - LifeLessons
 wordCount: 992
-# image: ./cover-image.jpg
-# imageAlt: Photo by K O on Unsplash.
 ---
 
 A few weeks ago, I got the kind of news that should've made me feel great but instead left me with a familiar knot in my stomach. The bids for our 2025 Sewer Rehabilitation Project had come in, and my estimates were high. Way high.

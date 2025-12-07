@@ -8,8 +8,6 @@ tags:
     - MentalHealth
     - PKM
     - Learning
-# image: ./cover-image.webp
-# imageAlt: Pensive Monkey by Reubx.
 ---
 
 Last week, I came across Danny Guo’s [Why I Blog](https://www.dannyguo.com/blog/why-i-blog) post, and it inspired me to write this.

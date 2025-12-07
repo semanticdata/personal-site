@@ -6,8 +6,6 @@ tags:
   - Hardware
   - SSD
   - NVME
-# image: ./cover-image.webp
-# imageAlt: SSD NVME by Marc PEZIN.
 ---
 
 The main goal of this post was to aid in selecting SSD, and NVMe drives during a Micro Center sale. But I'll try to give an overview of what to look for next time you find yourself in the same position.

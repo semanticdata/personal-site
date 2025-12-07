@@ -6,9 +6,6 @@ tags:
     - ADHD
     - Productivity
     - MentalHealth
-    - ProblemSolving
-# image: ./cover-image.jpg
-# imageAlt: Photo by Javier Allegue Barros on Unsplash.
 ---
 
 Picture this: I'm staring at a stubborn piece of code that won't work, my browser has twelve tabs open, and I'm genuinely stuck. What do I do? I put on my noise-canceling headphones and blast "Psychosocial" by Slipknot.

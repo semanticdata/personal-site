@@ -7,8 +7,6 @@ tags:
     - Travel
     - Culture
     - History
-# image: ./cover-image.webp
-# imageAlt: Dominican flag by Ruddy Corporan.
 ---
 
 After eight years away from the Dominican Republic, I returned in winter 2023. Walking through familiar streets in my hometown of Bonao, sitting in Santo Domingo's colonial plazas, and hearing the sounds I'd grown up with felt like rediscovering a country I thought I knew completely. That visit reminded me how much of my homeland's story remains untold to the outside world.

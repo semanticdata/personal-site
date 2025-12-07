@@ -9,8 +9,6 @@ tags:
     - Pomodoro
     - Productivity
     - ADHD
-# image: ./cover-image.jpg
-# imageAlt: Photo by Ngo Ngoc Khai Huyen on Unsplash.
 ---
 
 After my ADHD diagnosis, the [Pomodoro Technique](https://en.wikipedia.org/wiki/Pomodoro_Technique) became essential for managing my focus. As someone who spends most of my day in [Obsidian](https://obsidian.md/), I wanted a timer that lived seamlessly within my note-taking environment without cluttering my workspace.
