@@ -17,4 +17,6 @@ eleventyNavigation:
   }
 </style>
 
+<!-- This uses: https://omgnow.rknight.me/ -->
+
 <script src="https://omgnow.rknight.me/now.js?a=database"></script>
