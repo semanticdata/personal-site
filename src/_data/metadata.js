@@ -42,6 +42,11 @@ export default {
       label: "uses",
       url: "/uses/",
     },
+    {
+      label: "links",
+      url: "https://database.omg.lol/",
+      external: true,
+    },
   ],
   gifs: [
     {

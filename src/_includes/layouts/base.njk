@@ -121,7 +121,8 @@
 	<footer>
 		<ul class="footer-links">
 			{% for entry in metadata.footer %}
-			<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>{% if not loop.last %}<li aria-hidden="true">·</li>
+			<li><a {% if entry.external %}target="_blank" rel="noopener noreferrer" {% endif %}
+					href="{{ entry.url }}">{{ entry.label }}</a></li>{% if not loop.last %}<li aria-hidden="true">·</li>
 			{% endif %}
 			{% endfor %}
 		</ul>
