@@ -10,8 +10,8 @@ export default {
     url: "https://miguelpimentel.do/about/",
   },
   analytics: {
-    umamiWebsiteId: "YOUR WEBSITE ID HERE",
-    umamiScriptUrl: "YOUR UMAMI URL HERE",
+    umamiWebsiteId: "e8f4b407-ecac-420c-9951-83e9c8d44169",
+    umamiScriptUrl: "https://umami.itscattime.com/script.js",
   },
   social: [
     {

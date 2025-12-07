@@ -1,4 +1,4 @@
-# Personal Site
+# [MiguelPimentel.do](https://miguelpimentel.do/)
 
 Repository with the source code for my personal site built with the [Eleventy](https://www.11ty.dev/) static site generator.
 
@@ -61,3 +61,5 @@ This project is based on [11ty/eleventy-base-blog](https://github.com/11ty/eleve
 - [11ty](https://www.11ty.dev/)
 - [ESLint](https://eslint.org/)
 - [Utopia](https://utopia.fyi/)
+- [Vercel](https://vercel.com/) - For hosting
+- [Umami](https://umami.is/) - For analytics

@@ -1,5 +1,5 @@
 {
-  "name": "personal-site",
+  "name": "miguelpimentel-do",
   "version": "1.0.0",
   "description": "Latest version of my personal web site using the Eleventy site generator.",
   "type": "module",
@@ -27,7 +27,7 @@
   },
   "author": {
     "name": "Miguel Pimentel",
-    "email": "contact@miguelpimentel.do",
+    "email": "database@omg.lol",
     "url": "https://miguelpimentel.do/"
   },
   "license": "MIT",
