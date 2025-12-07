@@ -3,10 +3,10 @@ title: "My Actual Problem-Solving Rituals"
 description: "Aggressive metal music while trying to solve complex problems? That sounds like a recipe for distraction, not focus. But here's the thing I've learned about my brain since my ADHD diagnosis: what works for me doesn't always match what's supposed to work."
 date: 2025-09-09
 tags:
-    - adhd
-    - productivity
-    - mental-health
-    - problem-solving
+    - ADHD
+    - Productivity
+    - MentalHealth
+    - ProblemSolving
 # image: ./cover-image.jpg
 # imageAlt: Photo by Javier Allegue Barros on Unsplash.
 ---

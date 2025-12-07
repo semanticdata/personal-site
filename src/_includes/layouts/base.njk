@@ -1,107 +1,144 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ title or metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-		<meta name="generator" content="{{ eleventy.generator }}">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		{#-
-		Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
-		1. CSS:
-			* Add to a per-page bundle using `{% css %}{% endcss %}`
-			* Retrieve bundle content using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}`
-		2. Or for JavaScript:
-			* Add to a per-page bundle using `{% js %}{% endjs %}`
-			* Retrieve via `{% getBundle "js" %}` or `{% getBundleFileUrl "js" %}`
-		3. Learn more: https://github.com/11ty/eleventy-plugin-bundle
-		#}
+	{% set isPost = collections.posts | getCollectionItem(page) %}
+	<title>{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
+	<link rel="alternate" href="/rss.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
-		{#- Add CSS to the bundle #}
-		{# <style>/* This is an arbitrary CSS string added to the bundle */</style> #}
+	{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
+	<meta name="generator" content="{{ eleventy.generator }}">
 
-		{#- Add CSS files to the bundle without outputting them directly #}
-		{%- css -%}
-		  {# Base styles and variables #}
-		  {%- include "src/assets/css/base/_reset.css" -%}
-		  {%- include "src/assets/css/base/_variables.css" -%}
-		  {%- include "src/assets/css/base/_global.css" -%}
-		  {%- include "src/assets/css/base/_typography.css" -%}
+	<meta name="author" content="Miguel Pimentel">
+	{% if isPost %}
+	<meta property="og:type" content="article">
+	{% else %}
+	<meta property="og:type" content="website">
+	{% endif %}
+	<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+	<meta property="og:description"
+		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+	<meta property="og:url" content="{{ metadata.url }}">
+	<meta property="og:site_name" content="{{ metadata.title }}">
+	<meta property="og:image" content="/og.jpg">
+	<meta property="og:logo" content="/atom.svg">
 
-		  {# Component styles #}
-		  {%- include "src/assets/css/components/_header.css" -%}
-		  {%- include "src/assets/css/components/_nav.css" -%}
-		  {%- include "src/assets/css/components/_postlist.css" -%}
-		  {%- include "src/assets/css/components/_projectlist.css" -%}
-		  {%- include "src/assets/css/components/_footer.css" -%}
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="{{ metadata.url }}">
+	<meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+	<meta name="twitter:description"
+		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+	<meta name="twitter:image" content="/og.jpg">
 
-		  {# Responsive styles should come last #}
-		  {%- include "src/assets/css/base/_responsive.css" -%}
-		{%- endcss -%}
+	{#-
+	Plain-text bundles are provided via the `eleventy-plugin-bundle` plugin:
+	1. CSS:
+	* Add to a per-page bundle using `{% css %}{% endcss %}`
+	* Retrieve bundle content using `{% getBundle "css" %}` or `{% getBundleFileUrl "css" %}`
+	2. Or for JavaScript:
+	* Add to a per-page bundle using `{% js %}{% endjs %}`
+	* Retrieve via `{% getBundle "js" %}` or `{% getBundleFileUrl "js" %}`
+	3. Learn more: https://github.com/11ty/eleventy-plugin-bundle
+	#}
 
-		{#- Link to the generated CSS bundle. The browser can cache this file. #}
-		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
+	{#- Add CSS to the bundle #}
+	{# <style>
+		/* This is an arbitrary CSS string added to the bundle */
+	</style> #}
 
-		{# Favicons #}
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+	{#- Add CSS files to the bundle without outputting them directly #}
+	{%- css -%}
+	{# Base styles and variables #}
+	{%- include "src/assets/css/base/_reset.css" -%}
+	{%- include "src/assets/css/base/_variables.css" -%}
+	{%- include "src/assets/css/base/_global.css" -%}
+	{%- include "src/assets/css/base/_typography.css" -%}
 
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
-	</head>
-	<body>
-		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+	{# Component styles #}
+	{%- include "src/assets/css/components/_header.css" -%}
+	{%- include "src/assets/css/components/_nav.css" -%}
+	{%- include "src/assets/css/components/_postlist.css" -%}
+	{%- include "src/assets/css/components/_projectlist.css" -%}
+	{%- include "src/assets/css/components/_footer.css" -%}
 
-		<header>
+	{# Responsive styles should come last #}
+	{%- include "src/assets/css/base/_responsive.css" -%}
+	{%- endcss -%}
+
+	{#- Link to the generated CSS bundle. The browser can cache this file. #}
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
+
+	{# Favicons #}
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	{# Umami Analytics #}
+	{% umamiCounter %}
+
+	{#- Add the heading-anchors web component to the JavaScript bundle #}
+	<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
+</head>
+
+<body>
+	<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+	<header>
+		<div>
 			{# <img width="24px" height="24px" src="/assets/img/atom.svg" alt="Atom icon" class="atom" /> #}
 			<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
+		</div>
 
-			<div class="social-links">
-				{% for entry in metadata.social %}
-					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %} {% if entry.label %}<span class="desktop-only"> {{ entry.label }}</span>{% endif %}</a>
-				{% endfor %}
-			</div>
-			</header>
+		<div class="social-links">
+			{% for entry in metadata.social %}
+			<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
+				icon entry.icon %} {% if entry.label %}<span class="desktop-only"> {{ entry.label }}</span>{% endif
+				%}</a>
+			{% endfor %}
+		</div>
+	</header>
 
-		<nav aria-label="Main navigation" class="main-nav">
-			<div class="nav">
+	<nav aria-label="Main navigation" class="main-nav">
+		<div class="nav">
 			{%- for entry in collections.all | eleventyNavigation %}
-				<a class="nav-item" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+			<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
+				entry.title }}</a>
 			{%- endfor %}
-			</div>
-		</nav>
+		</div>
+	</nav>
 
-		{% set isPost = collections.posts | getCollectionItem(page) %}
-		<main id="main" {% if isPost %}class="prose"{% endif %}>
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
-		</main>
+	<main id="main" {% if isPost %}class="prose" {% endif %}>
+		<heading-anchors>
+			{{ content | safe }}
+		</heading-anchors>
+	</main>
 
-		<footer>
-			<ul class="footer-links">
-				{% for entry in metadata.footer %}
-					<li><a href="{{ entry.url }}">{{ entry.label }}</a></li>{% if not loop.last %}<li aria-hidden="true">·</li>{% endif %}
-				{% endfor %}
-			</ul>
+	<footer>
+		<ul class="footer-links">
+			{% for entry in metadata.footer %}
+			<li><a {% if entry.external %}target="_blank" rel="noopener noreferrer" {% endif %}
+					href="{{ entry.url }}">{{ entry.label }}</a></li>{% if not loop.last %}<li aria-hidden="true">·</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
 
-			<div class="footer-gifs">
-				{% for entry in metadata.gifs %}
-				{% if entry.url %}<a href="{{ entry.url }}">{% 88x31 entry.gif, entry.alt %}</a>
-				{% else %}{% 88x31 entry.gif, entry.alt %}{% endif %}
-				{% endfor %}
-			</div>
-		</footer>
+		<div class="footer-gifs">
+			{% for entry in metadata.gifs %}
+			{% if entry.url %}<a href="{{ entry.url }}">{% 88x31 entry.gif, entry.alt %}</a>
+			{% else %}{% 88x31 entry.gif, entry.alt %}{% endif %}
+			{% endfor %}
+		</div>
+	</footer>
 
-		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
-	</body>
+	<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+	<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
+</body>
+
 </html>
 
 {% getBundle "fontawesome" %}

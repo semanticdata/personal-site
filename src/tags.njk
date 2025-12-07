@@ -5,7 +5,7 @@ title: Tags
 <h1>Tags</h1>
 
 {% set allTags = [] %}
-{% for post in collections.posts %}
+{% for post in collections.all %}
   {% for tag in post.data.tags %}
     {% if tag != "posts" and tag != "projects" %}
       {% set allTags = (allTags.push(tag), allTags) %}
@@ -21,3 +21,23 @@ title: Tags
 	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
 {% endfor %}
 </ul>
+
+{# <h2>Project Tags</h2>
+
+{% set allTags = [] %}
+{% for post in collections.projects %}
+  {% for tag in post.data.tags %}
+    {% if tag != "posts" and tag != "projects" %}
+      {% set allTags = (allTags.push(tag), allTags) %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{% set uniqueTags = allTags | unique | sortAlphabetically %}
+
+<ul>
+{% for tag in uniqueTags %}
+	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
+{% endfor %}
+</ul> #}

@@ -1,8 +1,6 @@
 /* Header */
 header {
   display: flex;
-  /* gap: 1em; */
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
   padding-block: 1rem;
@@ -10,7 +8,7 @@ header {
 .home-link {
   flex-grow: 1;
   font-size: var(--step-1);
-  font-weight: 700;
+  font-weight: bold;
   align-items: center;
 }
 .home-link:link:not(:hover) {
@@ -34,9 +32,9 @@ header {
   display: flex;
   align-items: center;
   gap: 0.1rem;
-  font-weight: 600;
+  font-weight: bold;
 }
-.social-links a[href="/feed/feed.xml"] svg {
+.social-links a[href="/rss.xml"] svg {
   color: var(--brand-orange);
 }
 .social-links a[href="https://github.com/semanticdata"] svg
@@ -46,4 +44,38 @@ header {
 .social-links a[href="https://social.lol/@database"] svg
 {
   color: var(--social-mastodon);
+}
+.social-links-cta {
+  display: flex;
+  gap: 1em;
+}
+.social-links-cta a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-weight: bold;
+}
+.social-links-cta a[href="/rss.xml"] svg {
+  color: var(--brand-orange);
+}
+.social-links-cta a[href="https://github.com/semanticdata"] svg
+{
+  color: var(--text);
+}
+.social-links-cta a[href="https://social.lol/@database"] svg
+{
+  color: var(--social-mastodon);
+}
+.desktop-only {
+  color: var(--text);
+}
+.desktop-only:hover {
+  color: var(--link-active);
+}
+.desktop-only-cta {
+  color: var(--text);
+}
+.desktop-only-cta:hover {
+  color: var(--link-active);
 }

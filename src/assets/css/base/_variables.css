@@ -1,24 +1,4 @@
-/* === INK & PAPER THEME === */
-/* Desert Light + Ink Dark - Terracotta light mode, Ink blue dark mode */
-
 :root {
-  /* Desert Hues (for light mode) */
-  --hue-terracotta: 15; /* Burnt orange/red */
-  --hue-sand: 40;       /* Warm beige */
-  --hue-clay: 25;       /* Reddish clay */
-  --hue-cactus: 120;    /* Muted green */
-
-  /* Ink Hues (for dark mode) */
-  --hue-ink: 220;       /* Blue-black ink */
-  --hue-rust: 20;       /* Rusty orange */
-  --hue-sepia: 35;      /* Warm sepia */
-  --hue-sage: 130;      /* Muted sage */
-
-  /* Brand Colors (preserved for RSS and social icons) */
-  --brand-orange: hsl(var(--hue-clay), 85%, 60%);  /* Clay orange for RSS */
-  --social-mastodon: #8373e7;
-  --tag: var(--brand-orange);
-
   /* Font Families & Syntax */
   --font-family: -apple-system, system-ui, sans-serif;
   --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
@@ -26,54 +6,51 @@
     Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
     Courier, monospace;
   --syntax-tab-size: 2;
-}
 
-/* === Themes === */
+  --brand-orange: #f08a42;
+  --social-mastodon: #8373e7;
+  --tag: var(--brand-orange);
 
-/* --- Light Theme (Desert colors) --- */
-:root {
-  --bg: hsl(var(--hue-sand), 30%, 96%);           /* Warm cream background */
-  --text: hsl(var(--hue-terracotta), 30%, 18%);   /* Deep brown text */
-  --accent: hsl(var(--hue-terracotta), 65%, 50%); /* Terracotta accent */
-  --border-subtle: hsl(var(--hue-sand), 25%, 88%);
-  --border-strong: hsl(var(--hue-terracotta), 45%, 45%);
+  --bg: #f8f6f2;
+  --text: #301e0e;
+  --accent: #c54a20;
+  --border-subtle: #a7a29b;
+  --border-strong: #a6593f;
 
-  --link: var(--accent);
-  --link-visited: hsl(var(--hue-cactus), 40%, 40%);
-  --link-active: hsl(var(--hue-terracotta), 75%, 42%);
+  --link-visited: #5c3770;
+  --link: #275d27;
+  --link-active: #662512;
 
-  --blockquote-bg: hsl(var(--hue-sand), 30%, 93%);
-  --blockquote-text: hsl(var(--hue-terracotta), 30%, 28%);
-  --table-header-bg: hsl(var(--hue-sand), 30%, 90%);
-  --table-row-stripe-bg: hsl(var(--hue-sand), 28%, 94%);
+  --blockquote-bg: #f2efe8;
+  --blockquote-text: #5d3d32;
+  --table-header-bg: #f1ece2;
+  --table-row-stripe-bg: #f4f1eb;
 
-  /* Semantic colors for typography */
-  --text-heading: hsl(var(--hue-terracotta), 65%, 45%);  /* Terracotta headings */
-  --text-muted: hsl(var(--hue-sand), 25%, 40%);          /* Warm sand dates */
-  --text-emphasis: hsl(var(--hue-cactus), 45%, 45%);
+  --text-heading: #bd4d28;
+  --text-muted: #5c5137;
+  --text-emphasis: #3fa63f;
 }
 
 /* --- Dark Theme --- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: hsl(var(--hue-ink), 28%, 12%);           /* Deep ink background */
-    --text: hsl(var(--hue-sepia), 30%, 88%);       /* Warm off-white text */
-    --accent: hsl(var(--hue-rust), 75%, 65%);      /* Bright rust accent */
-    --border-subtle: hsl(var(--hue-ink), 25%, 22%);
-    --border-strong: hsl(var(--hue-rust), 55%, 60%);
+    --bg: #10141b;
+    --text: #e9e2d7;
+    --accent: #e88f63;
+    --border-subtle: #4b566e;
+    --border-strong: #d18661;
 
-    --link: var(--accent);
-    --link-visited: hsl(var(--hue-sage), 45%, 65%);
-    --link-active: hsl(var(--hue-rust), 85%, 75%);
+    --link-visited: #b990d6;
+    --link: #7dcd8a;
+    --link-active: #ff9b4f;
 
-    --blockquote-bg: hsl(var(--hue-ink), 28%, 16%);
-    --blockquote-text: hsl(var(--hue-sepia), 30%, 82%);
-    --table-header-bg: hsl(var(--hue-ink), 28%, 18%);
-    --table-row-stripe-bg: hsl(var(--hue-ink), 28%, 14%);
+    --blockquote-bg: #191f2b;
+    --blockquote-text: #dfd3c3;
+    --table-header-bg: #1e2430;
+    --table-row-stripe-bg: #131720;
 
-    /* Semantic colors for typography */
-    --text-heading: hsl(var(--hue-rust), 75%, 70%);   /* Warm rust headings */
-    --text-muted: hsl(var(--hue-sepia), 25%, 65%);    /* Soft sepia dates */
-    --text-emphasis: hsl(var(--hue-sage), 50%, 70%);
+    --text-heading: #f0a07e;
+    --text-muted: #bca98f;
+    --text-emphasis: #8cd899;
   }
 }

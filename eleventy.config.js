@@ -16,6 +16,8 @@ import markdownItFootnote from "markdown-it-footnote";
 import metadata from "./src/_data/metadata.js";
 import pluginMermaid from "@kevingimbel/eleventy-plugin-mermaid";
 
+console.log("Current NODE_ENV:", process.env.NODE_ENV);
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
   eleventyConfig.addPreprocessor("drafts", "*", (data) => {
@@ -64,8 +66,8 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
-    outputPath: "/feed/feed.xml",
-    stylesheet: "pretty-atom-feed.xsl",
+    outputPath: "/rss.xml",
+    stylesheetPath: "/feed/pretty-atom-feed.xsl",
     collection: {
       name: "posts",
       limit: 10,
@@ -100,7 +102,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin, {});
-  eleventyConfig.addPlugin(pluginShortcodes);
+  eleventyConfig.addPlugin(pluginShortcodes(metadata));
   eleventyConfig.addPlugin(pluginMermaid);
 
   eleventyConfig.amendLibrary("md", (mdLib) => {

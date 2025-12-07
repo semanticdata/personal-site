@@ -9,32 +9,46 @@ export default {
     email: "contact@miguelpimentel.do",
     url: "https://miguelpimentel.do/about/",
   },
+  analytics: {
+    umamiWebsiteId: "e8f4b407-ecac-420c-9951-83e9c8d44169",
+    umamiScriptUrl: "https://umami.itscattime.com/script.js",
+  },
   social: [
     {
       label: "subscribe",
       icon: "fas:rss",
-      url: "/feed/feed.xml",
-      ariaLabel: "RSS Feed",
+      url: "/rss.xml",
+      ariaLabel: "Subscribe via RSS",
+      cta: "Subscribe with RSS",
     },
     {
       label: "mastodon",
       icon: "fab:mastodon",
       url: "https://social.lol/@database",
       ariaLabel: "Mastodon Profile",
+      cta: "Follow me on Mastodon",
     },
   ],
   footer: [
     {
       label: "colophon",
       url: "/colophon/",
+      external: false,
     },
     {
       label: "contact",
       url: "/contact/",
+      external: false,
     },
     {
       label: "uses",
       url: "/uses/",
+      external: false,
+    },
+    {
+      label: "links",
+      url: "https://database.omg.lol/",
+      external: false,
     },
   ],
   gifs: [
@@ -55,8 +69,13 @@ export default {
     },
     {
       gif: "rss-button.gif",
-      url: "/feed/feed.xml",
+      url: "/rss.xml",
       alt: "RSS Feed",
+    },
+    {
+      gif: "buymeacoffee.png",
+      url: "https://buymeacoffee.com/semanticdata",
+      alt: "Buy Me a Coffee",
     },
     {
       gif: "library88x31.png",

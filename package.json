@@ -1,14 +1,14 @@
 {
-  "name": "personal-site",
+  "name": "miguelpimentel-do",
   "version": "1.0.0",
   "description": "Latest version of my personal web site using the Eleventy site generator.",
   "type": "module",
   "scripts": {
-    "build": "rimraf ./_site/ && npx @11ty/eleventy",
+    "build": "rimraf ./_site/ && cross-env NODE_ENV=production npx @11ty/eleventy",
     "build:nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
     "build:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
     "clean": "rimraf ./_site/",
-    "dev": "npx @11ty/eleventy --serve --quiet",
+    "dev": "cross-env NODE_ENV=development npx @11ty/eleventy --serve --quiet",
     "dev:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/ --serve --quiet",
     "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
     "debug:start": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
@@ -27,14 +27,11 @@
   },
   "author": {
     "name": "Miguel Pimentel",
-    "email": "contact@miguelpimentel.do",
+    "email": "database@omg.lol",
     "url": "https://miguelpimentel.do/"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=22"
-  },
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.24.0",
   "bugs": {
     "url": "https://github.com/semanticdata/personal-site/issues"
   },
@@ -42,27 +39,24 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-navigation": "^1.0.4",
+    "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@11ty/font-awesome": "^1.0.0",
-    "@eslint/css": "^0.14.0",
-    "@eslint/js": "^9.39.0",
-    "@eslint/json": "^0.13.2",
-    "@eslint/markdown": "^7.5.0",
+    "@11ty/font-awesome": "^1.0.1",
+    "@eslint/css": "^0.14.1",
+    "@eslint/js": "^9.39.1",
+    "@eslint/json": "^0.14.0",
+    "@eslint/markdown": "^7.5.1",
     "@zachleat/heading-anchors": "^1.0.5",
     "cross-env": "10.1.0",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "luxon": "^3.7.2",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-obsidian-callouts": "^0.3.2",
+    "markdown-it-obsidian-callouts": "^0.3.3",
     "prismjs": "^1.30.0",
-    "rimraf": "^6.1.0",
-    "zod": "^4.1.12",
-    "zod-validation-error": "^4.0.2"
-  },
-  "dependencies": {
-    "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1"
+    "rimraf": "^6.1.2",
+    "zod": "^4.1.13",
+    "zod-validation-error": "^5.0.0"
   }
 }

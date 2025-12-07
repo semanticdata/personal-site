@@ -5,25 +5,49 @@ layout: layouts/base.njk
 <style>{% include "node_modules/prismjs/themes/prism-tomorrow.css" %}</style>
 <style>{% include "src/assets/css/prism-diff.css" %}</style>
 <style>{% include "src/assets/css/markdown-it-callouts.css" %}</style>
+
 <h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	{%- for tag in tags | filterTagList %}
-	{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
+<div class="post-metadata">
+		<span>{% icon "calendar" %} <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></span>
+
+		<p style="margin-block-end: 0;">
+			{%- for tag in tags | filterTagList %}
+			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
+			{%- endfor %}
+		</p>
+</div>
 
 {{ content | safe }}
+
+<hr />
+
+<div class="post-cta">
+	<p style="margin-top:0;"><i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
+				href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
+				coffee</a></i> 💜</p>
+
+	<div class="social-links-cta">
+		{% for entry in metadata.social %}
+		<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
+			icon entry.icon %} {% if entry.cta %}<span class="desktop-only-cta"> {{ entry.cta }}</span>{% endif
+			%}</a>
+		{% endfor %}
+	</div>
+</div>
+
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
+<hr />
 <ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{
+			previousPost.data.title }}</a></li>{% endif %}
+	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title
+			}}</a></li>{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}
