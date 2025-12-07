@@ -8,7 +8,7 @@
 	{% set isPost = collections.posts | getCollectionItem(page) %}
 	<title>{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
 	<meta name="description" content="{{ description or metadata.description }}">
-	<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+	<link rel="alternate" href="/rss.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
 	{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
 	<meta name="generator" content="{{ eleventy.generator }}">

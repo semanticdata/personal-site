@@ -17,7 +17,7 @@ export default {
     {
       label: "subscribe",
       icon: "fas:rss",
-      url: "/feed/feed.xml",
+      url: "/rss.xml",
       ariaLabel: "Subscribe via RSS",
       cta: "Subscribe with RSS",
     },
@@ -66,7 +66,7 @@ export default {
     },
     {
       gif: "rss-button.gif",
-      url: "/feed/feed.xml",
+      url: "/rss.xml",
       alt: "RSS Feed",
     },
     {

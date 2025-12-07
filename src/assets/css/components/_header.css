@@ -36,7 +36,7 @@ header {
   gap: 0.1rem;
   font-weight: bold;
 }
-.social-links a[href="/feed/feed.xml"] svg {
+.social-links a[href="/rss.xml"] svg {
   color: var(--brand-orange);
 }
 .social-links a[href="https://github.com/semanticdata"] svg
@@ -58,7 +58,7 @@ header {
   gap: 0.1rem;
   font-weight: bold;
 }
-.social-links-cta a[href="/feed/feed.xml"] svg {
+.social-links-cta a[href="/rss.xml"] svg {
   color: var(--brand-orange);
 }
 .social-links-cta a[href="https://github.com/semanticdata"] svg
