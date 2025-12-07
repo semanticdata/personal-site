@@ -65,8 +65,8 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(feedPlugin, {
     type: "atom",
-    outputPath: "/feed/feed.xml",
-    stylesheet: "pretty-atom-feed.xsl",
+    outputPath: "/rss.xml",
+    stylesheetPath: "/feed/pretty-atom-feed.xsl",
     collection: {
       name: "posts",
       limit: 10,
