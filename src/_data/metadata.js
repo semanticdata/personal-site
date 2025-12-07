@@ -33,19 +33,22 @@ export default {
     {
       label: "colophon",
       url: "/colophon/",
+      external: false,
     },
     {
       label: "contact",
       url: "/contact/",
+      external: false,
     },
     {
       label: "uses",
       url: "/uses/",
+      external: false,
     },
     {
       label: "links",
       url: "https://database.omg.lol/",
-      external: true,
+      external: false,
     },
   ],
   gifs: [
