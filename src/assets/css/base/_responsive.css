@@ -6,6 +6,10 @@
     width: 100vw;
     transform: translateX(-1rem);
   }
+  .callout pre {
+    width: calc(100vw - 2rem);
+    transform: translateX(0);
+  }
   main img {
     max-width: 100vw;
     transform: translateX(-1rem);
@@ -40,5 +44,9 @@
     -webkit-overflow-scrolling: touch;
     /* max-width: 100vw; */
     transform: translateX(-1rem);
+  }
+  table th,
+  table td {
+    padding: 0.5rem;
   }
 }
