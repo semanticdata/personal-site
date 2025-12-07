@@ -55,9 +55,6 @@ iframe {
   aspect-ratio: 16/9;
 }
 
-/* p:last-child {
-  margin-bottom: 0;
-} */
 p {
   line-height: 1.5;
 }
@@ -100,7 +97,6 @@ a[href]:active {
   justify-content: space-between;
   gap: 0.5em 1em;
   list-style: none;
-  /* border-top: 1px dashed var(--border-subtle); */
   padding: 0;
 }
 .links-nextprev > * {
