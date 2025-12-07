@@ -8,7 +8,7 @@
     "build:nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
     "build:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/",
     "clean": "rimraf ./_site/",
-    "dev": "npx @11ty/eleventy --serve --quiet",
+    "dev": "cross-env NODE_ENV=development npx @11ty/eleventy --serve --quiet",
     "dev:ghpages": "npx @11ty/eleventy --pathprefix=/personal-site/ --serve --quiet",
     "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
     "debug:start": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
@@ -31,7 +31,7 @@
     "url": "https://miguelpimentel.do/"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.24.0",
   "bugs": {
     "url": "https://github.com/semanticdata/personal-site/issues"
   },
