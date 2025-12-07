@@ -54,6 +54,6 @@ This website serves as my public notebook and workshop—a place to connect the 
 
 ## Connect & Support
 
-If you enjoy the content of the site or find any of my projects useful, support is always appreciated. Thank you for reading!
+If you enjoy the content of the site or find any of my [projects](/projects/) useful, support is always appreciated. Thank you for reading!
 
 [Buy Me A Coffee](https://buymeacoffee.com/semanticdata)
