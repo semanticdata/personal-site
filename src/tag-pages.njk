@@ -25,19 +25,29 @@ const eleventyComputed = {
 {% set projectslist = collections.projects | getFilteredCollection(tag) %}
 
 <ul reversed class="taglist">
-{%- for post in postslist | reverse %}
-	<li class="taglist-item">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<br />
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
-	</li>
-{%- endfor %}
+	{%- for post in postslist | reverse %}
+		<li class="taglist-item">
+			<a href="{{ post.url }}" class="postlist-link">
+				{% if post.data.title %}{{ post.data.title }}
+				{% else %}
+					<code>{{ post.url }}</code>
+				{% endif %}
+			</a>
+			<br/>
+			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
+		</li>
+	{%- endfor %}
 
-{%- for post in projectslist | reverse %}
-	<li class="taglist-item">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-	</li>
-{%- endfor %}
+	{%- for post in projectslist | reverse %}
+		<li class="taglist-item">
+			<a href="{{ post.url }}" class="postlist-link">
+				{% if post.data.title %}{{ post.data.title }}
+				{% else %}
+					<code>{{ post.url }}</code>
+				{% endif %}
+			</a>
+		</li>
+	{%- endfor %}
 </ul>
 
 <p>See <a href="tags.njk">all tags</a>.</p>

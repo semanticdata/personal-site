@@ -5,30 +5,40 @@ layout: layouts/base.njk
 
 <div class="project-metadata">
   {% if iconLabel %}
-  <span>{% icon iconLabel %} <a href="{{ iconUrl }}">{{ repoLabel }}</a></span>
+    <span>{% icon iconLabel %}
+      <a href="{{ iconUrl }}">{{ repoLabel }}</a>
+    </span>
   {% endif %}
 
   <p style="margin-block-end: 0;">
     {%- for tag in tags | filterTagList %}
-    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
     {%- endfor %}
   </p>
 </div>
 
 {{ content | safe }}
 
-<hr />
+<hr/>
 
 {%- if collections.projects %}
-{%- set previousProject = collections.projects | getPreviousCollectionItem %}
-{%- set nextProject = collections.projects | getNextCollectionItem %}
-{%- if nextProject or previousProject %}
-<ul class="links-nextprev">
-  {%- if previousProject %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousProject.url }}">{{
-      previousProject.data.title }}</a></li>{% endif %}
-  {%- if nextProject %}<li class="links-nextprev-next">Next →<br><a href="{{ nextProject.url }}">{{
-      nextProject.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
+  {%- set previousProject = collections.projects | getPreviousCollectionItem %}
+  {%- set nextProject = collections.projects | getNextCollectionItem %}
+  {%- if nextProject or previousProject %}
+    <ul class="links-nextprev">
+      {%- if previousProject %}
+        <li class="links-nextprev-prev">← Previous<br>
+          <a href="{{ previousProject.url }}">{{
+      previousProject.data.title }}</a>
+        </li>
+      {% endif %}
+      {%- if nextProject %}
+        <li class="links-nextprev-next">Next →<br>
+          <a href="{{ nextProject.url }}">{{
+      nextProject.data.title }}</a>
+        </li>
+      {% endif %}
+    </ul>
+  {%- endif %}
 {%- endif %}

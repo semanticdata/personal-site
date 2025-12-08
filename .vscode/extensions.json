@@ -1,3 +1,7 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint", "ginfuru.better-nunjucks"]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ginfuru.better-nunjucks",
+    "okitavera.vscode-nunjucks-formatter"
+  ]
 }
