@@ -9,7 +9,6 @@ tags:
 iconLabel: fas:traffic-light
 iconUrl: https://github.com/semanticdata/traffic-studies
 repoLabel: semanticdata/traffic-studies
-featured: true
 ---
 
 A comprehensive traffic analysis dashboard for Crystal, Minnesota, built with Streamlit. This project processes and visualizes traffic data collected from [PicoCount 2500](https://vehiclecounts.com/picocount-2500.html) traffic counters, providing detailed insights into traffic patterns, speed compliance, and vehicle classifications.
