@@ -1,1 +1,2 @@
-src/feed/pretty-feed-v3.xsl linguist-vendored
+src/feed/simple-rss.xslt linguist-vendored
+src/feed/simple-atom.xslt linguist-vendored
