@@ -1,0 +1,47 @@
+---json
+{
+  "permalink": "feed.json",
+  "eleventyExcludeFromCollections": true,
+  "layout": "",
+  "metadata": {
+    "title": "MiguelPimentel.do",
+    "description": "Latest version of my personal web site using the Eleventy site generator.",
+    "language": "en",
+    "base": "https://miguelpimentel.do/",
+    "author": {
+      "name": "Miguel Pimentel"
+    }
+  }
+}
+---
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ metadata.title }}",
+  "language": "{{ metadata.language or page.lang }}",
+  "home_page_url": "{{ metadata.base | addPathPrefixToFullUrl }}",
+  "feed_url": "{{ permalink | htmlBaseUrl(metadata.base) }}",
+  "description": "{{ metadata.description }}",
+  "authors": [
+    {
+      "name": "{{ metadata.author.name }}"
+    }
+  ],
+  "items": [
+    {%- for post in collections.posts | reverse %}
+    {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.base) }}{% endset %}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}{% else %}""{% endif %},
+      "date_published": "{{ post.date | dateToRfc3339 }}",
+      "tags": [
+        {%- for tag in post.data.tags %}
+        "{{ tag }}"{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
