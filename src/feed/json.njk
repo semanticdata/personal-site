@@ -34,7 +34,12 @@
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
       "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}{% else %}""{% endif %},
-      "date_published": "{{ post.date | dateToRfc3339 }}"
+      "date_published": "{{ post.date | dateToRfc3339 }}",
+      "tags": [
+        {%- for tag in post.data.tags %}
+        "{{ tag }}"{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ]
     }
     {% if not loop.last %},{% endif %}
     {%- endfor %}

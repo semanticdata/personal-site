@@ -30,6 +30,9 @@
       <link>{{ absolutePostUrl }}</link>
       <description>{{ post.data.description }}</description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      {%- for tag in post.data.tags %}
+      <category>{{ tag }}</category>
+      {%- endfor %}
       <dc:creator>{{ metadata.author.name }}</dc:creator>
       <guid>{{ absolutePostUrl }}</guid>
     </item>

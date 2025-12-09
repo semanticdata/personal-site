@@ -35,6 +35,9 @@
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.base) }}</content>
     <summary>{{ post.data.description }}</summary>
+    {%- for tag in post.data.tags %}
+    <category term="{{ tag }}"/>
+    {%- endfor %}
   </entry>
   {%- endfor %}
 </feed>
