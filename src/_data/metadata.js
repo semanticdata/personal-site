@@ -68,11 +68,6 @@ export default {
       alt: "Mastodon",
     },
     {
-      gif: "rss-button.gif",
-      url: "/rss.xml",
-      alt: "RSS Feed",
-    },
-    {
       gif: "buymeacoffee.png",
       url: "https://buymeacoffee.com/semanticdata",
       alt: "Buy Me a Coffee",
@@ -86,6 +81,21 @@ export default {
       gif: "88x31.gif",
       url: "https://88x31.nl/history.html",
       alt: "88x31 Gif Button",
+    },
+    {
+      gif: "rss-button.gif",
+      url: "/rss.xml",
+      alt: "RSS Feed",
+    },
+    {
+      gif: "valid-atom.png",
+      url: "/atom.xml",
+      alt: "Atom Feed",
+    },
+    {
+      gif: "valid-json.png",
+      url: "/feed.json",
+      alt: "JSON Feed",
     },
     {
       gif: "css.gif",
