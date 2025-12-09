@@ -3,7 +3,7 @@ import {
   InputPathToUrlTransformPlugin,
   HtmlBasePlugin,
 } from "@11ty/eleventy";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
@@ -32,10 +32,8 @@ export default async function (eleventyConfig) {
     .addPassthroughCopy({
       "./public/": "/",
     })
-    .addPassthroughCopy("src/feed/pretty-atom-feed.xsl");
+    .addPassthroughCopy("src/feed/pretty-feed-v3.xsl");
   eleventyConfig.addPassthroughCopy("src/assets/js/", "/assets/js/");
-  // eleventyConfig.addPassthroughCopy("src/assets/css/", "/assets/css/");
-  // .addPassthroughCopy("src/assets/", "/assets/");
 
   eleventyConfig.addWatchTarget("src/assets/css/**/*.css");
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpg,jpeg,gif}");
@@ -63,24 +61,7 @@ export default async function (eleventyConfig) {
     shortcode: "icon",
   });
 
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "atom",
-    outputPath: "/rss.xml",
-    stylesheetPath: "/feed/pretty-atom-feed.xsl",
-    collection: {
-      name: "posts",
-      limit: 10,
-    },
-    metadata: {
-      language: metadata.language,
-      title: metadata.title,
-      subtitle: metadata.description,
-      base: metadata.url,
-      author: {
-        name: metadata.author.name,
-      },
-    },
-  });
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
