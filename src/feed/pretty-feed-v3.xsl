@@ -109,8 +109,10 @@ This file is in BETA. Please test and contribute to the discussion:
 
               Web Feed Preview
             </h1>
-            <h2><xsl:value-of select="/rss/channel/title"/></h2>
+            <h2 style="border:none;"><xsl:value-of select="/rss/channel/title"/></h2>
             <p><xsl:value-of select="/rss/channel/description"/></p>
+            <h2 style="border:none;"><xsl:value-of select="/atom:feed/atom:title"/></h2>
+            <p><xsl:value-of select="/atom:feed/atom:subtitle"/></p>
             <a class="head_link" target="_blank" rel="noreferrer">
               <xsl:attribute name="href">
                 <xsl:value-of select="/rss/channel/link"/>
@@ -131,6 +133,7 @@ This file is in BETA. Please test and contribute to the discussion:
                   <xsl:value-of select="title"/>
                 </a>
               </h3>
+              <p><xsl:value-of select="description"/></p>
               <small class="text-gray">
                 Published: <xsl:value-of select="pubDate" />
               </small>
@@ -148,6 +151,7 @@ This file is in BETA. Please test and contribute to the discussion:
                   <xsl:value-of select="atom:title"/>
                 </a>
               </h3>
+              <p><xsl:value-of select="atom:summary"/></p>
               <small class="text-gray">
                 Published: <xsl:value-of select="atom:updated" />
               </small>

@@ -34,6 +34,7 @@
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.base) }}</content>
+    <summary>{{ post.data.description }}</summary>
   </entry>
   {%- endfor %}
 </feed>
