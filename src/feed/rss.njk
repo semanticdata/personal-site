@@ -30,6 +30,7 @@
       <link>{{ absolutePostUrl }}</link>
       <description>{{ post.data.description }}</description>
       <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
+      <content type="html">{{ post.templateContent }}</content>
       {%- for tag in post.data.tags %}
       <category>{{ tag }}</category>
       {%- endfor %}
