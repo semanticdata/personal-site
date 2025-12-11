@@ -15,9 +15,9 @@ Then my phone rang. A resident had called City Hall asking specifically to speak
 
 My brain immediately went to complaint mode. Of course someone was calling with another problem. That's how these days go, right? One thing goes wrong and suddenly everything piles on. I picked up the phone to call back, bracing for whatever issue was about to land on my desk.
 
-"I just wanted to call and thank you."
+> "I just wanted to call and thank you."
 
-Wait, what?
+That was *not* what I expected.
 
 ## The Small Gesture That Landed
 
@@ -33,9 +33,9 @@ It was a powerful reminder that connection doesn't require a formal title or a p
 
 A few weeks ago, I was volunteering as a driver for [Meals-on-Wheels](https://www.mealsonwheelsamerica.org/), doing my usual route. I always look forward to these deliveries because the people are genuinely the kindest you'll meet. I knew the interactions would be positive.
 
-I handed over the meal to one of my regulars and was starting to turn away when they stopped me.
+I handed over the meal to one of my regulars and was starting to turn away when they stopped me:
 
-"What's your name?"
+> "What's your name?"
 
 That was it. They just wanted to know about me. Such a simple question, but I wasn't expecting it at all. Even when you're anticipating a good interaction, there are these small moments that catch you off guard. They didn't just want their meal. They wanted to know who I was.
 
@@ -54,15 +54,3 @@ These moments don't show up in project completion reports. They don't get quanti
 The resident who called took time out of their day to express gratitude for something I'd honestly forgotten about. The person receiving their meal delivery didn't just accept their food and close the door. They paused to make a human connection.
 
 I'm grateful they did. Those small acknowledgments matter more than formal recognition ever could.
-
-## Landing When You Need It
-
-The resident who called didn't know they were pulling me out of a bad mood. They didn't know I'd been having a rough morning. They just wanted to express their gratitude for something that probably took me fifteen minutes to handle weeks ago.
-
-The person asking my name at their doorstep didn't know that such a simple question would stick with me. They just wanted to know who was bringing them their meal so they could thank them properly.
-
-I'm grateful for both of those moments. They landed exactly when I needed them, even though nobody planned it that way.
-
-Sometimes it's the unexpected kindness that catches you off guard. Sometimes it's the simple gesture when you're already expecting good. Both remind you that the human element matters.
-
-And maybe that's what gratitude really looks like. Not waiting for the big wins to celebrate, but recognizing the everyday moments that make the work worth doing.
