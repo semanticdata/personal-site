@@ -2,6 +2,10 @@
 title: Colophon
 ---
 
+<style>
+	{% include "src/assets/css/markdown-it-callouts.css" %}
+</style>
+
 # Colophon
 
 <!--
@@ -15,3 +19,6 @@ In the past I've used [Jekyll](https://jekyllrb.com/), [Hugo](https://gohugo.io/
 It is based on [11ty/eleventy-base-blog](https://github.com/11ty/eleventy-base-blog). We use [Nunjucks](https://mozilla.github.io/nunjucks/) for most templates, CSS for styling, and Markdown to author most content.
 
 The analytics are powered by [Umami](https://github.com/umami-software/umami) which I host together with some other services from a [Hetzner](https://www.hetzner.com/) VPS.
+
+> [!NOTE]
+> The website is currently displaying falling snow using [@zachleat/snow-fall](https://github.com/zachleat/snow-fall).

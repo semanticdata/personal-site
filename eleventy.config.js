@@ -31,6 +31,7 @@ export default async function (eleventyConfig) {
   eleventyConfig
     .addPassthroughCopy({
       "./public/": "/",
+      "node_modules/@zachleat/snow-fall/snow-fall.js": "assets/js/snow-fall.js",
     })
     .addPassthroughCopy("src/feed/simple-rss.xslt")
     .addPassthroughCopy("src/feed/simple-atom.xslt")

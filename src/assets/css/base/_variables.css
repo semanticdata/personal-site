@@ -29,6 +29,8 @@
   --text-heading: #bd4d28;
   --text-muted: #5c5137;
   --text-emphasis: #3fa63f;
+
+  --snow-fall-color: rebeccapurple;
 }
 
 /* --- Dark Theme --- */
@@ -52,5 +54,7 @@
     --text-heading: #f0a07e;
     --text-muted: #bca98f;
     --text-emphasis: #8cd899;
+
+    --snow-fall-color: unset;
   }
 }
