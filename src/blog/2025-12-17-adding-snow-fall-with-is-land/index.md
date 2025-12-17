@@ -4,6 +4,7 @@ description: "I'm from the Dominican Republic, and winter makes me sad. I used @
 date: 2025-12-17
 tags:
   - Eleventy
+  - Accessibility
 ---
 
 ## The Digital Paradox

@@ -4,7 +4,6 @@ description: "The last year has been about creating rather than documenting. Whi
 date: 2025-07-31
 tags:
     - Blogging
-    - Productivity
     - Obsidian
     - Python
 ---

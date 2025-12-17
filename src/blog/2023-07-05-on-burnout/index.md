@@ -4,7 +4,6 @@ description: "The last 18 months have changed me profoundly, and I feel like I n
 date: 2023-07-05
 tags:
     - MentalHealth
-    - Burnout
     - Firefighting
 ---
 
