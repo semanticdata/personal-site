@@ -5,8 +5,6 @@ date: 2025-09-15
 tags:
   - ProjectManagement
   - ADHD
-  - RSD
-  - LifeLessons
 wordCount: 992
 ---
 

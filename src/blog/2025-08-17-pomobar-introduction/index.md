@@ -7,7 +7,6 @@ tags:
     - Typescript
     - JavaScript
     - Pomodoro
-    - Productivity
     - ADHD
 ---
 

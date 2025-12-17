@@ -20,5 +20,7 @@ It is based on [11ty/eleventy-base-blog](https://github.com/11ty/eleventy-base-b
 
 The analytics are powered by [Umami](https://github.com/umami-software/umami) which I host together with some other services from a [Hetzner](https://www.hetzner.com/) VPS.
 
-> [!NOTE]
+> [!NOTE] About the snow fall effect
 > The website is currently displaying falling snow using [@zachleat/snow-fall](https://github.com/zachleat/snow-fall).
+> 
+> Read the [blog post](/blog/2025-12-17-adding-snow-fall-with-is-land/) about it.

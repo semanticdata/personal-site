@@ -3,9 +3,8 @@ title: "My Actual Problem-Solving Rituals"
 description: "Aggressive metal music while trying to solve complex problems? That sounds like a recipe for distraction, not focus. But here's the thing I've learned about my brain since my ADHD diagnosis: what works for me doesn't always match what's supposed to work."
 date: 2025-09-09
 tags:
-    - ADHD
-    - Productivity
     - MentalHealth
+    - ADHD
 ---
 
 Picture this: I'm staring at a stubborn piece of code that won't work, my browser has twelve tabs open, and I'm genuinely stuck. What do I do? I put on my noise-canceling headphones and blast "Psychosocial" by Slipknot.

@@ -4,10 +4,8 @@ description: "The last 18 months have changed me profoundly, and I feel like I n
 date: 2023-04-11
 tags:
     - Blogging
-    - Writing
     - MentalHealth
     - PKM
-    - Learning
 ---
 
 Last week, I came across Danny Guo’s [Why I Blog](https://www.dannyguo.com/blog/why-i-blog) post, and it inspired me to write this.
