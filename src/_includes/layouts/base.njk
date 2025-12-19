@@ -77,8 +77,6 @@
 		<script type="module">
 			{% include "node_modules/@11ty/is-land/is-land.js" %}
 		</script>
-
-		<script type="module" data-ondemand src="/assets/js/snow-fall.js"></script>
 	</head>
 
 	<body>
@@ -144,6 +142,7 @@
 		{# Snow fall effect #}
 		<is-land on:media="(prefers-reduced-motion: no-preference)">
 			<snow-fall></snow-fall>
+			<script type="module" data-ondemand src="/assets/js/snow-fall.js"></script>
 		</is-land>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
