@@ -61,6 +61,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(fontAwesomePlugin, {
     transform: true,
     shortcode: "icon",
+    defaultAttributes: {
+      class: "icon",
+    },
   });
 
   eleventyConfig.addPlugin(pluginRss);

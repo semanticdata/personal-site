@@ -1,0 +1,150 @@
+:root {
+  --font-family: -apple-system, system-ui, sans-serif;
+  --measure: 60ch;
+  --brand-orange: #f08a42;
+  --social-mastodon: #8373e7;
+  --tag: var(--brand-orange);
+
+  --bg: #f8f6f2;
+  --text: #301e0e;
+  --accent: #c54a20;
+  --border-subtle: #a7a29b;
+  --border-strong: #a6593f;
+
+  --link-visited: #5c3770;
+  --link: #275d27;
+  --link-active: #662512;
+
+  --blockquote-bg: #f2efe8;
+  --blockquote-text: #5d3d32;
+  --table-header-bg: #f1ece2;
+  --table-row-stripe-bg: #f4f1eb;
+
+  --text-heading: #bd4d28;
+  --text-muted: #5c5137;
+  --text-emphasis: #3fa63f;
+}
+
+/* --- Dark Theme --- */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10141b;
+    --text: #e9e2d7;
+    --accent: #e88f63;
+    --border-subtle: #4b566e;
+    --border-strong: #d18661;
+
+    --link-visited: #b990d6;
+    --link: #7dcd8a;
+    --link-active: #ff9b4f;
+
+    --blockquote-bg: #191f2b;
+    --blockquote-text: #dfd3c3;
+    --table-header-bg: #1e2430;
+    --table-row-stripe-bg: #131720;
+
+    --text-heading: #f0a07e;
+    --text-muted: #bca98f;
+    --text-emphasis: #8cd899;
+
+    --snow-fall-color: unset;
+  }
+} */
+
+* {
+  box-sizing: border-box;
+  max-inline-size: var(--measure);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+#skip-link {
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  /* Ensure it is positioned on top of everything else when it is shown */
+  z-index: 999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
+/* Nav */
+.main-nav {
+  /* width: 100%; */
+  border-bottom: 1px dashed var(--border-subtle);
+  /* padding-block-end: 1rem; */
+}
+/* .nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+} */
+/* .nav-item {
+  font-size: var(--step--1);
+  border: dashed 1px var(--border-strong);
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  flex: 1 1 auto;
+  text-align: center;
+} */
+/* .nav-item:hover {
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: 6px 10px rgba(0, 0, 0, 0.15);
+  border-style: solid;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  border-color: var(--border-strong);
+} */
+/* .nav-item[href]:not(:hover) {
+  text-decoration: none;
+} */
+/* .nav a:visited:not(:hover) {
+  color: var(--link);
+} */
+/* .nav a[href][aria-current="page"] {
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: 6px 10px rgba(0, 0, 0, 0.15);
+  border-style: solid;
+  border-color: var(--brand-orange);
+  color: var(--accent);
+} */
