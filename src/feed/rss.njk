@@ -28,7 +28,7 @@
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ absolutePostUrl }}</link>
-        <description>{{ post.templateContent }}</description>
+        <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description>
         <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
         {%- if post.data.tags %}
           {%- for tag in post.data.tags %}
