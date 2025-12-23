@@ -1,9 +1,5 @@
 .center {
   box-sizing: content-box;
   margin-inline: auto;
-  /* text-align: center; */
   max-inline-size: var(--measure);
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }

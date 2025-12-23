@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% set isPost = collections.posts | getCollectionItem(page) %}
+<title>{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+<meta name="description" content="{{ description or metadata.description }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+<meta name="author" content="Miguel Pimentel">
+{% if isPost %}
+<meta property="og:type" content="article">
+{% else %}
+<meta property="og:type" content="website">
+{% endif %}
+<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+<meta property="og:description"
+		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+<meta property="og:url" content="{{ metadata.url }}">
+<meta property="og:site_name" content="{{ metadata.title }}">
+<meta property="og:image" content="/og.jpg">
+<meta property="og:logo" content="/atom.svg">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="{{ metadata.url }}">
+<meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+<meta name="twitter:description"
+		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
+<meta name="twitter:image" content="/og.jpg">

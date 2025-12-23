@@ -109,11 +109,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav */
-.main-nav {
-  /* width: 100%; */
+/* .main-nav {
+  width: 100%;
   border-bottom: 1px dashed var(--border-subtle);
-  /* padding-block-end: 1rem; */
-}
+  padding-block-end: 1rem;
+} */
 /* .nav {
   display: flex;
   gap: 0.75rem;
@@ -148,3 +148,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--brand-orange);
   color: var(--accent);
 } */
+
+footer {
+  margin-block: var(--space-m, 1rem);
+}
+ul,ol {
+  --space-m: 0.5rem;
+}

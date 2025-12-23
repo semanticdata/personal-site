@@ -1,0 +1,17 @@
+{#- Add CSS files to the bundle without outputting them directly #}
+{%- css -%}
+{%- include "src/assets/css/_reset.css" -%}
+{%- include "src/assets/css/_base.css" -%}
+{%- include "src/assets/css/_space.css" -%}
+{%- include "src/assets/css/_box.css" -%}
+{%- include "src/assets/css/_center.css" -%}
+{%- include "src/assets/css/_cluster.css" -%}
+{%- include "src/assets/css/_icon.css" -%}
+{%- include "src/assets/css/_grid.css" -%}
+{%- include "src/assets/css/_stack.css" -%}
+{%- include "src/assets/css/_typography.css" -%}
+{%- include "src/assets/css/_sidebar.css" -%}
+{%- endcss -%}
+
+{#- Link to the generated CSS bundle. The browser can cache this file. #}
+<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">

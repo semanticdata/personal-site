@@ -6,7 +6,7 @@
 				{% else %}
 					<code>{{ post.url }}</code>
 				{% endif %}
-			</a>
+			</a><br />
 			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("dd LLLL yyyy") }}</time>
 		</li>
 	{%- endfor %}

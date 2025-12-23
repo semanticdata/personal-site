@@ -7,9 +7,9 @@ export default function (metadata) {
     });
 
     // Universal Shortcode for 88x31 gifs
-    // Usage: {% 88x31 'my-cool-button.gif', 'My Cool Button' %}
+    // Usage: {% gifsmall 'my-cool-button.gif', 'My Cool Button' %}
     eleventyConfig.addShortcode(
-      "88x31",
+      "gifsmall",
       function (filename, alt = "88x31 gif button") {
         const src = `/assets/img/gifs/${filename}`;
         return `<img src="${src}" width="88px" height="31px" alt="${alt}" loading="lazy" decoding="async">`;

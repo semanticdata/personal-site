@@ -1,67 +1,10 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		{% set isPost = collections.posts | getCollectionItem(page) %}
-		<title>
-			{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="{{ metadata.title }} Atom feed">
-		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="{{ metadata.title }} RSS feed">
-		<link rel="alternate" href="/feed.json" type="application/feed+json" title="{{ metadata.title }} JSON feed">
-
-		<meta name="generator" content="{{ eleventy.generator }}">
-
-		<meta name="author" content="Miguel Pimentel">
-		{% if isPost %}
-			<meta property="og:type" content="article">
-		{% else %}
-			<meta property="og:type" content="website">
-		{% endif %}
-		<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
-		<meta property="og:description"
-		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
-		<meta property="og:url" content="{{ metadata.url }}">
-		<meta property="og:site_name" content="{{ metadata.title }}">
-		<meta property="og:image" content="/og.jpg">
-		<meta property="og:logo" content="/atom.svg">
-
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:url" content="{{ metadata.url }}">
-		<meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
-		<meta name="twitter:description"
-		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
-		<meta name="twitter:image" content="/og.jpg">
-
-		{#- Add CSS files to the bundle without outputting them directly #}
-		{%- css -%}
-		{%- include "src/assets/css/_reset.css" -%}
-		{%- include "src/assets/css/_base.css" -%}
-		{%- include "src/assets/css/_space.css" -%}
-		{%- include "src/assets/css/_box.css" -%}
-		{%- include "src/assets/css/_center.css" -%}
-		{%- include "src/assets/css/_cluster.css" -%}
-		{%- include "src/assets/css/_icon.css" -%}
-		{%- include "src/assets/css/_grid.css" -%}
-		{%- include "src/assets/css/_stack.css" -%}
-		{%- include "src/assets/css/_typography.css" -%}
-		{%- endcss -%}
-
-		{#- Link to the generated CSS bundle. The browser can cache this file. #}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
-
-		{# Favicons #}
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		<script type="module">
-			{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}
-		</script>
+		{% include 'components/meta-tags.njk' %}
+		{% include 'components/head-css.njk' %}
+		{% include 'components/head-links.njk' %}
+		{% include 'components/head-scripts.njk' %}
 	</head>
 
 	<body class="stack">
@@ -114,9 +57,9 @@
 				{% for entry in metadata.gifs %}
 				<div>
 					{% if entry.url %}
-						<a href="{{ entry.url }}">{% 88x31 entry.gif,
+						<a href="{{ entry.url }}">{% gifsmall entry.gif,
 							entry.alt %}</a>
-					{% else %}{% 88x31 entry.gif,
+					{% else %}{% gifsmall entry.gif,
 						entry.alt %}
 					{% endif %}
 				</div>
