@@ -9,7 +9,8 @@
     "language": "en",
     "base": "https://miguelpimentel.do/",
     "author": {
-      "name": "Miguel Pimentel"
+      "name": "Miguel Pimentel",
+      "url": "https://miguelpimentel.do/"
     }
   }
 }
@@ -23,25 +24,31 @@
   "description": "{{ metadata.description }}",
   "authors": [
     {
-      "name": "{{ metadata.author.name }}"
+      "name": "{{ metadata.author.name }}",
+      "url": "{{ metadata.author.url }}"
     }
   ],
   "items": [
     {%- for post in collections.posts | reverse %}
-    {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.base) }}{% endset %}
+  {%- set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.base) }}{% endset %}
     {
       "id": "{{ absolutePostUrl }}",
       "url": "{{ absolutePostUrl }}",
       "title": "{{ post.data.title }}",
-      "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}{% else %}""{% endif %},
+      "content_html": {% if post.content %}{{ post.content | renderTransforms(post.data.page, metadata.base) | dump | safe }}
+  {% else %}""{% endif %},
       "date_published": "{{ post.date | dateToRfc3339 }}",
       "tags": [
-        {%- for tag in post.data.tags %}
+      {%- if post.data.tags %}
+    {%- for tag in post.data.tags %}
+      {%- if tag != "posts" %}
         "{{ tag }}"{% if not loop.last %},{% endif %}
-        {%- endfor %}
+      {%- endif %}
+    {%- endfor %}
+  {%- endif %}
       ]
     }
     {% if not loop.last %},{% endif %}
-    {%- endfor %}
-  ]
+{%- endfor %}
+]
 }
