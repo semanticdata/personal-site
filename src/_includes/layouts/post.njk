@@ -19,7 +19,7 @@ layout: layouts/base.njk
 		<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 	</span>
 
-	<p style="margin-block-end: 0;">
+	<p class="post-tags">
 		{%- for tag in tags | filterTagList %}
 			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
