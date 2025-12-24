@@ -2,6 +2,9 @@
 
 Repository with the source code for my personal site built with the [Eleventy](https://www.11ty.dev/) static site generator.
 
+> [!NOTE]
+> Playing around with [omg.lol icons](https://source.tube/neatnik/omg.lol-icons).
+
 ## Features
 
 - Using [Eleventy v3](https://github.com/11ty/eleventy/releases/tag/v3.0.0) with zero-JavaScript output.
