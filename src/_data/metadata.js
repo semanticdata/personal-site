@@ -46,9 +46,14 @@ export default {
       external: false,
     },
     {
+      label: "feeds",
+      url: "/feeds/",
+      external: false,
+    },
+    {
       label: "links",
       url: "https://database.omg.lol/",
-      external: false,
+      external: true,
     },
   ],
   gifs: [
