@@ -48,6 +48,8 @@
     "@eslint/js": "^9.39.2",
     "@eslint/json": "^0.14.0",
     "@eslint/markdown": "^7.5.1",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
     "@zachleat/heading-anchors": "^1.0.5",
     "@zachleat/snow-fall": "^1.0.3",
     "cross-env": "10.1.0",

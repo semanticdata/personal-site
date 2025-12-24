@@ -35,7 +35,8 @@ export default async function (eleventyConfig) {
     })
     .addPassthroughCopy("src/feed/simple-rss.xslt")
     .addPassthroughCopy("src/feed/simple-atom.xslt")
-  eleventyConfig.addPassthroughCopy("src/assets/js/", "/assets/js/");
+    .addPassthroughCopy("src/assets/fonts/", "/assets/fonts/")
+    .addPassthroughCopy("src/assets/js/", "/assets/js/");
 
   eleventyConfig.addWatchTarget("src/assets/css/**/*.css");
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpg,jpeg,gif}");
