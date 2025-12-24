@@ -12,25 +12,24 @@
 
 		<div class="with-sidebar">
 			<div>
-				<header>
+				<header class="cluster-space-between">
 					<div>
 						{# <img width="24px" height="24px" src="/assets/img/atom.svg" alt="Atom icon" class="" /> #}
 						<a href="/" class="">MiguelPimentel<b class="">.</b>do</a>
 					</div>
 
-					<div class="" role="list">
+					<div class="cluster" role="list">
 						{% for entry in metadata.social %}
 							<div role="listitem" class="">
 								<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">
-									{% icon entry.icon %}
-									{{ entry.label }}
+									{% icon entry.icon %} <span class="desktop-only">{{ entry.label }}</span>
 								</a>
 							</div>
 						{% endfor %}
 					</div>
 				</header>
 
-				<nav aria-label="Main navigation" class="">
+				<nav aria-label="Main navigation" class="cluster-space-between">
 					{%- for entry in collections.all | eleventyNavigation %}
 						<a class="" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
 			entry.title }}</a>

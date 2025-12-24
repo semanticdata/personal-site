@@ -1,6 +1,6 @@
 :root {
   --font-family: -apple-system, system-ui, sans-serif;
-  --measure: 60ch;
+  --measure: 65ch;
   --brand-orange: #f08a42;
   --social-mastodon: #8373e7;
   --tag: var(--brand-orange);
@@ -154,4 +154,10 @@ footer {
 }
 ul,ol {
   --space-m: 0.5rem;
+}
+
+@media (max-width: 80ch) {
+  .desktop-only {
+    display: none;
+  }
 }
