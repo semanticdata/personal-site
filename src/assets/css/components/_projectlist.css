@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: center;
 }
+.project-tags {
+  margin-block: 0.5rem;
+}
 .projectlist {
   list-style-type: none;
   padding: 0;

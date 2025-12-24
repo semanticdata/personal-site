@@ -1,6 +1,6 @@
 ---
-title: "Adding Snow, Keeping Warm: Using is-land Responsibly"
-description: "I'm from the Dominican Republic, and winter makes me sad. I used @zachleat/snow-fall and is-land to create a beautiful, accessible snow effect for my site—on my own terms."
+title: "Adding Snow, Keeping Warm: Using <is-land> Responsibly"
+description: "I'm from the Dominican Republic, and winter makes me sad. I used @zachleat/snow-fall and <is-land> to create a beautiful, accessible snow effect for my site—on my own terms."
 date: 2025-12-17
 tags:
   - Eleventy
@@ -24,7 +24,7 @@ The best part? This digital flurry allows me to finally appreciate the stunning 
 > [!NOTE]
 > I chose [@zachleat/snow-fall](https://github.com/zachleat/snow-fall) because my site is built on [Eleventy](https://www.11ty.dev/), and I highly respect and trust [Zach Leatherman](https://www.zachleat.com/)'s work. Read their [blog post](https://www.zachleat.com/web/snow-fall/).
 
-## Respectful Flurry: Accessibility and `is-land`
+## Respectful Flurry: Accessibility and `<is-land>`
 
 The snow might be serene, but the implementation had to be rigorous. If my code is meant to bring _me_ comfort, I must ensure it causes no discomfort for my visitors.
 

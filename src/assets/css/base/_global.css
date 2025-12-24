@@ -22,6 +22,10 @@ html {
 body {
   max-width: min(80ch, 100% - 4rem);
 }
+main {
+  max-inline-size: 65ch;
+  margin-inline: auto;
+}
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden:not(:focus):not(:active) {
@@ -98,6 +102,7 @@ a[href]:active {
   gap: 0.5em 1em;
   list-style: none;
   padding: 0;
+  font-size: var(--step--1);
 }
 .links-nextprev > * {
   flex-grow: 1;
