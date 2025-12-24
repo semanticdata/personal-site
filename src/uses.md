@@ -15,8 +15,6 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 
 ## Software
 
-### Daily Drivers
-
 - [Obsidian](https://obsidian.md/) – Markdown Text Editor
 - [Visual Studio Code](https://code.visualstudio.com/) – Code Editor
 - [Raindrop](https://raindrop.io/) – Bookmarks Manager

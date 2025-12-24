@@ -11,7 +11,9 @@
 .post-metadata time {
   color: var(--text-muted);
 }
-
+.post-tags {
+  margin-block: 0.5rem;
+}
 .postlist {
   counter-reset: start-from var(--postlist-index);
   list-style: none;
@@ -61,4 +63,5 @@
 /* Tags */
 .post-tag {
   font-style: italic;
+  font-size: var(--step--1);
 }

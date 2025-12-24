@@ -10,7 +10,7 @@ layout: layouts/base.njk
     </span>
   {% endif %}
 
-  <p style="margin-block-end: 0;">
+  <p class="project-tags">
     {%- for tag in tags | filterTagList %}
       {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
       <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>

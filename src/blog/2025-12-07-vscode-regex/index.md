@@ -14,7 +14,7 @@ I needed a surgical solution. I needed VS Code Regex. But like most developers, 
 
 If you are currently in that "re-learning" phase and just want the code, I respect your time. Here's the TL;DR:
 
-> [!NOTE] TL;DR:
+> [!TLDR] TL;DR:
 > Find all `<img` tags containing the specific Liquid placeholder string (ignoring messy whitespace), but *exclude* those that already have `width="1024" height="1024"`.
 >
 > 1.  Enable **Regex Mode** (`.*` icon) in VS Code Search (`Ctrl+Shift+F`).
@@ -54,7 +54,7 @@ Here is how the regex works, broken down by its Capture Groups.
 (<img(?![^>]*width="1024" height="1024"))([^>]*?\|\s*image_url:\s*width:\s*1024,\s*height:\s*1024\s*\}\}[^"]*")([^>]*?)(\/?>)
 ```
 
-> [!TIP] Why `\s*` instead of spaces?
+> [!NOTE] Why `\s*` instead of spaces?
 > You'll notice the pattern uses `\s*` extensively. This token matches "zero or more whitespace characters" (including spaces, tabs, and newlines).
 >
 > Since legacy code often has inconsistent formatting—sometimes tight, sometimes loose—using `\s*` ensures we catch the tag regardless of how the previous developer hit the spacebar. Ask me how I know…

@@ -28,12 +28,15 @@
       <item>
         <title>{{ post.data.title }}</title>
         <link>{{ absolutePostUrl }}</link>
-        <description>{{ post.data.description }}</description>
+        <description>{{ post.content | renderTransforms(post.data.page, metadata.base) }}</description>
         <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-        <content:encoded>{{ post.templateContent }}</content:encoded>
-        {%- for tag in post.data.tags %}
-          <category>{{ tag }}</category>
-        {%- endfor %}
+        {%- if post.data.tags %}
+          {%- for tag in post.data.tags %}
+            {%- if tag != "posts" %}
+              <category>{{ tag }}</category>
+            {%- endif %}
+          {%- endfor %}
+        {%- endif %}
         <dc:creator>{{ metadata.author.name }}</dc:creator>
         <guid>{{ absolutePostUrl }}</guid>
       </item>

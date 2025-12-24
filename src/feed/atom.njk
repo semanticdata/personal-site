@@ -19,25 +19,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language or page.lang }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.description }}</subtitle>
-  <link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self" />
-  <link href="{{ metadata.base | addPathPrefixToFullUrl }}" />
+  <link href="{{ permalink | htmlBaseUrl(metadata.base) }}" rel="self"/>
+  <link href="{{ metadata.base | addPathPrefixToFullUrl }}"/>
   <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
   </author>
   {%- for post in collections.posts | reverse %}
-  {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
-  <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}" />
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.base) }}</content>
-    <summary>{{ post.data.description }}</summary>
-    {%- for tag in post.data.tags %}
-    <category term="{{ tag }}"/>
-    {%- endfor %}
-  </entry>
+    {%- set absolutePostUrl = post.url | htmlBaseUrl(metadata.base) %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="{{ absolutePostUrl }}"/>
+      <id>{{ absolutePostUrl }}</id>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <summary>{{ post.data.description }}</summary>
+      <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.base) }}</content>
+      {%- if post.data.tags %}
+        {%- for tag in post.data.tags %}
+          {%- if tag != "posts" %}
+            <category term="{{ tag }}"/>
+          {%- endif %}
+        {%- endfor %}
+      {%- endif %}
+      <author>
+        <name>{{ metadata.author.name }}</name>
+        <email>{{ metadata.author.email }}</email>
+      </author>
+    </entry>
   {%- endfor %}
 </feed>
