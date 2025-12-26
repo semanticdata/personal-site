@@ -7,51 +7,52 @@ eleventyNavigation:
 
 # About me
 
-Hello! I’m Miguel Pimentel—a bridge between hard hats and hard drives. By day, I’m an Engineering Project Manager in Minnesota, focused on public infrastructure. By night, I’m a self-taught hobby developer and lifelong learner exploring how technology and better systems can solve real-world problems.
+I’m Miguel Pimentel. I live in Minnesota and work as an Engineering Project Manager for the City of Crystal. While I spend my days managing the construction and maintenance of public infrastructure, I use this site to document my work in software development and data analysis.
 
-Born in the Dominican Republic, I document my professional journey, development projects, and insatiable appetite for learning right here.
+![Profile picture of Miguel Pimentel](/assets/img/pfp.webp)
 
-## Chronic Curiosity
+## Professional Background
 
-My diverse background isn't accidental; it’s driven by an insatiable curiosity. It leads me to explore a wide range of interests and projects. Over the years, this has led me to delve into projects like:
+My daily focus is the delivery of municipal projects. This includes everything from the design of street resurfacing plans to the management of large-scale road and utility contracts. My role requires a balance of technical oversight and coordination. I handle contract specifications, cost estimation, and final construction inspections while ensuring compliance between private agencies and public entities.
 
-… designing bike trails and residential roads in AutoCAD Civil 3D.  
-… creating my own Browser Extensions.  
-… teaching English as a Second Language.  
-… learning web development and computer programming.  
-… getting licensed as a Firefighter.  
-… getting certified as Emergency Medical Technician.  
-… inspecting public road construction projects.  
-… working in a construction materials laboratory.
+![Public Works employees doing construction](https://cdn.some.pics/database/68b9a7c7a551a.jpg)
 
-In my free time, I'm drawn to even more topics, such as public infrastructure, digital gardening, materials science, game development, and personal knowledge management.
+I began this journey over twelve years ago as a Civil Engineering Technician in the Dominican Republic. I eventually moved into project management, where I now rely on GIS and CAD systems to manage the lifecycle of physical infrastructure.
 
-## The Path to Project Management
+## The Self-Directed Path
 
-I currently serve as an Engineering Project Manager for the City of Crystal, overseeing the delivery of critical public infrastructure. My role is focused on managing complexity: I handle the full lifecycle of projects, from initial contract specification and cost estimation to final construction inspection and compliance. This requires constant coordination between private agencies, public entities (like Joint Water Commissions), and citizens, often relying heavily on advanced GIS and CAD systems to bridge technical gaps.
+My approach to expertise is non-traditional. While studying at INTEC, I found that I lacked the drive for traditional academics and eventually moved away from a formal degree. However, as I gained experience in the field, I discovered a profound motivation for learning that school had not sparked.
 
-My journey started over 10 years ago as a Civil Engineering Technician in the Dominican Republic. While attending INTEC, personal circumstances prevented me from completing my civil engineering degree. This experience taught me a profound lesson: **learning doesn't stop when you leave school.** My career became a testament to practical, self-directed mastery, giving me unique experience not only in public works but also in technology, electrical, rail, and bus-related projects.
+![Rail workers repairing train tracks](/assets/img/rail-work.jpg)
 
-_(For a full professional timeline, please see my [resume](https://api.raindrop.io/v2/raindrop/1439319340/file?type=application/pdf).)_
+This shift defined my career. I have spent the last decade in a process of self-directed mastery. I taught myself how to build software and use data analysis to solve specific problems. I believe that an engineer’s value is found in the ability to understand a system and improve it, regardless of whether that system is built of concrete or code.
 
-## Guided by Service and Rhythm
+![Firefighting training](/assets/img/firefighting-work.webp)
 
-My dedication to public infrastructure and emergency services (including past roles as a volunteer/on-call Firefighter) is deeply rooted in a family tradition of serving the public. I come from a family defined by this commitment: my grandfather was an honorary firefighter in our hometown, my father managed public infrastructure (roads, water, and sanitation systems), and my mother served the public health system as a nurse. This collective legacy guides my commitment to creating practical, tangible improvements in my community.
+## Areas of Experience
 
-When I step away from projects, I seek grounding and rhythm. Music is my most reliable productivity driver and source of relaxation. I also enjoy cooking with my wife and taking photographs.
+My background is a mix of technical precision and public service:
+
+- **Public Infrastructure:** Managing municipal projects, designing residential road plans in AutoCAD Civil 3D, and overseeing construction site inspections.
+- **Digital Tools:** Building Obsidian plugins and Firefox extensions to optimize my personal workflow.
+- **Data Analysis:** Developing Python-based prototypes to help stakeholders explore and understand public data, such as our Adopt-a-Drain program.
+- **Public Safety:** A past chapter as a licensed Firefighter and EMT, which provided early experience in managing systems under pressure.
+
+![Rail workers in front of US Bank stadium](/assets/img/usbs-work.webp)
+
+## A Legacy of Service
+
+My interest in public works is rooted in a family tradition of serving the community. My father managed municipal water and road systems, my mother was a nurse, and my grandfather was a firefighter. This legacy guides my commitment to the "boring" but essential infrastructure that keeps a city running. I am driven by the desire to create tangible, reliable improvements in the physical and digital systems we all use.
+
+![Rail workers installing Intrusion Detection System](/assets/img/tunnel-work.webp)
 
 ## What You'll Find Here
 
-This website serves as my public notebook and workshop—a place to connect the dots between engineering management and digital creation. If you stick around, you'll find content covering:
+This website is my public notebook. It is a place to connect the dots between engineering management and digital creation. I share content covering:
 
-- **Infrastructure Management:** Insights into successful public works projects, contract strategies, and practical applications of CAD/GIS systems.
-- **Self-Taught Tech:** Documentation of my current coding projects, web development tutorials, and explorations into better systems for organizing knowledge.
-- **Process Improvement:** How the engineering and project management mindset applies to learning new skills, optimizing workflows, and maximizing personal productivity.
+- **Infrastructure Management:** Insights into public works, contract strategies, and CAD/GIS applications.
+- **Software and Automation:** Documentation of my coding projects, technical tutorials, and personal knowledge management.
+- **Process Improvement:** Applying an engineering mindset to learning new skills and optimizing workflows.
 
-## My Photo
+When I’m away from the terminal or a project site, I am usually cooking with my wife, [taking photographs](https://database.some.pics/), or finding the right rhythm for a new playlist.
 
-<img src="/assets/img/pfp.webp" alt="Profile picture of Miguel Pimentel" />
-
-## Connect & Support
-
-If you enjoy the content of the site or find any of my [projects](/projects/) useful, your [support](https://buymeacoffee.com/semanticdata) is always appreciated. Thank you for reading!

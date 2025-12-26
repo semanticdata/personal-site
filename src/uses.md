@@ -6,6 +6,8 @@ title: Uses
 
 This page is inspired by many other [/uses](https://uses.tech/) pages. It's a non-comprehensive list of the hardware and software I use on a day-to-day basis.
 
+---
+
 ## Hardware
 
 - [Lenovo Thinkpad T480s](https://www.notebookcheck.net/Lenovo-ThinkPad-T480s-20L8S02D00.294734.0.html) – Laptop
@@ -21,7 +23,7 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 - [Syncthing](https://github.com/syncthing/syncthing) – Open source continuous file synchronization.
 - [Espanso](https://github.com/espanso/espanso) – Cross-platform text expander written in Rust.
 
-### Noteworthy Visual Studio Code Extensions
+### Visual Studio Code Extensions
 
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) – Opinionated Code Formatter.
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) – Markdown Support.
@@ -30,7 +32,7 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 - [shift shift](https://marketplace.visualstudio.com/items?itemName=ahgood.shift-shift) – Provides shortcuts for `shift + shift` and `ctrl + ctrl`.
 - [CSS Peek](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek) – Introduces `Go To Definition` and `Go To Symbol in Workspace` support.
 
-### Essential Obsidian Extensions
+### Obsidian Extensions
 
 - [Contextual Typography](https://github.com/mgmeyers/obsidian-contextual-typography) – Allows for custom insertion of code at the block level.
 - [DoubleShift](https://github.com/Qwyntex/doubleshift) – Provides shortcuts for `shift + shift` and `ctrl + ctrl`.
@@ -41,7 +43,7 @@ This page is inspired by many other [/uses](https://uses.tech/) pages. It's a no
 - [Obsidian Git](https://github.com/denolehov/obsidian-git) – Run Git commands from Obsidian.
 - [Omnisearch](https://github.com/scambier/obsidian-omnisearch) – Better Search Engine.
 
-### Notable Windows Programs
+### Windows Programs
 
 - [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) – Volume control, multi-channel discovery, default playback device management.
 - [Everything](https://www.voidtools.com/) – Locate files and folders by name instantly.

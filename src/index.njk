@@ -4,21 +4,20 @@
 # order: 1
 numberOfLatestPostsToShow: 7
 ---
-<h2>Hi, I'm Miguel!</h2>
-<p class="subtitle">I build systems—digital and physical.</p>
-<p>I’m an Engineering Project Manager in Minnesota, focused on delivering critical public infrastructure, like roads and
-    utilities. My curiosity doesn't stop at the construction site, though. I am a self-taught hobby developer who
-    believes the strict discipline of engineering should be applied to technology and everyday problem-solving.</p>
-
-<p>This site is my public workshop: a place to document the process of learning. I think a lot, work hard, and
-    occasionally have existential crises, but my constant motivation is finding elegant, practical solutions to complex
-    problems. You'll find me documenting how I connect contract management with coding, all while working with a
-    meticulously curated music playlist in the background. Check out my latest explorations below.</p>
+<h1>Hi, I’m Miguel.</h1>
+<p class="subtitle">Engineering civil infrastructure and digital tools.</p>
+<p>I’m an Engineering Project Manager in Minnesota, focusing on public infrastructure like roads and utilities. I apply
+    that same engineering discipline to software. As a self-taught developer, I build tools to solve practical
+    problems—ranging from Python-based dashboards for traffic analysis to Obsidian plugins and browser extensions that
+    streamline my workflow.</p>
+<p>This site is my public workshop for documenting my process and sharing what I learn. It’s where I explore how civil
+    engineering logic can be used in automation, usually with a playlist in the background.</p>
+{# <p>My latest posts and projects are below.</p> #}
 
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h3>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-</h3>
+<h2>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+</h2>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -26,5 +25,5 @@ numberOfLatestPostsToShow: 7
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-    <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
 {% endif %}

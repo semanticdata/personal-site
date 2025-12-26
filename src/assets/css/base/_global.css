@@ -186,4 +186,5 @@ hr {
 .subtitle {
   font-style: italic;
   color: var(--text-muted);
+  font-family: var(--font-family-monospace);
 }
