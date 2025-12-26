@@ -10,29 +10,29 @@ tags:
 
 This post will guide you through unlocking the sidebar width in Firefox. It will let you resize it beyond what is possible by default. We will be setting both the maximum, and the minimum width. You will have a chance to customize these values once at the right step.
 
-## Why Would Anyone Want to Do This?
+> [!INFO] Why Would Anyone Want to Do This?
+> - To enhance the use of the Firefox [Side View](https://addons.mozilla.org/en-US/firefox/addon/side-view/) extension.
+> - To compliment the use of one of my Firefox sidebar [extensions](https://addons.mozilla.org/en-US/firefox/user/17772574/).
 
-- To enhance the use of the Firefox [Side View](https://addons.mozilla.org/en-US/firefox/addon/side-view/) extension.
-- To compliment the use of one of my Firefox sidebar [extensions](https://addons.mozilla.org/en-US/firefox/user/17772574/).
-
-## Overview
-
-1. Open `about:support`.
-2. Locate your _Profile Folder_.
-3. Open your _Profile Folder_.
-4. Create a new folder called `chrome`.
-5. Inside the `chrome` folder, create a new file called `userChrome.css` (includes the file extension).
-6. Copy and paste this in it: `#sidebar-box { max-width: 40% !important; min-width: 300px !important; }`.
-7. Customize the width to your preference.
-8. Open `about:config`.
-9. Find `toolkit.legacyUserProfileCustomizations.stylesheets` and change its value to `true`.
-10. Restart Firefox.
+> [!TLDR] TL;DR:
+> 1. Open `about:support`.
+> 2. Locate your _Profile Folder_.
+> 3. Open your _Profile Folder_.
+> 4. Create a new folder called `chrome`.
+> 5. Inside the `chrome` folder, create a new file called `userChrome.css` (includes the file extension).
+> 6. Copy and paste this in it: `#sidebar-box { max-width: 40% !important; min-width: 300px !important; }`.
+> 7. Customize the width to your preference.
+> 8. Open `about:config`.
+> 9. Find `toolkit.legacyUserProfileCustomizations.stylesheets` and change its value to `true`.
+> 10. Restart Firefox.
 
 ## Step-by-Step Instructions
 
 ### 1. Open `about:support`
 
-In a new tab, navigate to `<about:support>`.
+In a new tab, navigate to `about:support`.
+
+![about:support screenshot](./about-support.webp)
 
 ### 2. Locate the Profile Folder
 
@@ -43,10 +43,13 @@ Under _Application Basics_, find **Profile Folder**.
 Locate and click the **Open Folder** button next to it. You'll find it next to an address similar to:[^1]
 
 ```plaintext
-%appdata%\Mozilla\Firefox\Profiles\your-profile-id.default
+%appdata%\Mozilla\Firefox\Profiles\your-profile-id.default-release
 ```
 
-> Note: In Windows, `%appdata%` is equivalent to:  
+![application basics screenshot](./application-basics.webp)
+
+> [!Note]
+> In Windows, `%appdata%` is equivalent to:  
 > `C:\Users\your-username\AppData\Roaming`.
 
 ### 4. Create New Folder `chrome`
@@ -72,9 +75,12 @@ Copy the following code, and paste as content inside `useChrome.css` and save:
 
 You may change the units to any length you find more convenient.
 
+> [!TIP]
+> You should take the time to play around with these units to find what fits your use case better.
+
 ### 8. Open `about:config`
 
-In a new tab, navigate to [about:config](about:config), and search for:
+In a new tab, navigate to `about:config`, and search for:
 
 ```
 toolkit.legacyUserProfileCustomizations.stylesheets
@@ -82,7 +88,9 @@ toolkit.legacyUserProfileCustomizations.stylesheets
 
 ### 9. Change the Value
 
-Change its value to `true`.
+Change its value from `false` to `true`.
+
+![about:config screenshot](./about-config-search.webp)
 
 ### 10. Restart Firefox
 
