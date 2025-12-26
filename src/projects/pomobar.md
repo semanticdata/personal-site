@@ -11,24 +11,20 @@ repoLabel: semanticdata/obsidian-pomodoro
 featured: true
 ---
 
-**_The Minimalist Pomodoro Timer for [Obsidian](https://obsidian.md/)._**
+A minimalist Pomodoro timer for Obsidian that lives in your status bar. Boost productivity and maintain focus without leaving your notes.
 
-Boost your productivity and maintain focus without ever leaving your notes. PomoBar is a sleek, unobtrusive Pomodoro timer that lives in your Obsidian status bar, with optional audio notifications to keep you on track. Seamlessly integrate the Pomodoro Technique into your workflow with visual and audible cues.
+## Features
 
-## Why Choose PomoBar?
+- **Status Bar Integration**: Unobtrusive timer display in your Obsidian status bar
+- **Audio Notifications**: Optional sound alerts when timers complete (default or custom sounds)
+- **Quick Controls**: Simple click management - no windows or commands needed
+- **Auto-Progression**: Optional automatic advancement through Pomodoro cycles
+- **Customizable**: Adjust timer durations, sounds, and automation settings
 
-- 🧘 **Stay Focused, Not Distracted:** PomoBar lives in your status bar, providing a constant but subtle reminder of your work session without cluttering your workspace.
-- 🔊 **Optional Audio Notifications:** Get gentle sound alerts when timers complete—choose from default sounds or use your own custom audio files.
-- 🖱️ **Intuitive & Quick Controls:** Manage your timers with simple clicks—no need to open new windows or type commands.
-- 🔄 **Automated Flow:** Optional auto-progression automatically starts the next timer in your Pomodoro cycle, or pause after each session for manual control.
-- ⚙️ **Fully Customizable:** Adjust timer durations, enable/disable sounds and auto-progression, and personalize your Pomodoro experience to fit your workflow perfectly.
+## Controls
 
-## How It Works
+- **Left-click**: Start or pause timer
+- **Middle-click**: Cycle between work, short break, and long break
+- **Right-click**: Reset current timer (when paused)
 
-The timer appears in your status bar. Here’s how to use it:
-
-- **Left-click:** Start or pause the timer.
-- **Middle-click:** Instantly cycle between work, short break, and long break timers.
-- **Right-click:** Reset the current timer (when paused).
-
-For more detailed instructions, check out the [documentation](https://semanticdata.github.io/obsidian-pomodoro/).
+[View documentation](https://semanticdata.github.io/obsidian-pomodoro/)
