@@ -19,11 +19,6 @@
 .absolute { position: absolute; }
 .static { position: static; }
 
-/* Sizing utilities */
-.w-full { width: 100%; }
-.h-auto { height: auto; }
-.max-w-none { max-width: none; }
-
 /* Display utilities */
 .block { display: block; }
 .inline-block { display: inline-block; }
