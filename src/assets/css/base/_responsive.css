@@ -36,6 +36,25 @@
     flex-direction: column;
   }
 
+  /* Mobile styles for navigation components */
+  .links-nextprev {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .links-nextprev-next {
+    text-align: left;
+  }
+
+  .post-navigation {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .post-navigation-next {
+    text-align: left;
+  }
+
   /* Make tables scrollable on small screens */
   table {
     display: block;
