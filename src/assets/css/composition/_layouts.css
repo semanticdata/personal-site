@@ -1,5 +1,11 @@
 /* Composition Layer - Layout Compositions */
 
+/* Default page layout */
+.page-layout {
+  max-width: min(80ch, 100% - 2rem);
+  margin: 0 auto;
+}
+
 /* Main content layout */
 .content-wrapper {
   max-width: min(80ch, 100% - 4rem);
@@ -33,6 +39,24 @@
 }
 
 .post-navigation-next {
+  text-align: right;
+}
+
+/* Links next/prev navigation */
+.links-nextprev {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em 1em;
+  list-style: none;
+  padding: 0;
+  font-size: var(--step--1);
+}
+
+.links-nextprev > * {
+  flex-grow: 1;
+}
+
+.links-nextprev-next {
   text-align: right;
 }
 

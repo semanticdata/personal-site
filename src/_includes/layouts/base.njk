@@ -84,64 +84,66 @@
 	</head>
 
 	<body>
-		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+		<div class="page-layout">
+			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-		<header class="header">
-			<div>
-				{# <img width="24px" height="24px" src="/atom.svg" alt="Atom icon" class="atom" /> #}
-				<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
-			</div>
+			<header class="header">
+				<div>
+					{# <img width="24px" height="24px" src="/atom.svg" alt="Atom icon" class="atom" /> #}
+					<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
+				</div>
 
-			<div class="social-links">
-				{% for entry in metadata.social %}
-					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %}
-						{% if entry.label %}
-							<span class="desktop-only">
-								{{ entry.label }}</span>{% endif %}
-					</a>
-				{% endfor %}
-			</div>
-		</header>
+				<div class="social-links">
+					{% for entry in metadata.social %}
+						<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %}
+							{% if entry.label %}
+								<span class="desktop-only">
+									{{ entry.label }}</span>{% endif %}
+						</a>
+					{% endfor %}
+				</div>
+			</header>
 
-		<nav aria-label="Main navigation" class="main-nav nav-layout">
-			<div class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
-				entry.title }}</a>
-				{%- endfor %}
-			</div>
-		</nav>
+			<nav aria-label="Main navigation" class="main-nav nav-layout">
+				<div class="nav">
+					{%- for entry in collections.all | eleventyNavigation %}
+						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
+					entry.title }}</a>
+					{%- endfor %}
+				</div>
+			</nav>
 
-		<main id="main" class="main-content {% if isPost %}prose{% endif %}">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
-		</main>
+			<main id="main" class="main-content {% if isPost %}prose{% endif %}">
+				<heading-anchors>
+					{{ content | safe }}
+				</heading-anchors>
+			</main>
 
-		<footer class="footer">
-			<ul class="footer-links">
-				{% for entry in metadata.footer %}
-					<li>
-						<a {% if entry.external %}target="_blank" rel="noopener noreferrer" {% endif %}
-					href="{{ entry.url }}">{{ entry.label }}</a>
-					</li>
-					{% if not loop.last %}
-						<li aria-hidden="true">·</li>
-					{% endif %}
-				{% endfor %}
-			</ul>
+			<footer class="footer">
+				<ul class="footer-links">
+					{% for entry in metadata.footer %}
+						<li>
+							<a {% if entry.external %}target="_blank" rel="noopener noreferrer" {% endif %}
+						href="{{ entry.url }}">{{ entry.label }}</a>
+						</li>
+						{% if not loop.last %}
+							<li aria-hidden="true">·</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
 
-			<div class="footer-gifs">
-				{% for entry in metadata.gifs %}
-					{% if entry.url %}
-						<a href="{{ entry.url }}">{% 88x31 entry.gif,
-							entry.alt %}</a>
-					{% else %}{% 88x31 entry.gif,
-						entry.alt %}
-					{% endif %}
-				{% endfor %}
-			</div>
-		</footer>
+				<div class="footer-gifs">
+					{% for entry in metadata.gifs %}
+						{% if entry.url %}
+							<a href="{{ entry.url }}">{% 88x31 entry.gif,
+								entry.alt %}</a>
+						{% else %}{% 88x31 entry.gif,
+							entry.alt %}
+						{% endif %}
+					{% endfor %}
+				</div>
+			</footer>
+		</div>
 
 		{# Snow fall effect #}
 		<is-land on:media="(prefers-reduced-motion: no-preference)">
