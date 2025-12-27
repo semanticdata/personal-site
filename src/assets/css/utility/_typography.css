@@ -40,3 +40,12 @@
 .whitespace-normal { white-space: normal; }
 .whitespace-pre { white-space: pre; }
 .whitespace-nowrap { white-space: nowrap; }
+
+/* Base element typography */
+p {
+  line-height: 1.5;
+}
+
+li {
+  line-height: 1.5;
+}

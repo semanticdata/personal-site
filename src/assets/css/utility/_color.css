@@ -26,3 +26,17 @@
 .svg-primary { color: var(--text); }
 .svg-brand { color: var(--brand-orange); }
 .svg-social-mastodon { color: var(--social-mastodon); }
+
+/* Base link styles */
+a[href] {
+  color: var(--link);
+}
+
+a[href]:visited {
+  color: var(--link-visited);
+}
+
+a[href]:hover,
+a[href]:active {
+  color: var(--link-active);
+}
