@@ -67,6 +67,13 @@
   align-items: center;
 }
 
+.post-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Table layout */
 .table-layout {
   width: 100%;
