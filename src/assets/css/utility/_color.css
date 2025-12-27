@@ -1,0 +1,28 @@
+/* Color Utilities */
+
+/* Text color utilities */
+.text-primary { color: var(--text); }
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--accent); }
+.text-brand { color: var(--brand-orange); }
+.text-link { color: var(--link); }
+.text-link-visited { color: var(--link-visited); }
+.text-link-active { color: var(--link-active); }
+
+/* Background color utilities */
+.bg-primary { background-color: var(--bg); }
+.bg-accent { background-color: var(--accent); }
+.bg-brand { background-color: var(--brand-orange); }
+.bg-blockquote { background-color: var(--blockquote-bg); }
+.bg-table-header { background-color: var(--table-header-bg); }
+.bg-table-stripe { background-color: var(--table-row-stripe-bg); }
+
+/* Border color utilities */
+.border-subtle { border-color: var(--border-subtle); }
+.border-strong { border-color: var(--border-strong); }
+.border-brand { border-color: var(--brand-orange); }
+
+/* SVG color utilities */
+.svg-primary { color: var(--text); }
+.svg-brand { color: var(--brand-orange); }
+.svg-social-mastodon { color: var(--social-mastodon); }

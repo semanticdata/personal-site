@@ -1,0 +1,35 @@
+/* Layout Utilities */
+
+/* Flexbox utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+
+/* Grid utilities */
+.grid { display: grid; }
+
+/* Position utilities */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.static { position: static; }
+
+/* Sizing utilities */
+.w-full { width: 100%; }
+.h-auto { height: auto; }
+.max-w-none { max-width: none; }
+
+/* Display utilities */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.hidden { display: none; }
+
+/* Overflow utilities */
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-y-scroll { overflow-y: scroll; }
+.overflow-x-auto { overflow-x: auto; }

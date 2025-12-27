@@ -39,21 +39,23 @@
 
 		{#- Add CSS files to the bundle without outputting them directly #}
 		{%- css -%}
-		{# Base styles and variables #}
+		{# CUBE CSS Structure #}
+		{%- include "src/assets/css/base/_variables.css" -%}
 		{%- include "src/assets/css/base/_reset.css" -%}
 		{%- include "src/assets/css/base/_typography.css" -%}
-		{%- include "src/assets/css/base/_variables.css" -%}
 		{%- include "src/assets/css/base/_global.css" -%}
-
-		{# Component styles #}
-		{%- include "src/assets/css/components/_header.css" -%}
-		{%- include "src/assets/css/components/_nav.css" -%}
-		{%- include "src/assets/css/components/_postlist.css" -%}
-		{%- include "src/assets/css/components/_projectlist.css" -%}
-		{%- include "src/assets/css/components/_footer.css" -%}
-
-		{# Responsive styles should come last #}
 		{%- include "src/assets/css/base/_responsive.css" -%}
+		{%- include "src/assets/css/utility/_layout.css" -%}
+		{%- include "src/assets/css/utility/_spacing.css" -%}
+		{%- include "src/assets/css/utility/_typography.css" -%}
+		{%- include "src/assets/css/utility/_color.css" -%}
+		{%- include "src/assets/css/block/_header.css" -%}
+		{%- include "src/assets/css/block/_nav.css" -%}
+		{%- include "src/assets/css/block/_footer.css" -%}
+		{%- include "src/assets/css/block/_postlist.css" -%}
+		{%- include "src/assets/css/block/_projectlist.css" -%}
+		{%- include "src/assets/css/exception/_overrides.css" -%}
+		{%- include "src/assets/css/composition/_layouts.css" -%}
 		{%- endcss -%}
 
 		{#- Link to the generated CSS bundle. The browser can cache this file. #}

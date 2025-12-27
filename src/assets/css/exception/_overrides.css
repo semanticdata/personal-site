@@ -1,0 +1,65 @@
+/* Exception Layer - Overrides and Specific Fixes */
+
+/* Accessibility helpers */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Skip link specific positioning */
+#skip-link {
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+#skip-link.visually-hidden:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--link-visited);
+  color: var(--bg);
+}
+
+/* View transition support */
+@view-transition {
+  navigation: auto;
+}
+
+/* Specific element overrides */
+hr {
+  border: none;
+  border-top: 1px dashed var(--border-subtle);
+  margin: 2rem 0;
+}
+
+/* Prose specific styling */
+.prose img {
+  margin-inline: auto;
+}
+
+/* Font Awesome specific styling */
+svg:has(use) {
+  height: 1rem;
+  width: 1rem;
+}
+
+/* Subtitle specific styling */
+.subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  font-family: var(--font-family-monospace);
+}
