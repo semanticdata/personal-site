@@ -10,11 +10,12 @@
   flex-grow: 1;
   font-size: var(--step-1);
   font-weight: bold;
-  align-items: center;
+  text-decoration: none;
+  color: var(--text);
 }
 
-.home-link:link:not(:hover) {
-  text-decoration: none;
+.home-link:hover {
+  color: var(--link-active);
 }
 
 .atom {
@@ -38,6 +39,11 @@
   align-items: center;
   gap: 0.25rem;
   font-weight: bold;
+  color: var(--text);
+}
+
+.social-links a:hover {
+  color: var(--link-active);
 }
 
 .social-links a[href="/rss.xml"] svg {
@@ -63,6 +69,11 @@
   align-items: center;
   gap: 0.25rem;
   font-weight: bold;
+  color: var(--text);
+}
+
+.social-links-cta a:hover {
+  color: var(--link-active);
 }
 
 .social-links-cta a[href="/rss.xml"] svg {
