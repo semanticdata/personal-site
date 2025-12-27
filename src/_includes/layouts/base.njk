@@ -87,7 +87,7 @@
 		<div class="page-layout">
 			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-			<header class="header">
+			<header class="header cluster">
 				<div>
 					{# <img width="24px" height="24px" src="/atom.svg" alt="Atom icon" class="atom" /> #}
 					<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
@@ -104,8 +104,8 @@
 				</div>
 			</header>
 
-			<nav aria-label="Main navigation" class="main-nav nav-layout">
-				<div class="nav">
+			<nav aria-label="Main navigation" class="main-nav nav-layout cluster">
+				<div class="nav cluster">
 					{%- for entry in collections.all | eleventyNavigation %}
 						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
 					entry.title }}</a>
@@ -119,12 +119,12 @@
 				</heading-anchors>
 			</main>
 
-			<footer class="footer">
-				<ul class="footer-links">
+			<footer class="footer stack">
+				<ul class="footer-links cluster">
 					{% for entry in metadata.footer %}
 						<li>
 							<a {% if entry.external %}target="_blank" rel="noopener noreferrer" {% endif %}
-						href="{{ entry.url }}">{{ entry.label }}</a>
+							href="{{ entry.url }}">{{ entry.label }}</a>
 						</li>
 						{% if not loop.last %}
 							<li aria-hidden="true">·</li>
@@ -132,13 +132,13 @@
 					{% endfor %}
 				</ul>
 
-				<div class="footer-gifs">
+				<div class="footer-gifs cluster">
 					{% for entry in metadata.gifs %}
 						{% if entry.url %}
 							<a href="{{ entry.url }}">{% 88x31 entry.gif,
 								entry.alt %}</a>
 						{% else %}{% 88x31 entry.gif,
-							entry.alt %}
+								entry.alt %}
 						{% endif %}
 					{% endfor %}
 				</div>
