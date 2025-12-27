@@ -4,7 +4,7 @@ description: "Decribe this blog post."
 date: 2025-12-31
 tags:
     - LiDAR
-draft: true
+draft: false
 ---
 
 Succesfully loaded `.glb` models with [\<model-viewer>](https://modelviewer.dev/). Only load the model when clicked, reducing unwanted JS.
