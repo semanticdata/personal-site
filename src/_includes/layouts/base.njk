@@ -49,6 +49,8 @@
 		{%- include "src/assets/css/utility/_spacing.css" -%}
 		{%- include "src/assets/css/utility/_typography.css" -%}
 		{%- include "src/assets/css/utility/_color.css" -%}
+		{%- include "src/assets/css/utility/_size.css" -%}
+		{%- include "src/assets/css/utility/_media.css" -%}
 		{%- include "src/assets/css/block/_header.css" -%}
 		{%- include "src/assets/css/block/_nav.css" -%}
 		{%- include "src/assets/css/block/_footer.css" -%}
@@ -84,7 +86,7 @@
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-		<header>
+		<header class="header">
 			<div>
 				{# <img width="24px" height="24px" src="/atom.svg" alt="Atom icon" class="atom" /> #}
 				<a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
@@ -101,7 +103,7 @@
 			</div>
 		</header>
 
-		<nav aria-label="Main navigation" class="main-nav">
+		<nav aria-label="Main navigation" class="main-nav nav-layout">
 			<div class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
 					<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif %}>{{
@@ -110,7 +112,7 @@
 			</div>
 		</nav>
 
-		<main id="main" {% if isPost %}class="prose" {% endif %}>
+		<main id="main" class="main-content {% if isPost %}prose{% endif %}">
 			<heading-anchors>
 				{{ content | safe }}
 			</heading-anchors>
