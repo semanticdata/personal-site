@@ -2,7 +2,7 @@
 title: About me
 eleventyNavigation:
   key: About
-  order: 2
+  order: 3
 ---
 
 # About me
