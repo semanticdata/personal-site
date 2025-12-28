@@ -3,114 +3,23 @@
   box-sizing: border-box;
 }
 
-@view-transition {
-  navigation: auto;
-}
-
 html,
 body {
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   font-family: var(--font-family);
   color: var(--text);
   background-color: var(--bg);
+  width: 100%;
+  min-height: 100vh;
 }
+
 html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-body {
-  max-width: min(80ch, 100% - 4rem);
-}
-main {
-  max-inline-size: 65ch;
-  margin-inline: auto;
-}
 
-/* https://www.a11yproject.com/posts/how-to-hide-content/ */
-.visually-hidden:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
-img {
-  max-width: 100%;
-}
-img[width][height] {
-  height: auto;
-}
-img[src$=".svg"] {
-  width: 100%;
-  height: auto;
-  max-width: none;
-}
-video,
-iframe {
-  width: 100%;
-  height: auto;
-}
-iframe {
-  aspect-ratio: 16/9;
-}
-
-p {
-  line-height: 1.5;
-}
-
-li {
-  line-height: 1.5;
-}
-
-a[href] {
-  color: var(--link);
-}
-a[href]:visited {
-  color: var(--link-visited);
-}
-a[href]:hover,
-a[href]:active {
-  color: var(--link-active);
-}
-
-#skip-link {
-  text-decoration: none;
-  background: var(--bg);
-  color: var(--text);
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border-strong);
-  border-radius: 2px;
-}
-
-/* Prevent visually-hidden skip link fom pushing content around when focused */
-#skip-link.visually-hidden:focus {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  /* Ensure it is positioned on top of everything else when it is shown */
-  z-index: 999;
-}
-
-.links-nextprev {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5em 1em;
-  list-style: none;
-  padding: 0;
-  font-size: var(--step--1);
-}
-.links-nextprev > * {
-  flex-grow: 1;
-}
-.links-nextprev-next {
-  text-align: right;
-}
-
+/* Base table and code styles that are truly global */
 table {
   width: 100%;
   margin: 2rem 0;
@@ -135,7 +44,7 @@ table tbody tr:nth-child(even) {
 
 pre:not([class*="language-"]) {
   margin: 0.5em 0;
-  line-height: 1.375; /* 22px /16 */
+  line-height: 1.375;
   -moz-tab-size: var(--syntax-tab-size);
   -o-tab-size: var(--syntax-tab-size);
   tab-size: var(--syntax-tab-size);
@@ -149,42 +58,7 @@ pre:not([class*="language-"]) {
   word-break: normal;
   overflow-x: auto;
 }
+
 code {
   word-break: break-all;
-}
-
-/* Prose */
-
-.prose img {
-  margin-inline: auto;
-}
-
-/* Font Awesome */
-svg:has(use) {
-  height: 1rem;
-  width: 1rem;
-}
-
-/* -- Selection Styles -- */
-::selection {
-  background-color: var(--link-visited);
-  color: var(--bg);
-}
-
-hr {
-  border: none;
-  border-top: 1px dashed var(--border-subtle);
-  margin: 2rem 0;
-}
-
-.post-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.subtitle {
-  font-style: italic;
-  color: var(--text-muted);
-  font-family: var(--font-family-monospace);
 }

@@ -1,0 +1,53 @@
+/* Media Utilities */
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+.fluid-img {
+  max-width: 100%;
+}
+
+.fluid-img[width][height] {
+  height: auto;
+}
+
+.fluid-img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/* Responsive media */
+.responsive-media {
+  width: 100%;
+  height: auto;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+/* Base media elements (for when utilities aren't applied) */
+img {
+  max-width: 100%;
+}
+
+img[width][height] {
+  height: auto;
+}
+
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+video,
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+}

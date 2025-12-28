@@ -1,7 +1,4 @@
 @media (max-width: 550px) {
-  body {
-    max-width: min(80ch, 100% - 2rem);
-  }
   pre {
     width: 100vw;
     transform: translateX(-1rem);
@@ -34,6 +31,25 @@
   .social-links-cta {
     display: flex;
     flex-direction: column;
+  }
+
+  /* Mobile styles for navigation components */
+  .links-nextprev {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .links-nextprev-next {
+    text-align: left;
+  }
+
+  .post-navigation {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .post-navigation-next {
+    text-align: left;
   }
 
   /* Make tables scrollable on small screens */

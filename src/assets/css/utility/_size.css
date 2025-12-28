@@ -1,0 +1,15 @@
+/* Size Utilities */
+
+/* Width utilities */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+
+/* Height utilities */
+.h-auto { height: auto; }
+
+/* Max width utilities */
+.max-w-none { max-width: none; }
+.max-w-full { max-width: 100%; }
+
+/* Aspect ratio utilities */
+.aspect-16-9 { aspect-ratio: 16/9; }
