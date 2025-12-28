@@ -1,7 +1,4 @@
 @media (max-width: 550px) {
-  /* body {
-    max-width: min(80ch, 100% - 2rem);
-  } */
   pre {
     width: 100vw;
     transform: translateX(-1rem);
