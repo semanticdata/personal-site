@@ -107,6 +107,15 @@ export default {
       alt: "CSS3",
     },
     {
+      gif: "pride-bisexual.png",
+      alt: "Pride Bisexual",
+    },
+    {
+      gif: "pronoun-vga-he-him.png",
+      url: "https://qalle.neocities.org/88x31/",
+      alt: "Pronouns VGA He/Him",
+    },
+    {
       gif: "radium.gif",
       alt: "Radium",
     },
