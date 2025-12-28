@@ -15,9 +15,9 @@ layout: layouts/base.njk
 <h1>{{ title }}</h1>
 
 <div class="post-metadata">
-	<span>{% icon "calendar" %}
+	<p>{% icon "calendar" %}
 		<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-	</span>
+	</p>
 
 	<p class="post-tags">
 		{%- for tag in tags | filterTagList %}
