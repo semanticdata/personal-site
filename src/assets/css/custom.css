@@ -201,26 +201,22 @@ footer .footer-gifs img {
 
     header {
         text-align: left;
+        padding-block-end: 1rem;
+        border-bottom: 1px solid var(--border-subtle);
     }
 
     header nav {
         flex-direction: row;
         gap: 1rem;
         margin-top: 1em;
-    }
-
-    header svg {
-        /* display: none; */
-        display: block;
-    }
-
-    header nav ul ul {
-        display: none;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     header nav ul {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     header nav li:not(:last-child)::after {
