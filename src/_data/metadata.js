@@ -107,6 +107,10 @@ export default {
       alt: "CSS3",
     },
     {
+      gif: "CoffeePowered_04.png",
+      alt: "Coffee Powered",
+    },
+    {
       gif: "pride-bisexual.png",
       alt: "Pride Bisexual",
     },
