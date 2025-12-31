@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
+    font-family: var(--font-family);
 }
 
 body *+* {
@@ -271,6 +272,8 @@ footer .footer-gifs img {
 .atom {
     transition: transform 0.3s ease;
     color: rebeccapurple;
+    display: block;
+    margin-top: 0.5em;
 }
 
 .electron {
@@ -328,55 +331,55 @@ body {
 }
 
 table {
-  width: 100%;
-  margin: 2rem 0;
-  border-collapse: collapse;
-  text-align: left;
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    text-align: left;
 }
 
 table th,
 table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border-subtle);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 table th {
-  background-color: var(--table-header-bg);
-  font-weight: bold;
+    background-color: var(--table-header-bg);
+    font-weight: bold;
 }
 
 table tbody tr:nth-child(even) {
-  background-color: var(--table-row-stripe-bg);
+    background-color: var(--table-row-stripe-bg);
 }
 
 pre:not([class*="language-"]) {
-  margin: 0.5em 0;
-  line-height: 1.375;
-  -moz-tab-size: var(--syntax-tab-size);
-  -o-tab-size: var(--syntax-tab-size);
-  tab-size: var(--syntax-tab-size);
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  overflow-x: auto;
+    margin: 0.5em 0;
+    line-height: 1.375;
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    overflow-x: auto;
 }
 
 code {
-  word-break: break-all;
+    word-break: break-all;
 }
 
 blockquote {
-  margin-inline: 0;
-  padding: 0.5em 1em;
-  border-inline-start: 4px solid var(--accent);
-  background-color: var(--blockquote-bg);
-  color: var(--blockquote-text);
-  font-style: italic;
+    margin-inline: 0;
+    padding: 0.5em 1em;
+    border-inline-start: 4px solid var(--accent);
+    background-color: var(--blockquote-bg);
+    color: var(--blockquote-text);
+    font-style: italic;
 }
 
 h1,
@@ -385,20 +388,21 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-heading);
+    color: var(--text-heading);
 }
 
 ::selection {
-  background-color: var(--link-visited);
-  color: var(--bg);
+    background-color: var(--link-visited);
+    color: var(--bg);
 }
 
 .subtitle {
-  font-style: italic;
-  color: var(--text-muted);
-  font-family: var(--font-family-monospace);
+    font-style: italic;
+    color: var(--text-muted);
+    font-family: var(--font-family-monospace);
 }
+
 pre {
-  /* eslint-disable-next-line css/no-important */
-  font-size: var(--step--1) !important;
+    /* eslint-disable-next-line css/no-important */
+    font-size: var(--step--1) !important;
 }
