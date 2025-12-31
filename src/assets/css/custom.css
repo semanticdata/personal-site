@@ -102,7 +102,8 @@ header nav {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-top: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 0.5em;
     font-size: var(--step--1);
 }
 
@@ -139,7 +140,7 @@ main {
 
 footer {
     font-size: var(--step--1);
-    padding-top: 3rem;
+    padding-block-start: 0.5rem;
 }
 
 footer hr {
@@ -180,101 +181,7 @@ footer .footer-gifs img {
     margin-block-start: unset;
 }
 
-@media (max-width: 850px) {
-    body {
-        flex-direction: column;
-        align-items: stretch;
-        padding-block: 2rem;
-        gap: 2rem;
-    }
 
-    header,
-    main {
-        max-width: none;
-    }
-
-    header {
-        text-align: left;
-        padding-block-end: 1rem;
-        border-bottom: 1px solid var(--border-subtle);
-        min-width: unset;
-    }
-
-    header nav {
-        flex-direction: row;
-        gap: 1rem;
-        margin-top: 1em;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    header nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    header nav li:not(:last-child)::after {
-        content: "/";
-        color: light-dark(var(--secondary-light), var(--secondary-dark));
-        padding-left: .5rem;
-    }
-
-    pre {
-        width: 100vw;
-        transform: translateX(-1rem);
-    }
-
-    .callout pre {
-        width: calc(100vw - 2rem);
-        transform: translateX(0);
-    }
-
-    main img {
-        max-width: calc(100% + 2rem);
-        margin-inline: -1rem;
-    }
-
-    footer img {
-        margin-inline: unset;
-    }
-
-    table {
-        display: block;
-        width: calc(100% + 2rem);
-        margin: 0 -1rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: var(--step--1);
-    }
-
-    table th,
-    table td {
-        padding: 0.5rem;
-    }
-
-    .links-nextprev {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .links-nextprev-next {
-        text-align: left;
-    }
-
-    .post-navigation {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .post-navigation-next {
-        text-align: left;
-    }
-
-    .social-links-cta {
-        flex-direction: column;
-    }
-}
 
 .visually-hidden:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
@@ -437,6 +344,16 @@ h6 {
 .home-link {
     font-size: var(--step-1);
     font-weight: bold;
+    line-height: 1.1;
+}
+
+.home-link .line-break {
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.home-link:hover .the-dot {
+    color: var(--link-active);
 }
 
 pre {
@@ -587,4 +504,110 @@ svg:has(use) {
 
 .social-links-cta a[href="https://social.lol/@database"] svg {
     color: var(--social-mastodon);
+}
+
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        padding-block: 2rem;
+        gap: 2rem;
+    }
+
+    header,
+    main {
+        max-width: none;
+    }
+
+    header {
+        text-align: left;
+        padding-block-end: 1rem;
+        border-bottom: 1px solid var(--border-subtle);
+        min-width: unset;
+    }
+
+    header nav {
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 1em;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    header nav li:not(:last-child)::after {
+        content: "/";
+        color: light-dark(var(--secondary-light), var(--secondary-dark));
+        padding-left: .5rem;
+    }
+
+    pre {
+        width: 100vw;
+        transform: translateX(-1rem);
+    }
+
+    .callout pre {
+        width: calc(100vw - 2rem);
+        transform: translateX(0);
+    }
+
+    main img {
+        max-width: calc(100% + 2rem);
+        margin-inline: -1rem;
+    }
+
+    footer img {
+        margin-inline: unset;
+    }
+
+    table {
+        display: block;
+        width: calc(100% + 2rem);
+        margin: 0 -1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: var(--step--1);
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem;
+    }
+
+    .links-nextprev {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .links-nextprev-next {
+        text-align: left;
+    }
+
+    .post-navigation {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .post-navigation-next {
+        text-align: left;
+    }
+
+    .social-links-cta {
+        flex-direction: column;
+        margin-block-start: 0;
+    }
+
+    .home-link {
+        white-space: normal;
+    }
+
+    .home-link .line-break {
+        display: unset;
+        margin-bottom: unset;
+    }
 }
