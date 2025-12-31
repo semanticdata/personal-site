@@ -114,6 +114,10 @@ def fibonacci(n):
 print(fibonacci(10))
 ```
 
+```plaintext
+This is plaintext.
+```
+
 ## Tables
 
 ### Basic Table
