@@ -147,7 +147,7 @@ footer hr {
     border-bottom: 1px solid var(--border-subtle);
 }
 
-footer ul {
+footer .footer-links {
     list-style: none;
     padding: 0;
     display: flex;
@@ -155,6 +155,10 @@ footer ul {
     align-items: center;
     flex-wrap: wrap;
 }
+
+/* footer .footer-links a {
+    text-decoration: none;
+} */
 
 footer li {
     display: inline-block;
