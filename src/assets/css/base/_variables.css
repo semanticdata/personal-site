@@ -1,5 +1,4 @@
 :root {
-  /* Font Families & Syntax */
   --font-family: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
   --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
     Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
@@ -33,7 +32,6 @@
   --snow-fall-color: rebeccapurple;
 }
 
-/* --- Dark Theme --- */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #10141b;
