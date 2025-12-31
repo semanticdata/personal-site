@@ -13,6 +13,7 @@ import markdownItFootnote from "markdown-it-footnote";
 
 import pluginFilters from "./src/_config/filters.js";
 import pluginShortcodes from "./src/_config/shortcodes.js";
+import buildTOC from "./src/_config/toc.js";
 import metadata from "./src/_data/metadata.js";
 
 console.log("Current NODE_ENV:", process.env.NODE_ENV);
@@ -83,6 +84,8 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(pluginShortcodes(metadata));
+
+  eleventyConfig.addFilter("toc", buildTOC);
 
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.use(markdownItObsidianCallouts);

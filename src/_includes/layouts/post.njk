@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
 <style>
 	{% include "node_modules/prismjs/themes/prism-tomorrow.css" %}
@@ -26,6 +27,8 @@ layout: layouts/base.njk
 		{%- endfor %}
 	</p>
 </div>
+
+{{ content | toc | safe }}
 
 {{ content | safe }}
 
