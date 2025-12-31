@@ -31,7 +31,7 @@
     "url": "https://miguelpimentel.do/"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.27.0",
   "bugs": {
     "url": "https://github.com/semanticdata/personal-site/issues"
   },
