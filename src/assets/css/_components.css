@@ -101,6 +101,12 @@ svg:has(use) {
   height: 1rem;
   width: 1rem;
 }
+
+.home-link {
+    /* max-width: 5em; */
+    display: inline-block;
+}
+
 /* ibm-plex-sans-latin-400-normal */
 @font-face {
   font-family: "IBM Plex Sans";
