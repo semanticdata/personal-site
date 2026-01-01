@@ -1,12 +1,13 @@
 /**
  * CLUSTER COMPONENT - CSS Only
  * Flexbox layout for wrapping items
- * Usage: <cluster-l justify="center">
+ * Usage: <cluster-l justify="center" gap="var(--s1)">
  */
 
 cluster-l {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--space, 1rem);
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -43,4 +44,54 @@ cluster-l[align="center"] {
 
 cluster-l[align="flex-end"] {
   align-items: flex-end;
+}
+
+/* Gap variations with design tokens */
+cluster-l[gap="var(--s0)"] {
+  gap: var(--s0);
+}
+
+cluster-l[gap="var(--s1)"] {
+  gap: var(--s1);
+}
+
+cluster-l[gap="var(--s2)"] {
+  gap: var(--s2);
+}
+
+cluster-l[gap="var(--s3)"] {
+  gap: var(--s3);
+}
+
+/* Gap variations with common values */
+cluster-l[gap="0.5rem"] {
+  gap: 0.5rem;
+}
+
+cluster-l[gap="1rem"] {
+  gap: 1rem;
+}
+
+cluster-l[gap="1.5rem"] {
+  gap: 1.5rem;
+}
+
+cluster-l[gap="2rem"] {
+  gap: 2rem;
+}
+
+cluster-l[gap="0.5em"] {
+  gap: 0.5em;
+}
+
+cluster-l[gap="1em"] {
+  gap: 1em;
+}
+
+cluster-l[gap="1.5em"] {
+  gap: 1.5em;
+}
+
+cluster-l[gap="2em"] {
+  gap: 2em;
 }
