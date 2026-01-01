@@ -75,7 +75,7 @@
 	</head>
 
 	<body>
-		<sidebar-l>
+		<sidebar-l gap="3rem" min-width="60%" sidebar-width="14em">
 			<header>
 				<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 				<div>
@@ -101,15 +101,13 @@
 				</div> #}
 
 				<nav aria-label="Main navigation">
-					<ul>
+					<cluster-l role="list" gap="var(--s0)">
 						{%- for entry in collections.all | eleventyNavigation %}
-						<li>
-							<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif
-								%}>{{
-								entry.title }}</a>
-						</li>
+						<a role="listitem" class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif
+							%}>{{
+							entry.title }}</a>
 						{%- endfor %}
-					</ul>
+					</cluster-l>
 				</nav>
 			</header>
 
@@ -122,28 +120,26 @@
 
 						<footer>
 							<hr />
-							<ul class="footer-links">
+							<cluster-l role="list" justify="flex-start" gap="var(--s1)" align="center" class="footer-links">
 								{% for entry in metadata.footer %}
-								<li>
-									<a href="{{ entry.url }}"
-									   {% if entry.external %}target="_blank" rel="noopener noreferrer" class="external-link"{% endif %}
-									   {% if entry.url == page.url %}aria-current="page"{% endif %}>
-										{{- entry.label -}}
-									</a>
-								</li>
+								<a role="listitem" href="{{ entry.url }}"
+								   {% if entry.external %}target="_blank" rel="noopener noreferrer" class="external-link"{% endif %}
+								   {% if entry.url == page.url %}aria-current="page"{% endif %}>
+									{{- entry.label -}}
+								</a>
 								{% endfor %}
-							</ul>
+							</cluster-l>
 
-							<div class="footer-gifs">
+							<cluster-l role="list" justify="center" gap="0.5rem" class="footer-gifs">
 								{% for entry in metadata.gifs %}
 								{% if entry.url %}
-								<a href="{{ entry.url }}">{% 88x31 entry.gif,
+								<a role="listitem" href="{{ entry.url }}">{% 88x31 entry.gif,
 									entry.alt %}</a>
 								{% else %}{% 88x31 entry.gif,
 								entry.alt %}
 								{% endif %}
 								{% endfor %}
-							</div>
+							</cluster-l>
 						</footer>
 					</stack-l>
 				</center-l>
