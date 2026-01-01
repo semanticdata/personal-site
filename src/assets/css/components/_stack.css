@@ -14,9 +14,9 @@ stack-l > * {
   margin-block: 0;
 }
 
-/* Default spacing for when no attribute is set */
-stack-l:not([space]) > * + * {
-  margin-block-start: var(--s1);
+/* Default spacing */
+stack-l > * + * {
+  margin-block-start: var(--space, var(--s1));
 }
 
 /* Spacing with design tokens */
@@ -93,7 +93,7 @@ stack-l[space="2rem"] > * + * {
 /* Recursive mode - applies spacing at all nesting levels */
 stack-l[recursive] > * {
   margin-block: 0;
-} 
+}
 
 stack-l[recursive] * + * {
   margin-block-start: inherit;

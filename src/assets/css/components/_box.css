@@ -5,18 +5,13 @@
  */
 
 box-l {
-  display: block;
-  padding: var(--s1);
-  border: var(--border-thin) solid currentColor;
-  outline: var(--border-thin) solid transparent;
-  outline-offset: calc(var(--border-thin) * -1);
+  padding: var(--space, var(--s1));
+  border: var(--border-width, var(--border-thin)) solid currentColor;
+  outline: var(--border-width, var(--border-thin)) solid transparent;
+  outline-offset: calc(var(--border-width, var(--border-thin)) * -1);
 }
 
 /* Padding variations */
-box-l:not([padding]) {
-  padding: var(--s1);
-}
-
 box-l[padding="var(--s0)"] {
   padding: var(--s0);
 }
@@ -52,22 +47,32 @@ box-l[padding="2rem"] {
 /* Border width variations */
 box-l[border-width="var(--border-thin)"] {
   border-width: var(--border-thin);
+  outline-width: var(--border-thin);
+  outline-offset: calc(var(--border-thin) * -1);
 }
 
 box-l[border-width="1px"] {
   border-width: 1px;
+  outline-width: 1px;
+  outline-offset: -1px;
 }
 
 box-l[border-width="2px"] {
   border-width: 2px;
+  outline-width: 2px;
+  outline-offset: -2px;
 }
 
 box-l[border-width="3px"] {
   border-width: 3px;
+  outline-width: 3px;
+  outline-offset: -3px;
 }
 
 box-l[border-width="4px"] {
   border-width: 4px;
+  outline-width: 4px;
+  outline-offset: -4px;
 }
 
 /* Invert mode - for greyscale designs */

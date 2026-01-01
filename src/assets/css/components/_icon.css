@@ -5,10 +5,10 @@
  */
 
 icon-l svg {
-  height: 0.75em;
-  height: 1cap;
   width: 0.75em;
   width: 1cap;
+  height: 0.75em;
+  height: 1cap;
 }
 
 /* Space attribute - adds spacing between icon and text */
@@ -17,6 +17,11 @@ icon-l[space] {
   align-items: baseline;
 }
 
+icon-l[space] svg {
+  margin-inline-end: var(--space, 1rem);
+}
+
+/* Space variations */
 icon-l[space="var(--s0)"] svg {
   margin-inline-end: var(--s0);
 }

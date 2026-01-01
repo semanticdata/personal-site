@@ -2,12 +2,13 @@
  * SIDEBAR COMPONENT - CSS Only
  * Creates a sidebar layout with flexible main content
  * Usage: <sidebar-l><header>...</header><main>...</main></sidebar-l>
+ * Usage: <sidebar-l gap="var(--s1)" min-width="50%">
  */
 
 sidebar-l {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-component, 2rem);
+  gap: var(--space, var(--s1));
   align-items: flex-start;
 }
 
@@ -15,25 +16,111 @@ sidebar-l > * {
   flex-grow: 1;
 }
 
-/* First child is typically the sidebar/header */
+/* First child - typically the sidebar/header */
 sidebar-l > *:first-child {
-  flex: 0 1 auto;
-  min-width: 14em;
+  flex-basis: var(--sidebar-width, auto);
+  flex-grow: 0;
+}
+
+/* Last child - main content gets flexible width */
+sidebar-l > *:last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--min-content-width, 50%);
+}
+
+/* Gap variations */
+sidebar-l[gap="var(--s0)"] {
+  gap: var(--s0);
+}
+
+sidebar-l[gap="var(--s1)"] {
+  gap: var(--s1);
+}
+
+sidebar-l[gap="var(--s2)"] {
+  gap: var(--s2);
+}
+
+sidebar-l[gap="var(--s3)"] {
+  gap: var(--s3);
+}
+
+sidebar-l[gap="1rem"] {
+  gap: 1rem;
+}
+
+sidebar-l[gap="1.5rem"] {
+  gap: 1.5rem;
+}
+
+sidebar-l[gap="2rem"] {
+  gap: 2rem;
+}
+
+sidebar-l[gap="3rem"] {
+  gap: 3rem;
+}
+
+sidebar-l[gap="4rem"] {
+  gap: 4rem;
+}
+
+/* Min-width variations for main content */
+sidebar-l[min-width="50%"] > *:last-child {
+  min-inline-size: 50%;
+}
+
+sidebar-l[min-width="60%"] > *:last-child {
+  min-inline-size: 60%;
+}
+
+sidebar-l[min-width="70%"] > *:last-child {
+  min-inline-size: 70%;
+}
+
+sidebar-l[min-width="30em"] > *:last-child {
+  min-inline-size: 30em;
+}
+
+sidebar-l[min-width="40em"] > *:last-child {
+  min-inline-size: 40em;
+}
+
+sidebar-l[min-width="50em"] > *:last-child {
+  min-inline-size: 50em;
+}
+
+/* Sidebar width variations */
+sidebar-l[sidebar-width="14em"] > *:first-child {
+  flex-basis: 14em;
+  max-width: 14em;
+}
+
+sidebar-l[sidebar-width="16em"] > *:first-child {
+  flex-basis: 16em;
+  max-width: 16em;
+}
+
+sidebar-l[sidebar-width="20em"] > *:first-child {
+  flex-basis: 20em;
+  max-width: 20em;
+}
+
+sidebar-l[sidebar-width="26em"] > *:first-child {
+  flex-basis: 26em;
   max-width: 26em;
 }
 
-/* Second child is main content */
-sidebar-l > *:last-child {
-  flex: 1 1 50em;
+/* Align items variations */
+sidebar-l[align="flex-start"] {
+  align-items: flex-start;
 }
 
-/* Responsive behavior */
-@media (max-width: 850px) {
-  sidebar-l {
-    flex-direction: column;
-  }
+sidebar-l[align="center"] {
+  align-items: center;
+}
 
-  sidebar-l > * {
-    max-width: none;
-  }
+sidebar-l[align="flex-end"] {
+  align-items: flex-end;
 }

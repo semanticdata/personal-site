@@ -9,7 +9,7 @@ cluster-l {
   flex-wrap: wrap;
   gap: var(--space, 1rem);
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* Justify content variations */
@@ -94,4 +94,10 @@ cluster-l[gap="1.5em"] {
 
 cluster-l[gap="2em"] {
   gap: 2em;
+}
+
+/* Vertical orientation */
+cluster-l[orient="vertical"] {
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
