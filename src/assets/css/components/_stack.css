@@ -7,6 +7,11 @@
 stack-l {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+
+stack-l > * {
+  margin-block: 0;
 }
 
 /* Default spacing for when no attribute is set */
@@ -86,6 +91,10 @@ stack-l[space="2rem"] > * + * {
 }
 
 /* Recursive mode - applies spacing at all nesting levels */
+stack-l[recursive] > * {
+  margin-block: 0;
+} 
+
 stack-l[recursive] * + * {
   margin-block-start: inherit;
 }
