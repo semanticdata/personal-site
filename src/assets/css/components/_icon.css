@@ -1,0 +1,47 @@
+/**
+ * ICON COMPONENT - CSS Only
+ * Inline icon sizing and spacing
+ * Usage: <icon-l space="var(--s0)" label="Icon description">
+ */
+
+icon-l svg {
+  height: 0.75em;
+  height: 1cap;
+  width: 0.75em;
+  width: 1cap;
+}
+
+/* Space attribute - adds spacing between icon and text */
+icon-l[space] {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+icon-l[space="var(--s0)"] svg {
+  margin-inline-end: var(--s0);
+}
+
+icon-l[space="var(--s1)"] svg {
+  margin-inline-end: var(--s1);
+}
+
+icon-l[space="var(--s2)"] svg {
+  margin-inline-end: var(--s2);
+}
+
+icon-l[space="0.25em"] svg {
+  margin-inline-end: 0.25em;
+}
+
+icon-l[space="0.5em"] svg {
+  margin-inline-end: 0.5em;
+}
+
+icon-l[space="1em"] svg {
+  margin-inline-end: 1em;
+}
+
+/* Accessibility - icons with labels are images */
+icon-l[label]:not([label=""]) {
+  role: img;
+}

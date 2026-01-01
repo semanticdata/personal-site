@@ -40,25 +40,15 @@
 		{#- Add CSS files to the bundle without outputting them directly #}
 		{%- css -%}
 		{# CUBE CSS Structure #}
-		{%- include "src/assets/css/base/_variables.css" -%}
-		{# {%- include "src/assets/css/base/_reset.css" -%} #}
-		{# {%- include "src/assets/css/base/_typography.css" -%} #}
-		{# {%- include "src/assets/css/base/_global.css" -%} #}
-		{# {%- include "src/assets/css/base/_responsive.css" -%} #}
-		{# {%- include "src/assets/css/utility/_layout.css" -%} #}
-		{# {%- include "src/assets/css/utility/_spacing.css" -%} #}
-		{# {%- include "src/assets/css/utility/_typography.css" -%} #}
-		{# {%- include "src/assets/css/utility/_color.css" -%} #}
-		{# {%- include "src/assets/css/utility/_size.css" -%} #}
-		{# {%- include "src/assets/css/utility/_media.css" -%} #}
-		{# {%- include "src/assets/css/block/_header.css" -%} #}
-		{# {%- include "src/assets/css/block/_nav.css" -%} #}
-		{# {%- include "src/assets/css/block/_footer.css" -%} #}
-		{# {%- include "src/assets/css/block/_postlist.css" -%} #}
-		{# {%- include "src/assets/css/block/_projectlist.css" -%} #}
-		{# {%- include "src/assets/css/exception/_overrides.css" -%} #}
-		{# {%- include "src/assets/css/composition/_layouts.css" -%} #}
-		{%- include "src/assets/css/custom.css" -%}
+		{%- include "src/assets/css/_variables.css" -%}
+		{%- include "src/assets/css/components/_stack.css" -%}
+		{%- include "src/assets/css/components/_center.css" -%}
+		{%- include "src/assets/css/components/_cluster.css" -%}
+		{%- include "src/assets/css/components/_sidebar.css" -%}
+		{%- include "src/assets/css/components/_box.css" -%}
+		{%- include "src/assets/css/components/_icon.css" -%}
+		{%- include "src/assets/css/_components.css" -%}
+		{# {%- include "src/assets/css/_custom.css" -%} #}
 		{%- endcss -%}
 
 		{#- Link to the generated CSS bundle. The browser can cache this file. #}
@@ -85,74 +75,81 @@
 	</head>
 
 	<body>
-		<header>
-			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-			<div>
-				<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b class="the-dot">.</b>do
-					
-					<svg viewBox="0 0 268 255" xmlns="http://www.w3.org/2000/svg" class="atom">
-						<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor" stroke-width="15" />
-						<circle class="nucleus" cx="134" cy="127.6" r="66.3" fill="currentColor" opacity="0.8" />
-						<circle class="electron" cx="224" cy="57" r="28" fill="currentColor" />
-					</svg>
-				</a>
-			</div>
-	
-			{# <div class="social-links">
-				{% for entry in metadata.social %}
-				<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
-					icon entry.icon %}
-					{% if entry.label %}
-					<span class="desktop-only">
-						{{ entry.label }}</span>{% endif %}
-				</a>
-				{% endfor %}
-			</div> #}
-	
-			<nav aria-label="Main navigation">
-				<ul>
-					{%- for entry in collections.all | eleventyNavigation %}
-					<li>
-						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif
-							%}>{{
-							entry.title }}</a>
-					</li>
-					{%- endfor %}
-				</ul>
-			</nav>
-		</header>
-	
-		<main>
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
-	
-			<footer>
-				<hr />
-				<ul class="footer-links">
-					{% for entry in metadata.footer %}
-					<li>
-						<a href="{{ entry.url }}"
-						   {% if entry.external %}target="_blank" rel="noopener noreferrer" class="external-link"{% endif %}
-						   {% if entry.url == page.url %}aria-current="page"{% endif %}>
-							{{- entry.label -}}
-						</a>
-					</li>
-					{% endfor %}
-				</ul>
-	
-				<div class="footer-gifs">
-					{% for entry in metadata.gifs %}
-					{% if entry.url %}
-					<a href="{{ entry.url }}">{% 88x31 entry.gif,
-						entry.alt %}</a>
-					{% else %}{% 88x31 entry.gif,
-					entry.alt %}
-					{% endif %}
-					{% endfor %}
+		<sidebar-l>
+			<header>
+				<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+				<div>
+					<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b class="the-dot">.</b>do
+
+						<svg viewBox="0 0 268 255" xmlns="http://www.w3.org/2000/svg" class="atom">
+							<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor" stroke-width="15" />
+							<circle class="nucleus" cx="134" cy="127.6" r="66.3" fill="currentColor" opacity="0.8" />
+							<circle class="electron" cx="224" cy="57" r="28" fill="currentColor" />
+						</svg>
+					</a>
 				</div>
-			</footer>
-		</main>
+
+				{# <div class="social-links">
+					{% for entry in metadata.social %}
+					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
+						icon entry.icon %}
+						{% if entry.label %}
+						<span class="desktop-only">
+							{{ entry.label }}</span>{% endif %}
+					</a>
+					{% endfor %}
+				</div> #}
+
+				<nav aria-label="Main navigation">
+					<ul>
+						{%- for entry in collections.all | eleventyNavigation %}
+						<li>
+							<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif
+								%}>{{
+								entry.title }}</a>
+						</li>
+						{%- endfor %}
+					</ul>
+				</nav>
+			</header>
+
+			<main>
+				<center-l max="var(--measure)">
+					<stack-l space="var(--s1)">
+						<heading-anchors>
+							{{ content | safe }}
+						</heading-anchors>
+
+						<footer>
+							<hr />
+							<ul class="footer-links">
+								{% for entry in metadata.footer %}
+								<li>
+									<a href="{{ entry.url }}"
+									   {% if entry.external %}target="_blank" rel="noopener noreferrer" class="external-link"{% endif %}
+									   {% if entry.url == page.url %}aria-current="page"{% endif %}>
+										{{- entry.label -}}
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+
+							<div class="footer-gifs">
+								{% for entry in metadata.gifs %}
+								{% if entry.url %}
+								<a href="{{ entry.url }}">{% 88x31 entry.gif,
+									entry.alt %}</a>
+								{% else %}{% 88x31 entry.gif,
+								entry.alt %}
+								{% endif %}
+								{% endfor %}
+							</div>
+						</footer>
+					</stack-l>
+				</center-l>
+			</main>
+		</sidebar-l>
+	</body>
 	
 		{# Snow fall effect #}
 		{# <is-land on:media="(prefers-reduced-motion: no-preference)">

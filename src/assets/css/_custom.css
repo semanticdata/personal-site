@@ -20,21 +20,11 @@ html {
 body {
     padding: 2rem 1rem;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 3rem;
     font-family: var(--font-family);
-}
-
-body *+* {
-    margin-block-start: 1.2em;
 }
 
 li,
 body,
-header,
-main,
 nav,
 ul ul,
 h2 span {
@@ -87,13 +77,11 @@ li {
 }
 
 header {
-    flex: 0 1 auto;
+    background-color: var(--header-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
     min-width: 14em;
     max-width: 26em;
-    background-color: var(--header-bg, rgba(127, 127, 127, 0.05));
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    align-self: flex-start;
 }
 
 header svg {
@@ -123,28 +111,23 @@ header nav ul {
 header nav ul a {
     text-decoration: none;
     padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
 }
 
 header nav ul a[aria-current="page"] {
     color: var(--link-active);
     font-weight: 600;
-    background-color: var(--header-active-bg, rgba(127, 127, 127, 0.1));
+    background-color: var(--header-active-bg);
 }
 
 header nav ul a:hover {
-    background-color: var(--header-hover-bg, rgba(127, 127, 127, 0.08));
+    background-color: var(--header-hover-bg);
 }
 
 main h1:first-of-type {
     margin-block-start: 0;
     padding-top: 0;
-}
-
-main {
-    flex: 1 1 50em;
-    max-width: 50em;
 }
 
 .social-links svg {
@@ -178,18 +161,18 @@ footer .footer-links {
 footer .footer-links a {
     text-decoration: none;
     padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 footer .footer-links a[aria-current="page"] {
     color: var(--link-active);
     font-weight: 600;
-    background-color: var(--header-active-bg, rgba(127, 127, 127, 0.1));
+    background-color: var(--header-active-bg);
 }
 
 footer .footer-links a:hover {
-    background-color: var(--header-hover-bg, rgba(127, 127, 127, 0.08));
+    background-color: var(--header-hover-bg);
 }
 
 footer .footer-links li:not(:last-child)::after {
@@ -547,26 +530,21 @@ svg:has(use) {
 
 @media (max-width: 850px) {
     body {
-        flex-direction: column;
-        align-items: stretch;
         padding-block: 1rem;
-        gap: 2rem;
     }
 
-    header,
-    main {
-        max-width: none;
+    sidebar-l {
+        flex-direction: column;
     }
 
     header {
         background-color: transparent;
         padding: 0;
         border-radius: 0;
-        text-align: left;
         padding-block-end: 1rem;
         border-bottom: 1px solid var(--border-subtle);
-        min-width: unset;
         width: 100%;
+        max-width: none;
     }
 
     header nav {

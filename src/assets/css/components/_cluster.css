@@ -1,0 +1,46 @@
+/**
+ * CLUSTER COMPONENT - CSS Only
+ * Flexbox layout for wrapping items
+ * Usage: <cluster-l justify="center">
+ */
+
+cluster-l {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Justify content variations */
+cluster-l[justify="flex-start"] {
+  justify-content: flex-start;
+}
+
+cluster-l[justify="center"] {
+  justify-content: center;
+}
+
+cluster-l[justify="flex-end"] {
+  justify-content: flex-end;
+}
+
+cluster-l[justify="space-between"] {
+  justify-content: space-between;
+}
+
+cluster-l[justify="space-around"] {
+  justify-content: space-around;
+}
+
+/* Align items variations */
+cluster-l[align="flex-start"] {
+  align-items: flex-start;
+}
+
+cluster-l[align="center"] {
+  align-items: center;
+}
+
+cluster-l[align="flex-end"] {
+  align-items: flex-end;
+}

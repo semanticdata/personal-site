@@ -1,0 +1,76 @@
+/**
+ * BOX COMPONENT - CSS Only
+ * Creates bordered boxes with padding
+ * Usage: <box-l padding="var(--s1)" border-width="var(--border-thin)" invert>
+ */
+
+box-l {
+  display: block;
+  padding: var(--s1);
+  border: var(--border-thin) solid currentColor;
+  outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+}
+
+/* Padding variations */
+box-l:not([padding]) {
+  padding: var(--s1);
+}
+
+box-l[padding="var(--s0)"] {
+  padding: var(--s0);
+}
+
+box-l[padding="var(--s1)"] {
+  padding: var(--s1);
+}
+
+box-l[padding="var(--s2)"] {
+  padding: var(--s2);
+}
+
+box-l[padding="var(--s3)"] {
+  padding: var(--s3);
+}
+
+box-l[padding="0.5rem"] {
+  padding: 0.5rem;
+}
+
+box-l[padding="1rem"] {
+  padding: 1rem;
+}
+
+box-l[padding="1.5rem"] {
+  padding: 1.5rem;
+}
+
+box-l[padding="2rem"] {
+  padding: 2rem;
+}
+
+/* Border width variations */
+box-l[border-width="var(--border-thin)"] {
+  border-width: var(--border-thin);
+}
+
+box-l[border-width="1px"] {
+  border-width: 1px;
+}
+
+box-l[border-width="2px"] {
+  border-width: 2px;
+}
+
+box-l[border-width="3px"] {
+  border-width: 3px;
+}
+
+box-l[border-width="4px"] {
+  border-width: 4px;
+}
+
+/* Invert mode - for greyscale designs */
+box-l[invert] {
+  filter: invert(100%);
+}

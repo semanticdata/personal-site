@@ -1,0 +1,39 @@
+/**
+ * SIDEBAR COMPONENT - CSS Only
+ * Creates a sidebar layout with flexible main content
+ * Usage: <sidebar-l><header>...</header><main>...</main></sidebar-l>
+ */
+
+sidebar-l {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-component, 2rem);
+  align-items: flex-start;
+}
+
+sidebar-l > * {
+  flex-grow: 1;
+}
+
+/* First child is typically the sidebar/header */
+sidebar-l > *:first-child {
+  flex: 0 1 auto;
+  min-width: 14em;
+  max-width: 26em;
+}
+
+/* Second child is main content */
+sidebar-l > *:last-child {
+  flex: 1 1 50em;
+}
+
+/* Responsive behavior */
+@media (max-width: 850px) {
+  sidebar-l {
+    flex-direction: column;
+  }
+
+  sidebar-l > * {
+    max-width: none;
+  }
+}
