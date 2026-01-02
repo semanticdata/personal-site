@@ -1,88 +1,91 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		{% set isPost = collections.posts | getCollectionItem(page) %}
-		<title>
-			{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
-		<meta name="description" content="{{ description or metadata.description }}">
-		<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="{{ metadata.title }} Atom feed">
-		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="{{ metadata.title }} RSS feed">
-		<link rel="alternate" href="/feed.json" type="application/feed+json" title="{{ metadata.title }} JSON feed">
+	{% set isPost = collections.posts | getCollectionItem(page) %}
+	<title>
+		{% if title %}{{ title }} | {% endif %}{{ metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
+	<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="{{ metadata.title }} Atom feed">
+	<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="{{ metadata.title }} RSS feed">
+	<link rel="alternate" href="/feed.json" type="application/feed+json" title="{{ metadata.title }} JSON feed">
 
-		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
-		<meta name="generator" content="{{ eleventy.generator }}">
+	{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site! #}
+	<meta name="generator" content="{{ eleventy.generator }}">
 
-		<meta name="author" content="Miguel Pimentel">
-		{% if isPost %}
-			<meta property="og:type" content="article">
-		{% else %}
-			<meta property="og:type" content="website">
-		{% endif %}
-		<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
-		<meta property="og:description"
+	<meta name="author" content="Miguel Pimentel">
+	{% if isPost %}
+	<meta property="og:type" content="article">
+	{% else %}
+	<meta property="og:type" content="website">
+	{% endif %}
+	<meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+	<meta property="og:description"
 		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
-		<meta property="og:url" content="{{ metadata.url }}">
-		<meta property="og:site_name" content="{{ metadata.title }}">
-		<meta property="og:image" content="/og.jpg">
-		<meta property="og:logo" content="/atom.svg">
+	<meta property="og:url" content="{{ metadata.url }}">
+	<meta property="og:site_name" content="{{ metadata.title }}">
+	<meta property="og:image" content="/og.jpg">
+	<meta property="og:logo" content="/atom.svg">
 
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:url" content="{{ metadata.url }}">
-		<meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
-		<meta name="twitter:description"
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="{{ metadata.url }}">
+	<meta name="twitter:title" content="{% if title %}{{ title }} | {% endif %}{{ metadata.title }}">
+	<meta name="twitter:description"
 		content="{% if description %}{{ description }}{% else %}{{ metadata.description }}{% endif %}">
-		<meta name="twitter:image" content="/og.jpg">
+	<meta name="twitter:image" content="/og.jpg">
 
-		{#- Add CSS files to the bundle without outputting them directly #}
-		{%- css -%}
-		{# CUBE CSS Structure #}
-		{%- include "src/assets/css/_variables.css" -%}
-		{%- include "src/assets/css/components/_stack.css" -%}
-		{%- include "src/assets/css/components/_center.css" -%}
-		{%- include "src/assets/css/components/_cluster.css" -%}
-		{%- include "src/assets/css/components/_sidebar.css" -%}
-		{%- include "src/assets/css/components/_box.css" -%}
-		{%- include "src/assets/css/components/_icon.css" -%}
-		{%- include "src/assets/css/_components.css" -%}
-		{# {%- include "src/assets/css/_custom.css" -%} #}
-		{%- endcss -%}
+	{#- Add CSS files to the bundle without outputting them directly #}
+	{%- css -%}
+	{# CUBE CSS Structure #}
+	{%- include "src/assets/css/_variables.css" -%}
+	{%- include "src/assets/css/components/_stack.css" -%}
+	{%- include "src/assets/css/components/_center.css" -%}
+	{%- include "src/assets/css/components/_cluster.css" -%}
+	{%- include "src/assets/css/components/_sidebar.css" -%}
+	{%- include "src/assets/css/components/_box.css" -%}
+	{%- include "src/assets/css/components/_icon.css" -%}
+	{%- include "src/assets/css/_components.css" -%}
+	{# {%- include "src/assets/css/_custom.css" -%} #}
+	{%- endcss -%}
 
-		{#- Link to the generated CSS bundle. The browser can cache this file. #}
-		<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
+	{#- Link to the generated CSS bundle. The browser can cache this file. #}
+	<link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 
-		{# Favicons #}
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+	{# Favicons #}
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 
-		{# Umami Analytics #}
-		{% umamiCounter %}
+	{# Umami Analytics #}
+	{% umamiCounter %}
 
-		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		<script type="module">
-			{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}
-		</script>
+	{#- Add the heading-anchors web component to the JavaScript bundle #}
+	<script type="module">
+		{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}
+	</script>
 
-		{# Is-lands JS framework #}
-		<script type="module">
-			{% include "node_modules/@11ty/is-land/is-land.js" %}
-		</script>
-	</head>
+	{# Is-lands JS framework #}
+	<script type="module">
+		{% include "node_modules/@11ty/is-land/is-land.js" %}
+	</script>
+</head>
 
-	<body>
-		<sidebar-l gap="3rem" min-width="60%" sidebar-width="14em">
-			<header>
-				<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+<body>
+	<sidebar-l gap="var(--s1)" min-width="60%">
+		<header>
+			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+			<stack-l space="var(--s1)">
 				<div>
-					<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b class="the-dot">.</b>do
+					<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b
+							class="the-dot">.</b>do
 
 						<svg viewBox="0 0 268 255" xmlns="http://www.w3.org/2000/svg" class="atom">
-							<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor" stroke-width="15" />
+							<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor"
+								stroke-width="15" />
 							<circle class="nucleus" cx="134" cy="127.6" r="66.3" fill="currentColor" opacity="0.8" />
 							<circle class="electron" cx="224" cy="57" r="28" fill="currentColor" />
 						</svg>
@@ -91,7 +94,8 @@
 
 				{# <div class="social-links">
 					{% for entry in metadata.social %}
-					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
+					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}"
+						aria-label="{{ entry.ariaLabel }}">{%
 						icon entry.icon %}
 						{% if entry.label %}
 						<span class="desktop-only">
@@ -101,30 +105,32 @@
 				</div> #}
 
 				<nav aria-label="Main navigation">
-					<cluster-l role="list" gap="var(--s0)">
+					<cluster-l gap="var(--s0)">
 						{%- for entry in collections.all | eleventyNavigation %}
-						<a role="listitem" class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {% endif
-							%}>{{
+						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {%
+							endif %}>{{
 							entry.title }}</a>
 						{%- endfor %}
 					</cluster-l>
 				</nav>
-			</header>
+			</stack-l>
+		</header>
 
-			<main>
-				<center-l max="var(--measure)">
-					<stack-l space="var(--s1)">
-						<heading-anchors>
-							{{ content | safe }}
-						</heading-anchors>
+		<main>
+			<center-l max="var(--measure)">
+				<stack-l space="var(--s1)">
+					<heading-anchors>
+						{{ content | safe }}
+					</heading-anchors>
 
-						<footer>
+					<footer>
+						<stack-l space="var(--s1)">
 							<hr />
-							<cluster-l role="list" justify="flex-start" gap="var(--s1)" align="center" class="footer-links">
+							<cluster-l role="list" justify="center" gap="var(--s1)" align="center" class="footer-links">
 								{% for entry in metadata.footer %}
-								<a role="listitem" href="{{ entry.url }}"
-								   {% if entry.external %}target="_blank" rel="noopener noreferrer" class="external-link"{% endif %}
-								   {% if entry.url == page.url %}aria-current="page"{% endif %}>
+								<a role="listitem" href="{{ entry.url }}" {% if entry.external %}target="_blank"
+									rel="noopener noreferrer" class="external-link" {% endif %} {% if
+									entry.url==page.url %}aria-current="page" {% endif %}>
 									{{- entry.label -}}
 								</a>
 								{% endfor %}
@@ -140,22 +146,22 @@
 								{% endif %}
 								{% endfor %}
 							</cluster-l>
-						</footer>
-					</stack-l>
-				</center-l>
-			</main>
-		</sidebar-l>
-	</body>
-	
-		{# Snow fall effect #}
-		{# <is-land on:media="(prefers-reduced-motion: no-preference)">
-			<snow-fall></snow-fall>
-			<script type="module" data-ondemand src="/assets/js/snow-fall.js"></script>
-		</is-land> #}
-	
-		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
-		<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
-	</body>
+						</stack-l>
+					</footer>
+				</stack-l>
+			</center-l>
+		</main>
+	</sidebar-l>
+
+	{# Snow fall effect #}
+	{# <is-land on:media="(prefers-reduced-motion: no-preference)">
+		<snow-fall></snow-fall>
+		<script type="module" data-ondemand src="/assets/js/snow-fall.js"></script>
+	</is-land> #}
+
+	<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+	<script type="module" src="{% getBundleFileUrl 'js' %}"></script>
+</body>
 
 </html>
 
