@@ -5,9 +5,7 @@
  */
 
 icon-l svg {
-  width: 0.75em;
   width: 1cap;
-  height: 0.75em;
   height: 1cap;
 }
 
@@ -22,31 +20,12 @@ icon-l[space] svg {
 }
 
 /* Space variations */
-icon-l[space="var(--s0)"] svg {
-  margin-inline-end: var(--s0);
-}
-
-icon-l[space="var(--s1)"] svg {
-  margin-inline-end: var(--s1);
-}
-
-icon-l[space="var(--s2)"] svg {
-  margin-inline-end: var(--s2);
-}
-
-icon-l[space="0.25em"] svg {
-  margin-inline-end: 0.25em;
-}
-
-icon-l[space="0.5em"] svg {
-  margin-inline-end: 0.5em;
-}
-
-icon-l[space="1em"] svg {
-  margin-inline-end: 1em;
-}
+icon-l[space="var(--s0)"] svg { margin-inline-end: var(--s0); }
+icon-l[space="var(--s1)"] svg { margin-inline-end: var(--s1); }
+icon-l[space="var(--s2)"] svg { margin-inline-end: var(--s2); }
+icon-l[space="0.25em"] svg { margin-inline-end: 0.25em; }
+icon-l[space="0.5em"] svg { margin-inline-end: 0.5em; }
+icon-l[space="1em"] svg { margin-inline-end: 1em; }
 
 /* Accessibility - icons with labels are images */
-icon-l[label]:not([label=""]) {
-  role: img;
-}
+icon-l[label]:not([label=""]) { role: img; }
