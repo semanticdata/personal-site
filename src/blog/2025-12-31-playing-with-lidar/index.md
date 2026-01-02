@@ -54,7 +54,7 @@ Succesfully loaded `.glb` and `.gltf` models with [\<model-viewer>](https://mode
 
 <template data-island>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-<model-viewer alt="A culvert." src="/assets/36-georgia-y.gltf" camera-controls auto-rotate touch-action="pan-y" camera-orbit="145deg 55deg 4m" shadow-intensity="1" style="height:600px;width:100%;border:1px solid orange;overflow-x: hidden;"></model-viewer>
+<model-viewer alt="A culvert." src="https://demos.emilyleanne.com/36-georgia-y.gltf" camera-controls auto-rotate touch-action="pan-y" camera-orbit="145deg 55deg 4m" shadow-intensity="1" style="height:600px;width:100%;border:1px solid orange;overflow-x: hidden;"></model-viewer>
 </template>
 </is-land>
 
@@ -68,7 +68,7 @@ Succesfully loaded `.glb` and `.gltf` models with [\<model-viewer>](https://mode
 <p>Click here to load the model!</p>
 
 <template data-island>
-<model-viewer alt="A culvert." src="/assets/36-hampshire-y.gltf" camera-controls auto-rotate touch-action="pan-y" camera-orbit="145deg 55deg 4m" shadow-intensity="1" style="height:600px;width:100%;border:1px solid orange;overflow-x: hidden;"></model-viewer>
+<model-viewer alt="A culvert." src="https://demos.emilyleanne.com/36-hampshire-y.gltf" camera-controls auto-rotate touch-action="pan-y" camera-orbit="145deg 55deg 4m" shadow-intensity="1" style="height:600px;width:100%;border:1px solid orange;overflow-x: hidden;"></model-viewer>
 </template>
 </is-land>
 
