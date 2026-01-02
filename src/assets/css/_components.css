@@ -5,6 +5,8 @@
 
 body {
   font-family: var(--font-family);
+  /* background-color: var(--bg); */
+  /* color: var(--text); */
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -65,7 +67,7 @@ body {
 
 .atom:hover {
   transform: rotate(15deg);
-  color: goldenrod;
+  color: var(--accent);
 }
 
 /* h1 {
@@ -103,8 +105,7 @@ svg:has(use) {
 }
 
 .home-link {
-    /* max-width: 5em; */
-    display: inline-block;
+  display: inline-block;
 }
 
 /* ibm-plex-sans-latin-400-normal */
