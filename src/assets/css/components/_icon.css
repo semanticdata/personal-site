@@ -2,33 +2,28 @@
  * ICON COMPONENT - CSS Only
  * Inline icon sizing and spacing
  * Usage: <icon-l space="var(--s0)" label="Icon description">
- *
- * Uses em units for text-relative sizing (see notes-units.md)
- * The cap unit sizes icons to match capital letter height
+ * https://every-layout.dev/layouts/icon/
  */
 
-/* EVERY LAYOUT: ICON BASE STYLES
- * Uses cap unit for proper icon sizing relative to text
- */
 icon-l svg {
+  /* Match uppercase letter height with cap unit fallback to 0.75em */
+  width: 0.75em;
   width: 1cap;
+  height: 0.75em;
   height: 1cap;
 }
 
-/* EVERY LAYOUT: SPACE ATTRIBUTE
- * CSS of suggestion: adds spacing between icon and text
- * Works with ANY value: space="var(--s0)" space="0.25em" space="calc(var(--s-1) * 0.5)"
- */
+/* Controlled spacing mode: removes word space and adds custom margin */
 icon-l[space] {
   display: inline-flex;
   align-items: baseline;
 }
 
 icon-l[space] svg {
-  margin-inline-end: var(--space, 1rem);
+  margin-inline-end: var(--space, 0.5em);
 }
 
-/* Accessibility - icons with labels are images */
+/* Accessibility: icons with labels are treated as images */
 icon-l[label]:not([label=""]) {
   role: img;
 }

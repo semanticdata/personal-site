@@ -1,25 +1,35 @@
 /**
  * BOX COMPONENT - CSS Only
- * Creates bordered boxes with padding
- * Usage: <box-l padding="var(--s1)" border-width="var(--border-thin)" invert>
- *
- * Double border technique for accessible focus states
- * Outline provides contrast while border provides structure
+ * Creates bordered boxes with padding and color control
+ * Usage: <box-l padding="var(--s1)">
+ * https://every-layout.dev/layouts/box/
  */
 
-/* EVERY LAYOUT: BOX BASE STYLES
- * CSS of suggestion: uses custom property fallbacks
- * Works with ANY value for padding and border-width
- * Examples: padding="var(--s2)" border-width="2px" border-width="calc(var(--border-thin) * 2)"
- */
 box-l {
-  padding: var(--space, var(--s1));
-  border: var(--border-width, var(--border-thin)) solid currentColor;
-  outline: var(--border-width, var(--border-thin)) solid transparent;
-  outline-offset: calc(var(--border-width, var(--border-thin)) * -1);
+  --color-light: var(--bg);
+  --color-dark: var(--text);
+
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  padding: var(--padding, var(--s1));
+
+  /* High contrast mode support: invisible outline becomes visible in HC mode */
+  outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1);
 }
 
-/* Invert mode - for greyscale designs */
+/* Force all descendants to inherit color (Box controls all text colors) */
+box-l * {
+  color: inherit;
+}
+
+/* Invert mode: swap light and dark colors */
 box-l[invert] {
-  filter: invert(100%);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+/* Optional border variant - use when you need a visible border */
+box-l[border] {
+  border: var(--border-thin) solid currentColor;
 }

@@ -1,32 +1,26 @@
 /**
  * CENTER COMPONENT - CSS Only
- * Centers content with optional max-width
+ * Horizontally centers content with optional max-width
  * Usage: <center-l max="var(--measure)" gutters="var(--s1)">
- *
- * Uses content-box for accurate padding calculation
- * See notes-boxes.md for why content-box is the exception here
+ * https://every-layout.dev/layouts/center/
  */
 
-/* EVERY LAYOUT: CENTER BASE STYLES
- * CSS of suggestion: uses custom property fallbacks
- * Works with ANY value for max-width and gutters
- * Examples: max="60ch" max="var(--measure)" gutters="var(--s1)"
- */
 center-l {
   display: block;
-  /* Exception to border-box rule - see notes-boxes.md */
   box-sizing: content-box;
   margin-inline: auto;
-  max-inline-size: var(--max-width, var(--measure));
+  max-inline-size: var(--max, var(--measure));
   padding-inline: var(--gutters, 0);
 }
 
-/* Text alignment option */
+/* Center text content within the container */
 center-l[and-text] {
   text-align: center;
 }
 
-/* Intrinsic mode - center child elements */
+/* Intrinsic mode: center child elements based on their natural width
+ * Useful for centering buttons and other narrow content
+ */
 center-l[intrinsic] {
   display: flex;
   flex-direction: column;

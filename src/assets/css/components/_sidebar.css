@@ -1,45 +1,46 @@
 /**
  * SIDEBAR COMPONENT - CSS Only
  * Creates a sidebar layout with flexible main content
- * Based on Every Layout implementation
- * Usage: <sidebar-l side="left" min-width="60%" gap="var(--s1)">
- *
- * Intrinsically responsive - uses flex-grow: 999 algorithm
+ * Intrinsically responsive - wraps based on available space
+ * Usage: <sidebar-l side="left" min-content-width="50%">
+ * https://every-layout.dev/layouts/sidebar/
  */
 
-/* EVERY LAYOUT: SIDEBAR BASE STYLES
- * CSS of suggestion: uses custom property fallbacks
- * Works with ANY value for gap, sidebar-width, min-content-width, align
- */
 sidebar-l {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space, var(--s1));
+  gap: var(--gap, var(--s1));
   align-items: var(--align, flex-start);
 }
 
+/* Both children can grow when wrapped */
 sidebar-l > * {
   flex-grow: 1;
 }
 
-/* EVERY LAYOUT: SIDEBAR (FIRST CHILD)
- * Fixed width sidebar using custom property
- * Examples: sidebar-width="15rem" sidebar-width="20em" sidebar-width="var(--s3)"
- */
+/* First child is the sidebar: fixed width, doesn't compete for space */
 sidebar-l > *:first-child {
   flex-basis: var(--sidebar-width, 15rem);
   flex-grow: 0;
-  min-inline-size: 10em;
-  max-inline-size: var(--sidebar-width, 15rem);
+  flex-shrink: 0;
 }
 
-/* EVERY LAYOUT: THE 999 TECHNIQUE
- * Main content takes all remaining space
- * flex-grow: 999 makes it fill available space while respecting min-width
- * See notes-composition.md for the theory
+/* Second child is the main content: takes all remaining space
+ * flex-grow: 999 ensures it wins the space competition
+ * min-inline-size determines when to wrap (50% = when sidebar is no longer the narrower element)
  */
 sidebar-l > *:last-child {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: var(--min-content-width, 50%);
+}
+
+/* Optional: center main content in available space */
+sidebar-l[center-main] > *:last-child {
+  flex-basis: var(--measure);
+  margin-inline: auto;
+}
+
+sidebar-l[center-main] {
+  justify-content: center;
 }

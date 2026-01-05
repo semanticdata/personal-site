@@ -1,28 +1,19 @@
 /**
  * CLUSTER COMPONENT - CSS Only
- * Flexbox layout for wrapping items
- * Usage: <cluster-l justify="center" gap="var(--s1)">
- *
- * Based on Every Layout principles
- * Intrinsically responsive - no @media breakpoints needed
+ * Flexbox layout for wrapping items with consistent spacing
+ * Usage: <cluster-l justify="center" align="center" gap="var(--s1)">
+ * https://every-layout.dev/layouts/cluster/
  */
 
-/* EVERY LAYOUT: CLUSTER BASE STYLES
- * CSS of suggestion: uses custom property fallbacks
- * Works with ANY value for gap, justify, align
- * Examples: gap="var(--s1)" gap="calc(var(--s0) * 0.5)" justify="center"
- */
 cluster-l {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space, 1rem);
+  gap: var(--gap, var(--s1));
   justify-content: var(--justify, flex-start);
   align-items: var(--align, center);
 }
 
-/* EVERY LAYOUT: VERTICAL ORIENTATION
- * Changes flex direction for vertical layouts
- */
+/* Vertical orientation: stack items vertically instead of horizontally */
 cluster-l[orient="vertical"] {
   flex-direction: column;
   flex-wrap: nowrap;
