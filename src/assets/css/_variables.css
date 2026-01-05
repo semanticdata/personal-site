@@ -85,13 +85,26 @@
   --step-4: clamp(2.3328rem, 1.9138rem + 1.8621vw, 3.3569rem);
   --step-5: clamp(2.7994rem, 2.2279rem + 2.5396vw, 4.1962rem);
 
-  /* Every Layout Spacing Scale */
+  /* EVERY LAYOUT: MODULAR SPACING SCALE
+   * Based on line-height of 1.5 for mathematical harmony
+   * See notes-modular-scale.md for the theory
+   */
+  --ratio: 1.5;
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
   --s0: 1rem;
-  --s1: var(--step-1);
-  --s2: var(--step-3);
-  --s3: var(--step-5);
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
 
-  /* Layout */
+  /* EVERY LAYOUT: MEASURE AXIOM
+   * "The measure should never exceed 65ch" - applied universally
+   * See notes-axiom.md for exception-based approach
+   */
   --measure: 65ch;
+
+  /* Border thickness */
   --border-thin: 1px;
 }

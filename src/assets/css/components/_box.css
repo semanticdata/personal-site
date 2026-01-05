@@ -2,8 +2,16 @@
  * BOX COMPONENT - CSS Only
  * Creates bordered boxes with padding
  * Usage: <box-l padding="var(--s1)" border-width="var(--border-thin)" invert>
+ *
+ * Double border technique for accessible focus states
+ * Outline provides contrast while border provides structure
  */
 
+/* EVERY LAYOUT: BOX BASE STYLES
+ * CSS of suggestion: uses custom property fallbacks
+ * Works with ANY value for padding and border-width
+ * Examples: padding="var(--s2)" border-width="2px" border-width="calc(var(--border-thin) * 2)"
+ */
 box-l {
   padding: var(--space, var(--s1));
   border: var(--border-width, var(--border-thin)) solid currentColor;
@@ -11,26 +19,7 @@ box-l {
   outline-offset: calc(var(--border-width, var(--border-thin)) * -1);
 }
 
-/* Padding variations */
-box-l[padding="var(--s0)"] { padding: var(--s0); }
-box-l[padding="var(--s1)"] { padding: var(--s1); }
-box-l[padding="var(--s2)"] { padding: var(--s2); }
-box-l[padding="var(--s3)"] { padding: var(--s3); }
-box-l[padding="0.5rem"] { padding: 0.5rem; }
-box-l[padding="1rem"] { padding: 1rem; }
-box-l[padding="1.5rem"] { padding: 1.5rem; }
-box-l[padding="2rem"] { padding: 2rem; }
-
-/* Border width variations */
-box-l[border-width="var(--border-thin)"] {
-  border-width: var(--border-thin);
-  outline-width: var(--border-thin);
-  outline-offset: calc(var(--border-thin) * -1);
-}
-box-l[border-width="1px"] { border-width: 1px; outline-width: 1px; outline-offset: -1px; }
-box-l[border-width="2px"] { border-width: 2px; outline-width: 2px; outline-offset: -2px; }
-box-l[border-width="3px"] { border-width: 3px; outline-width: 3px; outline-offset: -3px; }
-box-l[border-width="4px"] { border-width: 4px; outline-width: 4px; outline-offset: -4px; }
-
 /* Invert mode - for greyscale designs */
-box-l[invert] { filter: invert(100%); }
+box-l[invert] {
+  filter: invert(100%);
+}

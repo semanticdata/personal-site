@@ -2,35 +2,31 @@
  * CENTER COMPONENT - CSS Only
  * Centers content with optional max-width
  * Usage: <center-l max="var(--measure)" gutters="var(--s1)">
+ *
+ * Uses content-box for accurate padding calculation
+ * See notes-boxes.md for why content-box is the exception here
  */
 
+/* EVERY LAYOUT: CENTER BASE STYLES
+ * CSS of suggestion: uses custom property fallbacks
+ * Works with ANY value for max-width and gutters
+ * Examples: max="60ch" max="var(--measure)" gutters="var(--s1)"
+ */
 center-l {
   display: block;
+  /* Exception to border-box rule - see notes-boxes.md */
   box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--max-width, var(--measure));
   padding-inline: var(--gutters, 0);
 }
 
-/* Max-width variations */
-center-l[max="40em"] { max-width: 40em; }
-center-l[max="50em"] { max-width: 50em; }
-center-l[max="60em"] { max-width: 60em; }
-center-l[max="70em"] { max-width: 70em; }
-center-l[max="80em"] { max-width: 80em; }
-center-l[max="var(--measure)"] { max-width: var(--measure); }
+/* Text alignment option */
+center-l[and-text] {
+  text-align: center;
+}
 
-/* Gutter variations */
-center-l[gutters="0.5rem"] { padding-inline: 0.5rem; }
-center-l[gutters="1rem"] { padding-inline: 1rem; }
-center-l[gutters="var(--s0)"] { padding-inline: var(--s0); }
-center-l[gutters="var(--s1)"] { padding-inline: var(--s1); }
-center-l[gutters="var(--s2)"] { padding-inline: var(--s2); }
-
-/* Text alignment */
-center-l[and-text] { text-align: center; }
-
-/* Intrinsic - center child elements */
+/* Intrinsic mode - center child elements */
 center-l[intrinsic] {
   display: flex;
   flex-direction: column;

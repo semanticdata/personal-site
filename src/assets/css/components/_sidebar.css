@@ -2,61 +2,44 @@
  * SIDEBAR COMPONENT - CSS Only
  * Creates a sidebar layout with flexible main content
  * Based on Every Layout implementation
- * Usage: <sidebar-l side="left" contentMin="66.666%" gap="var(--s1)">
+ * Usage: <sidebar-l side="left" min-width="60%" gap="var(--s1)">
+ *
+ * Intrinsically responsive - uses flex-grow: 999 algorithm
  */
 
+/* EVERY LAYOUT: SIDEBAR BASE STYLES
+ * CSS of suggestion: uses custom property fallbacks
+ * Works with ANY value for gap, sidebar-width, min-content-width, align
+ */
 sidebar-l {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space, var(--s1));
-  align-items: flex-start;
+  align-items: var(--align, flex-start);
 }
 
-sidebar-l > * { flex-grow: 1; }
+sidebar-l > * {
+  flex-grow: 1;
+}
 
-/* First child - sidebar (fixed width) */
+/* EVERY LAYOUT: SIDEBAR (FIRST CHILD)
+ * Fixed width sidebar using custom property
+ * Examples: sidebar-width="15rem" sidebar-width="20em" sidebar-width="var(--s3)"
+ */
 sidebar-l > *:first-child {
   flex-basis: var(--sidebar-width, 15rem);
   flex-grow: 0;
   min-inline-size: 10em;
-  max-width: 15rem;
+  max-inline-size: var(--sidebar-width, 15rem);
 }
 
-/* Last child - main content (flexible) */
+/* EVERY LAYOUT: THE 999 TECHNIQUE
+ * Main content takes all remaining space
+ * flex-grow: 999 makes it fill available space while respecting min-width
+ * See notes-composition.md for the theory
+ */
 sidebar-l > *:last-child {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: var(--min-content-width, 50%);
 }
-
-/* Gap variations */
-sidebar-l[gap="var(--s0)"] { gap: var(--s0); }
-sidebar-l[gap="var(--s1)"] { gap: var(--s1); }
-sidebar-l[gap="var(--s2)"] { gap: var(--s2); }
-sidebar-l[gap="var(--s3)"] { gap: var(--s3); }
-sidebar-l[gap="1rem"] { gap: 1rem; }
-sidebar-l[gap="1.5rem"] { gap: 1.5rem; }
-sidebar-l[gap="2rem"] { gap: 2rem; }
-sidebar-l[gap="3rem"] { gap: 3rem; }
-sidebar-l[gap="4rem"] { gap: 4rem; }
-
-/* Min-width for main content (Every Layout uses 'contentMin') */
-sidebar-l[min-width="50%"] > *:last-child { min-inline-size: 50%; }
-sidebar-l[min-width="60%"] > *:last-child { min-inline-size: 60%; }
-sidebar-l[min-width="66.666%"] > *:last-child { min-inline-size: 66.666%; }
-sidebar-l[min-width="70%"] > *:last-child { min-inline-size: 70%; }
-sidebar-l[min-width="30em"] > *:last-child { min-inline-size: 30em; }
-sidebar-l[min-width="40em"] > *:last-child { min-inline-size: 40em; }
-sidebar-l[min-width="50em"] > *:last-child { min-inline-size: 50em; }
-
-/* Sidebar width */
-sidebar-l[sidebar-width="14em"] > *:first-child { flex-basis: 14em; max-width: 14em; }
-sidebar-l[sidebar-width="16em"] > *:first-child { flex-basis: 16em; max-width: 16em; }
-sidebar-l[sidebar-width="20em"] > *:first-child { flex-basis: 20em; max-width: 20em; }
-sidebar-l[sidebar-width="26em"] > *:first-child { flex-basis: 26em; max-width: 26em; }
-
-/* Alignment */
-sidebar-l[align="flex-start"] { align-items: flex-start; }
-sidebar-l[align="center"] { align-items: center; }
-sidebar-l[align="flex-end"] { align-items: flex-end; }
-

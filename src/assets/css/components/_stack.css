@@ -2,53 +2,47 @@
  * STACK COMPONENT - CSS Only
  * A custom element for injecting white space (margin) between flow elements
  * Usage: <stack-l space="var(--s1)" recursive splitAfter="2">
+ *
+ * Based on Every Layout principles: https://every-layout.dev/
+ * Uses modular scale for harmonious spacing based on line-height
  */
 
+/* EVERY LAYOUT: STACK BASE STYLES */
 stack-l {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-stack-l > * { margin-block: 0; }
+/* Reset margins for all children */
+stack-l > * {
+  margin-block: 0;
+}
 
-/* Default spacing */
+/* EVERY LAYOUT: CSS OF SUGGESTION
+ * Default spacing using custom property fallback chain
+ * Works with ANY value: space="var(--s1)" space="calc(var(--s1) * 2)" space="2rem"
+ * No hardcoded variants needed - browser calculates the right value
+ */
 stack-l > * + * {
+  margin-block-start: var(--child-space, var(--space, var(--s1)));
+}
+
+/* EVERY LAYOUT: RECURSIVE MODE
+ * Applies spacing at all nesting levels, not just direct children
+ */
+stack-l[recursive] > * {
+  margin-block: 0;
+}
+
+stack-l[recursive] * + * {
   margin-block-start: var(--space, var(--s1));
 }
 
-/* Spacing - design tokens */
-stack-l[space="var(--s0)"] > * + * { margin-block-start: var(--s0); }
-stack-l[space="var(--s1)"] > * + * { margin-block-start: var(--s1); }
-stack-l[space="var(--s2)"] > * + * { margin-block-start: var(--s2); }
-stack-l[space="var(--s3)"] > * + * { margin-block-start: var(--s3); }
-
-/* Spacing - step scale */
-stack-l[space="var(--step--2)"] > * + * { margin-block-start: var(--step--2); }
-stack-l[space="var(--step--1)"] > * + * { margin-block-start: var(--step--1); }
-stack-l[space="var(--step-0)"] > * + * { margin-block-start: var(--step-0); }
-stack-l[space="var(--step-1)"] > * + * { margin-block-start: var(--step-1); }
-stack-l[space="var(--step-2)"] > * + * { margin-block-start: var(--step-2); }
-stack-l[space="var(--step-3)"] > * + * { margin-block-start: var(--step-3); }
-
-/* Spacing - custom values */
-stack-l[space="0.5em"] > * + * { margin-block-start: 0.5em; }
-stack-l[space="1em"] > * + * { margin-block-start: 1em; }
-stack-l[space="1.5em"] > * + * { margin-block-start: 1.5em; }
-stack-l[space="2em"] > * + * { margin-block-start: 2em; }
-stack-l[space="1rem"] > * + * { margin-block-start: 1rem; }
-stack-l[space="1.5rem"] > * + * { margin-block-start: 1.5rem; }
-stack-l[space="2rem"] > * + * { margin-block-start: 2rem; }
-
-/* Recursive mode - applies spacing at all nesting levels */
-stack-l[recursive] > * { margin-block: 0; }
-stack-l[recursive] * + * { margin-block-start: inherit; }
-stack-l[recursive][space="var(--s0)"] * + * { margin-block-start: var(--s0); }
-stack-l[recursive][space="var(--s1)"] * + * { margin-block-start: var(--s1); }
-stack-l[recursive][space="var(--s2)"] * + * { margin-block-start: var(--s2); }
-stack-l[recursive][space="var(--s3)"] * + * { margin-block-start: var(--s3); }
-
-/* Split feature - pushes content apart using auto margin */
+/* EVERY LAYOUT: SPLIT FEATURE
+ * Pushes content apart using auto margin
+ * CSS of suggestion: let browser calculate available space
+ */
 stack-l[split-after="1"] > :nth-child(1) { margin-block-end: auto; }
 stack-l[split-after="2"] > :nth-child(2) { margin-block-end: auto; }
 stack-l[split-after="3"] > :nth-child(3) { margin-block-end: auto; }

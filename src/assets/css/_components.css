@@ -1,6 +1,66 @@
+/* EVERY LAYOUT: UNIVERSAL STYLES */
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+}
+
+/* EVERY LAYOUT: MEASURE AXIOM - EXCEPTION-BASED APPROACH
+ * "The measure should never exceed 65ch" - applied universally
+ * See notes-axiom.md for the theory behind this approach
+ */
+* {
+  max-inline-size: var(--measure);
+}
+
+/* Exceptions: Layout containers that should NOT have measure constraints */
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+section,
+article,
+aside,
+figure,
+video,
+iframe,
+cluster-l,
+stack-l,
+sidebar-l,
+center-l,
+box-l,
+icon-l {
+  max-inline-size: none;
+}
+
+/* Restore measure for content-bearing flow elements */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+figcaption,
+blockquote,
+pre,
+code,
+address {
+  max-inline-size: var(--measure);
+}
+
+/* EVERY LAYOUT: CONTENT-DRIVEN SIZING
+ * Let content determine dimensions by default
+ * See notes-boxes.md for theory
+ */
+img,
+video,
+iframe {
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 body {
