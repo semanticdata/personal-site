@@ -21,55 +21,57 @@ layout: layouts/alt.njk
 
 	<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start" class="post-tags">
 		{%- for tag in tags | filterTagList %}
-			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
+		{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+		<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
 		{%- endfor %}
 	</cluster-l>
 </cluster-l>
 
 {{ content | safe }}
 
-<hr/>
+<hr />
 
-<div class="post-cta">
-	<p style="margin-top:0;">
-		<i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
-				href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
-				coffee</a>
-		</i> 💜</p>
+<stack-l class="post-cta">
+	<center-l style="--center-max: var(--measure)">
+		<p><i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
+					href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
+					coffee</a>
+			</i> 💜</p>
 
-	<div class="social-links-cta">
-		<cluster-l style="--cluster-gap: var(--s1); --cluster-justify: flex-start">
+
+		<cluster-l style="--cluster-gap: var(--s1); --cluster-justify: center">
 			{% for entry in metadata.social %}
-				<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %}
-					{% if entry.cta %}
-						<span class="desktop-only-cta">
-							{{ entry.cta }}</span>{% endif
- %}
-				</a>
+			<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{%
+				icon entry.icon %}
+				{% if entry.cta %}
+				<span class="desktop-only-cta">
+					{{ entry.cta }}</span>{% endif
+				%}
+			</a>
 			{% endfor %}
 		</cluster-l>
-	</div>
-</div>
+	</center-l>
+</stack-l>
+
+<hr />
 
 {%- if collections.posts %}
-	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-	{%- set nextPost = collections.posts | getNextCollectionItem %}
-	{%- if nextPost or previousPost %}
-		<hr/>
-		<ul class="links-nextprev">
-			{%- if previousPost %}
-				<li class="links-nextprev-prev">← Previous<br>
-					<a href="{{ previousPost.url }}">{{
+{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+{%- set nextPost = collections.posts | getNextCollectionItem %}
+{%- if nextPost or previousPost %}
+<ul class="links-nextprev">
+	{%- if previousPost %}
+	<li class="links-nextprev-prev">← Previous<br>
+		<a href="{{ previousPost.url }}">{{
 			previousPost.data.title }}</a>
-				</li>
-			{% endif %}
-			{%- if nextPost %}
-				<li class="links-nextprev-next">Next →<br>
-					<a href="{{ nextPost.url }}">{{ nextPost.data.title
+	</li>
+	{% endif %}
+	{%- if nextPost %}
+	<li class="links-nextprev-next">Next →<br>
+		<a href="{{ nextPost.url }}">{{ nextPost.data.title
 			}}</a>
-				</li>
-			{% endif %}
-		</ul>
-	{%- endif %}
+	</li>
+	{% endif %}
+</ul>
+{%- endif %}
 {%- endif %}

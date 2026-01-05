@@ -83,45 +83,46 @@
 	<sidebar-l style="--sidebar-gap: var(--s1); --sidebar-min-width: 60%" center-main>
 		<header>
 			<center-l style="--center-max: var(--measure)">
-			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-			<stack-l style="--stack-space: var(--s1)">
-				<div>
-					<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b
-							class="the-dot">.</b>do
+				<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+				<stack-l style="--stack-space: var(--s1)">
+					<div>
+						<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b
+								class="the-dot">.</b>do
 
-						<svg viewBox="0 0 268 255" xmlns="http://www.w3.org/2000/svg" class="atom">
-							<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor"
-								stroke-width="15" />
-							<circle class="nucleus" cx="134" cy="127.6" r="66.3" fill="currentColor" opacity="0.8" />
-							<circle class="electron" cx="224" cy="57" r="28" fill="currentColor" />
-						</svg>
-					</a>
-				</div>
+							<svg viewBox="0 0 268 255" xmlns="http://www.w3.org/2000/svg" class="atom">
+								<circle class="ring" cx="134" cy="127.6" r="115" fill="none" stroke="currentColor"
+									stroke-width="15" />
+								<circle class="nucleus" cx="134" cy="127.6" r="66.3" fill="currentColor"
+									opacity="0.8" />
+								<circle class="electron" cx="224" cy="57" r="28" fill="currentColor" />
+							</svg>
+						</a>
+					</div>
 
-				{# <div class="social-links">
-					{% for entry in metadata.social %}
-					<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}"
-						aria-label="{{ entry.ariaLabel }}">{%
-						icon entry.icon %}
-						{% if entry.label %}
-						<span class="desktop-only">
-							{{ entry.label }}</span>{% endif %}
-					</a>
-					{% endfor %}
-				</div> #}
+					{# <div class="social-links">
+						{% for entry in metadata.social %}
+						<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}"
+							aria-label="{{ entry.ariaLabel }}">{%
+							icon entry.icon %}
+							{% if entry.label %}
+							<span class="desktop-only">
+								{{ entry.label }}</span>{% endif %}
+						</a>
+						{% endfor %}
+					</div> #}
 
-				<nav aria-label="Main navigation">
-					<switcher-l style="--switcher-threshold: 20rem; --switcher-gap: var(--s0)">
-						<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start">
-							{%- for entry in collections.all | eleventyNavigation %}
-							<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {%
-								endif %}>{{
-								entry.title }}</a>
-							{%- endfor %}
-						</cluster-l>
-					</switcher-l>
-				</nav>
-			</stack-l>
+					<nav aria-label="Main navigation">
+						<switcher-l style="--switcher-threshold: 20rem; --switcher-gap: var(--s0)">
+							<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start">
+								{%- for entry in collections.all | eleventyNavigation %}
+								<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %}
+									aria-current="page" {% endif %}>{{
+									entry.title }}</a>
+								{%- endfor %}
+							</cluster-l>
+						</switcher-l>
+					</nav>
+				</stack-l>
 			</center-l>
 		</header>
 
@@ -133,9 +134,11 @@
 					</heading-anchors>
 
 					<footer>
-							<stack-l style="--stack-space: var(--s1)">
-							<hr />
-							<cluster-l role="list" style="--cluster-justify: center; --cluster-gap: var(--s-1); --cluster-align: center;" class="footer-links">
+						<hr />
+						<stack-l style="--stack-space: var(--s1)">
+							<cluster-l role="list"
+								style="--cluster-justify: center; --cluster-gap: var(--s-1); --cluster-align: center;"
+								class="footer-links">
 								{% for entry in metadata.footer %}
 								<a role="listitem" href="{{ entry.url }}" {% if entry.external %}target="_blank"
 									rel="noopener noreferrer" class="external-link" {% endif %} {% if
