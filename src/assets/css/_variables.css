@@ -1,80 +1,117 @@
 :root {
-  /* Font Families */
+  /* Typography */
   --font-family: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
   --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
   --syntax-tab-size: 2;
 
-  /* Brand Colors */
+  /* Colors */
+  --bg: #f8f6f2;
+  --text: #301e0e;
+  --accent: #c54a20;
+
+  /* Surface hierarchy */
+  --surface-base: #f8f6f2;
+  --surface-subtle: #f2efe8;
+  --surface-card: #f1ece2;
+  --surface-highlight: #ffe8e0;
+
+  /* Text on surfaces */
+  --text-on-base: #301e0e;
+  --text-on-subtle: #5d3d32;
+  --text-on-card: #5c5137;
+  --text-muted: #5c5137;
+
+  /* Semantic colors */
+  --text-link: #275d27;
+  --text-link-visited: #5c3770;
+  --text-link-active: #662512;
+
+  /* Borders */
+  --border-subtle: #a7a29b;
+  --border-strong: #a6593f;
+  --border-thin: 1px;
+
+  /* Interactive states */
+  --surface-hover: rgba(127, 127, 127, 0.05);
+  --surface-active: rgba(127, 127, 127, 0.1);
+  --surface-focus: rgba(197, 74, 32, 0.15);
+
+  /* Selection */
+  --selection-bg: #c54a20;
+  --selection-text: #ffffff;
+
+  /* Brands */
+  --brand-primary: var(--accent);
   --brand-orange: #f08a42;
   --social-mastodon: #8373e7;
   --tag: var(--brand-orange);
 
-  /* Theme Colors (Light Mode) */
-  --bg: #f8f6f2;
-  --text: #301e0e;
-  --accent: #c54a20;
-  --border-subtle: #a7a29b;
-  --border-strong: #a6593f;
-
-  --link-visited: #5c3770;
-  --link: #275d27;
-  --link-active: #662512;
-
-  /* Component Colors */
-  --blockquote-bg: #f2efe8;
-  --blockquote-text: #5d3d32;
-  --table-header-bg: #f1ece2;
+  /* Overrides */
+  --blockquote-bg: var(--surface-subtle);
+  --blockquote-text: var(--text-on-subtle);
+  --table-header-bg: var(--surface-card);
   --table-row-stripe-bg: #f4f1eb;
-
-  --text-heading: #bd4d28;
-  --text-muted: #5c5137;
+  --text-heading: var(--text-on-base);
   --text-emphasis: #3fa63f;
-
-  --snow-fall-color: rebeccapurple;
-
-  /* Interactive States */
-  --header-bg: rgba(127, 127, 127, 0.05);
-  --header-active-bg: rgba(127, 127, 127, 0.1);
+  --header-bg: var(--surface-hover);
+  --header-active-bg: var(--surface-active);
   --header-hover-bg: rgba(127, 127, 127, 0.08);
 
-  /* Border Radius */
+  /* Layout */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
-
-  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+  --snow-fall-color: rebeccapurple;
 }
 
-/* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #10141b;
     --text: #e9e2d7;
     --accent: #e88f63;
+
+    --surface-base: #10141b;
+    --surface-subtle: #191f2b;
+    --surface-card: #1e2430;
+    --surface-highlight: #2a1a1a;
+
+    --text-on-base: #e9e2d7;
+    --text-on-subtle: #dfd3c3;
+    --text-on-card: #bca98f;
+    --text-muted: #bca98f;
+
+    --text-link: #7dcd8a;
+    --text-link-visited: #b990d6;
+    --text-link-active: #ff9b4f;
+
     --border-subtle: #4b566e;
     --border-strong: #d18661;
 
-    --link-visited: #b990d6;
-    --link: #7dcd8a;
-    --link-active: #ff9b4f;
+    --surface-hover: rgba(255, 255, 255, 0.05);
+    --surface-active: rgba(255, 255, 255, 0.1);
+    --surface-focus: rgba(232, 143, 99, 0.2);
 
-    --blockquote-bg: #191f2b;
-    --blockquote-text: #dfd3c3;
-    --table-header-bg: #1e2430;
+    --selection-bg: #e88f63;
+    --selection-text: #10141b;
+
+    --blockquote-bg: var(--surface-subtle);
+    --blockquote-text: var(--text-on-subtle);
+    --table-header-bg: var(--surface-card);
     --table-row-stripe-bg: #131720;
-
     --text-heading: #f0a07e;
-    --text-muted: #bca98f;
     --text-emphasis: #8cd899;
-
+    --header-bg: var(--surface-hover);
+    --header-active-bg: var(--surface-active);
+    --header-hover-bg: rgba(255, 255, 255, 0.08);
     --snow-fall-color: unset;
   }
 }
 
-/* Type Scale (Fluid Typography) - https://utopia.fyi/type/calculator?c=360,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* Fluid typography
+   https://utopia.fyi/type/calculator?c=360,18,1.2,1240,22,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
   --step--2: clamp(0.7813rem, 0.7409rem + 0.1795vw, 0.88rem);
   --step--1: clamp(0.9375rem, 0.871rem + 0.2955vw, 1.1rem);
@@ -84,11 +121,10 @@
   --step-3: clamp(1.944rem, 1.6406rem + 1.3483vw, 2.6855rem);
   --step-4: clamp(2.3328rem, 1.9138rem + 1.8621vw, 3.3569rem);
   --step-5: clamp(2.7994rem, 2.2279rem + 2.5396vw, 4.1962rem);
+}
 
-  /* EVERY LAYOUT: MODULAR SPACING SCALE
-   * Based on line-height of 1.5 for mathematical harmony
-   * See notes-modular-scale.md for the theory
-   */
+/* Modular spacing scale (1.5 ratio) */
+:root {
   --ratio: 1.5;
   --s-2: calc(var(--s-1) / var(--ratio));
   --s-1: calc(var(--s0) / var(--ratio));
@@ -98,13 +134,5 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-
-  /* EVERY LAYOUT: MEASURE AXIOM
-   * "The measure should never exceed 65ch" - applied universally
-   * See notes-axiom.md for exception-based approach
-   */
   --measure: 65ch;
-
-  /* Border thickness */
-  --border-thin: 1px;
 }
