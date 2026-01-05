@@ -2,15 +2,15 @@
  * SIDEBAR COMPONENT - CSS Only
  * Creates a sidebar layout with flexible main content
  * Intrinsically responsive - wraps based on available space
- * Usage: <sidebar-l side="left" min-content-width="50%">
+ * Usage: <sidebar-l style="--sidebar-gap: var(--s1); --sidebar-width: 15rem; --sidebar-min-width: 60%" center-main>
  * https://every-layout.dev/layouts/sidebar/
  */
 
 sidebar-l {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap, var(--s1));
-  align-items: var(--align, flex-start);
+  gap: var(--sidebar-gap, var(--s1));
+  align-items: var(--sidebar-align, flex-start);
 }
 
 /* Both children can grow when wrapped */
@@ -32,7 +32,7 @@ sidebar-l > *:first-child {
 sidebar-l > *:last-child {
   flex-basis: 0;
   flex-grow: 999;
-  min-inline-size: var(--min-content-width, 50%);
+  min-inline-size: var(--sidebar-min-width, 50%);
 }
 
 /* Optional: center main content in available space */

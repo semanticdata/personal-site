@@ -1,21 +1,23 @@
 ---
-layout: layouts/base.njk
+layout: layouts/alt.njk
 ---
 <h1>{{ title }}</h1>
 
 <div class="project-metadata">
-  {% if iconLabel %}
-    <span>{% icon iconLabel %}
-      <a href="{{ iconUrl }}">{{ repoLabel }}</a>
-    </span>
-  {% endif %}
+  <cluster-l style="--cluster-gap: var(--s1); --cluster-justify: flex-start">
+    {% if iconLabel %}
+      <span>{% icon iconLabel %}
+        <a href="{{ iconUrl }}">{{ repoLabel }}</a>
+      </span>
+    {% endif %}
 
-  <p class="project-tags">
-    {%- for tag in tags | filterTagList %}
-      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-      <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
-    {%- endfor %}
-  </p>
+    <cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start" class="project-tags">
+      {%- for tag in tags | filterTagList %}
+        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
+      {%- endfor %}
+    </cluster-l>
+  </cluster-l>
 </div>
 
 {{ content | safe }}

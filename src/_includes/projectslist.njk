@@ -1,24 +1,27 @@
 <ul class="projectlist">
 	{%- for project in projectlist %}
 		<li class="projectlist-item">
-			<div class="projectlist-text-content">
-				<h3 class="projectlist-title">
-					{% if project.data.iconLabel %}
-						{% icon project.data.iconLabel %}
-					{% endif %}
-					<a href="{{ project.url }}">
-						{{ project.data.title or project.url }}
-					</a>
-				</h3>
-				<p class="projectlist-description">
-					{{ project.data.description }}
-				</p>
-				<div class="projectlist-metadata">
+			<stack-l style="--stack-space: var(--s-1)">
+				<div class="projectlist-text-content">
+					<h3 class="projectlist-title">
+						{% if project.data.iconLabel %}
+							{% icon project.data.iconLabel %}
+						{% endif %}
+						<a href="{{ project.url }}">
+							{{ project.data.title or project.url }}
+						</a>
+					</h3>
+					<p class="projectlist-description">
+						{{ project.data.description }}
+					</p>
+				</div>
+
+				<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start">
 					{% if project.data.iconUrl %}
 						<div>
 							<span>Repository:</span>
 							<a href="{{ project.data.iconUrl }}" target="_blank" rel="noopener noreferrer">{{
-						project.data.repoLabel or "Repository" }}</a>
+							project.data.repoLabel or "Repository" }}</a>
 						</div>
 					{% endif %}
 
@@ -39,8 +42,8 @@
 							<a href="{{ project.data.websiteUrl }}" target="_blank" rel="noopener noreferrer">Live Demo</a>
 						</div>
 					{% endif %}
-				</div>
-			</div>
+				</cluster-l>
+			</stack-l>
 		</li>
 	{%- endfor %}
 </ul>

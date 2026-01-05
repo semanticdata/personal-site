@@ -31,7 +31,13 @@ stack-l,
 sidebar-l,
 center-l,
 box-l,
-icon-l {
+icon-l,
+switcher-l,
+cover-l,
+grid-l,
+frame-l,
+reel-l,
+impostor-l {
   max-inline-size: none;
 }
 

@@ -14,18 +14,18 @@ layout: layouts/alt.njk
 
 <h1>{{ title }}</h1>
 
-<div class="post-metadata">
+<cluster-l style="--cluster-gap: var(--s1); --cluster-justify: flex-start" class="post-metadata">
 	<p>{% icon "calendar" %}
 		<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 	</p>
 
-	<p class="post-tags">
+	<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start" class="post-tags">
 		{%- for tag in tags | filterTagList %}
 			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 			<a href="{{ tagUrl }}" class="post-tag">#{{ tag }}</a>
 		{%- endfor %}
-	</p>
-</div>
+	</cluster-l>
+</cluster-l>
 
 {{ content | safe }}
 
@@ -39,14 +39,16 @@ layout: layouts/alt.njk
 		</i> 💜</p>
 
 	<div class="social-links-cta">
-		{% for entry in metadata.social %}
-			<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %}
-				{% if entry.cta %}
-					<span class="desktop-only-cta">
-						{{ entry.cta }}</span>{% endif
+		<cluster-l style="--cluster-gap: var(--s1); --cluster-justify: flex-start">
+			{% for entry in metadata.social %}
+				<a rel="noopener noreferrer" target="_blank" href="{{ entry.url }}" aria-label="{{ entry.ariaLabel }}">{% icon entry.icon %}
+					{% if entry.cta %}
+						<span class="desktop-only-cta">
+							{{ entry.cta }}</span>{% endif
  %}
-			</a>
-		{% endfor %}
+				</a>
+			{% endfor %}
+		</cluster-l>
 	</div>
 </div>
 

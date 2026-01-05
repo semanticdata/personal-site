@@ -54,7 +54,6 @@
 	{%- include "src/assets/css/components/_frame.css" -%}
 	{%- include "src/assets/css/components/_reel.css" -%}
 	{%- include "src/assets/css/components/_impostor.css" -%}
-	{# {%- include "src/assets/css/_custom.css" -%} #}
 	{%- endcss -%}
 
 	{#- Link to the generated CSS bundle. The browser can cache this file. #}
@@ -81,10 +80,10 @@
 </head>
 
 <body>
-	<sidebar-l gap="var(--s1)" min-content-width="60%" center-main>
+	<sidebar-l style="--sidebar-gap: var(--s1); --sidebar-min-width: 60%" center-main>
 		<header>
 			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-			<stack-l space="var(--s1)">
+			<stack-l style="--stack-space: var(--s1)">
 				<div>
 					<a href="/" class="home-link">Miguel<span class="line-break"></span>Pimentel<b
 							class="the-dot">.</b>do
@@ -111,28 +110,30 @@
 				</div> #}
 
 				<nav aria-label="Main navigation">
-					<cluster-l gap="var(--s0)" justify="flex-start">
-						{%- for entry in collections.all | eleventyNavigation %}
-						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {%
-							endif %}>{{
-							entry.title }}</a>
-						{%- endfor %}
-					</cluster-l>
+					<switcher-l style="--switcher-threshold: 20rem; --switcher-gap: var(--s0)">
+						<cluster-l style="--cluster-gap: var(--s0); --cluster-justify: flex-start">
+							{%- for entry in collections.all | eleventyNavigation %}
+							<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {%
+								endif %}>{{
+								entry.title }}</a>
+							{%- endfor %}
+						</cluster-l>
+					</switcher-l>
 				</nav>
 			</stack-l>
 		</header>
 
 		<main>
-			<center-l max="var(--measure)">
-				<stack-l space="var(--s1)">
+			<center-l style="--center-max: var(--measure)">
+				<stack-l style="--stack-space: var(--s1)">
 					<heading-anchors>
 						{{ content | safe }}
 					</heading-anchors>
 
 					<footer>
-							<stack-l space="var(--s1)">
+							<stack-l style="--stack-space: var(--s1)">
 							<hr />
-							<cluster-l role="list" justify="center" gap="var(--s1)" align="center" class="footer-links">
+							<cluster-l role="list" style="--cluster-justify: center; --cluster-gap: var(--s-1); --cluster-align: center;" class="footer-links">
 								{% for entry in metadata.footer %}
 								<a role="listitem" href="{{ entry.url }}" {% if entry.external %}target="_blank"
 									rel="noopener noreferrer" class="external-link" {% endif %} {% if
@@ -142,8 +143,7 @@
 								{% endfor %}
 							</cluster-l>
 
-							<div class="footer-gifs measure">
-								<cluster-l role="list" justify="center" gap="0.5rem">
+							<cluster-l role="list" style="--cluster-justify: center; --cluster-gap: var(--s-1);">
 								{% for entry in metadata.gifs %}
 								{% if entry.url %}
 								<a role="listitem" href="{{ entry.url }}">{% 88x31 entry.gif,
@@ -152,8 +152,7 @@
 								entry.alt %}
 								{% endif %}
 								{% endfor %}
-								</cluster-l>
-							</div>
+							</cluster-l>
 						</stack-l>
 					</footer>
 				</stack-l>

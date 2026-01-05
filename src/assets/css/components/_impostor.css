@@ -2,12 +2,12 @@
  * IMPOSTOR COMPONENT - CSS Only
  * Centers content over a positioning container, viewport, or document
  * Perfect for modals, dialogs, and overlays
- * Usage: <impostor-l fixed margin="var(--s1)">Content</impostor-l>
- * https://every-layout.dev/layouts/imposter/
+ * Usage: <impostor-l fixed style="--impostor-margin: var(--s1)">Content</impostor-l>
+ * https://every-layout.dev/layouts/impostor/
  */
 
 impostor-l {
-  position: var(--positioning, absolute);
+  position: var(--impostor-positioning, absolute);
   inset-block-start: 50%;
   inset-inline-start: 50%;
   transform: translate(-50%, -50%);
@@ -17,13 +17,12 @@ impostor-l {
  * Adds margin/gap from edges and scrolling for overflow content
  */
 impostor-l[contain] {
-  --margin: var(--margin, var(--s1));
   overflow: auto;
-  max-inline-size: calc(100% - (var(--margin) * 2));
-  max-block-size: calc(100% - (var(--margin) * 2));
+  max-inline-size: calc(100% - (var(--impostor-margin, var(--s1)) * 2));
+  max-block-size: calc(100% - (var(--impostor-margin, var(--s1)) * 2));
 }
 
 /* Fixed positioning: relative to viewport instead of document */
 impostor-l[fixed] {
-  --positioning: fixed;
+  --impostor-positioning: fixed;
 }

@@ -1,7 +1,7 @@
 /**
  * STACK COMPONENT - CSS Only
  * Injects margin between flow elements
- * Usage: <stack-l space="var(--s1)" recursive splitAfter="2">
+ * Usage: <stack-l style="--stack-space: var(--s1)">
  * https://every-layout.dev/layouts/stack/
  */
 
@@ -17,7 +17,7 @@ stack-l > * {
 
 /* Owl selector: only applies margin between adjacent elements */
 stack-l > * + * {
-  margin-block-start: var(--space, var(--s1));
+  margin-block-start: var(--stack-space, var(--s1));
 }
 
 /* Match parent height when only child (enables split feature) */
@@ -33,7 +33,7 @@ stack-l[recursive] > * {
 }
 
 stack-l[recursive] * + * {
-  margin-block-start: var(--space, var(--s1));
+  margin-block-start: var(--stack-space, var(--s1));
 }
 
 /* Split feature: push content apart using auto margin */

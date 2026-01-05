@@ -1,7 +1,7 @@
 /**
  * ICON COMPONENT - CSS Only
  * Inline icon sizing and spacing
- * Usage: <icon-l space="var(--s0)" label="Icon description">
+ * Usage: <icon-l style="--icon-space: var(--s0)" label="Icon description">
  * https://every-layout.dev/layouts/icon/
  */
 
@@ -20,7 +20,7 @@ icon-l[space] {
 }
 
 icon-l[space] svg {
-  margin-inline-end: var(--space, 0.5em);
+  margin-inline-end: var(--icon-space, 0.5em);
 }
 
 /* Accessibility: icons with labels are treated as images */
