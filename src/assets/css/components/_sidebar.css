@@ -14,15 +14,16 @@ sidebar-l {
 }
 
 /* Both children can grow when wrapped */
-sidebar-l > * {
+/* sidebar-l > * {
   flex-grow: 1;
-}
+} */
 
 /* First child is the sidebar: fixed width, doesn't compete for space */
 sidebar-l > *:first-child {
   flex-basis: var(--sidebar-width, 15rem);
-  flex-grow: 0;
-  flex-shrink: 0;
+  /* flex-grow: 0; */
+  /* flex-shrink: 0; */
+  flex-grow: 1;
 }
 
 /* Second child is the main content: takes all remaining space
