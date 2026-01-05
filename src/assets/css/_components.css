@@ -1,18 +1,16 @@
-/* EVERY LAYOUT: UNIVERSAL STYLES */
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
 }
 
-/* EVERY LAYOUT: MEASURE AXIOM - EXCEPTION-BASED APPROACH
+/* EVERY LAYOUT: MEASURE AXIOM
  * "The measure should never exceed 65ch" - applied universally
- * See notes-axiom.md for the theory behind this approach
  */
 * {
   max-inline-size: var(--measure);
 }
 
-/* Exceptions: Layout containers that should NOT have measure constraints */
+/* Layout containers that should NOT have measure constraints */
 html,
 body,
 div,
@@ -60,7 +58,6 @@ address {
 
 /* EVERY LAYOUT: CONTENT-DRIVEN SIZING
  * Let content determine dimensions by default
- * See notes-boxes.md for theory
  */
 img,
 video,
@@ -69,20 +66,136 @@ iframe {
   block-size: auto;
 }
 
-/* EVERY LAYOUT: UTILITY CLASSES
- * For when you need to apply measure to specific elements
- * Use sparingly - the universal axiom should handle most cases
- */
 .measure {
   max-inline-size: var(--measure);
 }
 
 body {
   font-family: var(--font-family);
-  /* background-color: var(--bg); */
-  /* color: var(--text); */
+  background-color: var(--surface-base);
+  color: var(--text-on-base);
 }
 
+/* Links */
+a {
+  color: var(--text-link);
+}
+
+a:visited {
+  color: var(--text-link-visited);
+}
+
+a:active {
+  color: var(--text-link-active);
+}
+
+/* Text selection */
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+::-moz-selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+  margin-block-start: 0.75em;
+  padding-top: 0.75em;
+  text-wrap: balance;
+}
+
+.subtitle {
+  font-style: italic;
+  color: var(--text-muted);
+  font-family: var(--font-family-monospace);
+  font-size: var(--step--1);
+  margin-block-start: 1em;
+}
+
+/* Content spacing */
+p, li {
+  line-height: 1.5;
+}
+
+/* Blockquote */
+blockquote {
+  margin-inline: 0;
+  padding: 0.5em 1em;
+  border-inline-start: 8px solid var(--accent);
+  background-color: var(--surface-subtle);
+  color: var(--text-on-subtle);
+  font-style: italic;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+table th {
+  background-color: var(--surface-card);
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--table-row-stripe-bg);
+}
+
+/* Code */
+pre:not([class*="language-"]) {
+  margin: 0.5em 0;
+  line-height: 1.375;
+  -moz-tab-size: var(--syntax-tab-size);
+  -o-tab-size: var(--syntax-tab-size);
+  tab-size: var(--syntax-tab-size);
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-x: auto;
+}
+
+/* Details/Summary */
+summary:hover {
+  cursor: pointer;
+}
+
+details summary::before {
+  font-weight: normal;
+  content: "\f0da";
+  width: 1.2ch;
+  display: inline-block;
+  padding-right: .3rem;
+}
+
+details[open] summary::before {
+  font-weight: normal;
+  content: "\f0d7";
+  width: 1.2ch;
+  display: inline-block;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Utilities */
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -109,12 +222,29 @@ body {
   z-index: 999;
 }
 
-@view-transition {
-  navigation: auto;
+/* Font Awesome */
+svg:has(use) {
+  height: 1rem;
+  width: 1rem;
 }
 
+/* Home link */
+.home-link {
+  display: inline-block;
+}
+
+.home-link .line-break {
+  display: block;
+  margin-bottom: 0.1em;
+}
+
+.home-link:hover .the-dot {
+  color: var(--accent);
+}
+
+/* Atom logo */
 .atom {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
   color: rebeccapurple;
   display: block;
   margin-top: 0.5em;
@@ -126,62 +256,22 @@ body {
 }
 
 @keyframes pulse {
-  0% {
-    opacity: 0.6;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
 }
 
 .atom:hover {
   transform: rotate(15deg);
-  color: var(--accent);
+  color: goldenrod;
 }
 
-/* h1 {
-  font-size: var(--step-4);
+/* View transitions */
+@view-transition {
+  navigation: auto;
 }
 
-h2 {
-  font-size: var(--step-3);
-}
-
-h3 {
-  font-size: var(--step-2);
-}
-
-h4 {
-  font-size: var(--step-1);
-}
-
-h5 {
-  font-size: var(--step-0);
-}
-
-h6 {
-  font-size: var(--step--1);
-}
-
-body {
-  font-size: var(--step-0);
-} */
-
-/* Font Awesome specific styling */
-svg:has(use) {
-  height: 1rem;
-  width: 1rem;
-}
-
-.home-link {
-  display: inline-block;
-}
-
+/* Fonts */
 /* ibm-plex-sans-latin-400-normal */
 @font-face {
   font-family: "IBM Plex Sans";
