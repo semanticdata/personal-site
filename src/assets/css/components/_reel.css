@@ -1,0 +1,61 @@
+/**
+ * REEL COMPONENT - CSS Only
+ * Horizontally scrolling container for content
+ * Native scrolling - no JavaScript required
+ * Usage: <reel-l height="50vh" gap="var(--s1)" no-scrollbar>
+ * https://every-layout.dev/layouts/reel/
+ */
+
+reel-l {
+  display: flex;
+  block-size: var(--height, auto);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: var(--scrollbar-thumb, var(--bg)) var(--scrollbar-track, var(--text));
+}
+
+/* Custom scrollbar for WebKit/Blink browsers */
+reel-l::-webkit-scrollbar {
+  block-size: var(--scrollbar-height, 1rem);
+}
+
+reel-l::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track, var(--text));
+}
+
+reel-l::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb, var(--bg));
+  background-image: linear-gradient(
+    var(--scrollbar-thumb, var(--bg)) 0,
+    var(--scrollbar-thumb, var(--bg)) 0.25rem,
+    var(--scrollbar-track, var(--text)) 0.25rem,
+    var(--scrollbar-track, var(--text)) 0.75rem,
+    var(--scrollbar-thumb, var(--bg)) 0.75rem
+  );
+}
+
+/* Children don't grow or shrink - maintain their natural size */
+reel-l > * {
+  flex: 0 0 auto;
+}
+
+/* Images fill the height but maintain aspect ratio */
+reel-l > img {
+  block-size: 100%;
+  flex-basis: auto;
+  width: auto;
+}
+
+/* Spacing between children */
+reel-l > * + * {
+  margin-inline-start: var(--gap, var(--s1));
+}
+
+/* Hide scrollbar when no-scrollbar attribute is present */
+reel-l[no-scrollbar] {
+  scrollbar-width: none;
+}
+
+reel-l[no-scrollbar]::-webkit-scrollbar {
+  display: none;
+}

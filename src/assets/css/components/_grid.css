@@ -1,0 +1,22 @@
+/**
+ * GRID COMPONENT - CSS Only
+ * Responsive grid with auto-fitting columns
+ * Intrinsically responsive - uses min() function for safe wrapping
+ * Usage: <grid-l min-column-width="15rem" gap="var(--s1)">
+ * https://every-layout.dev/layouts/grid/
+ */
+
+grid-l {
+  display: grid;
+  gap: var(--gap, var(--s1));
+}
+
+/* Modern browsers: min() function prevents overflow
+ * min(250px, 100%) returns 100% when container is narrower than 250px
+ * This ensures columns can shrink to fit the available space
+ */
+@supports (width: min(250px, 100%)) {
+  grid-l {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-width, 15rem), 100%), 1fr));
+  }
+}

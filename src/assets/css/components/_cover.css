@@ -1,0 +1,36 @@
+/**
+ * COVER COMPONENT - CSS Only
+ * Vertically centers content with optional top/bottom elements
+ * Intrinsically responsive - expands to accommodate content
+ * Usage: <cover-l min-height="100vh" padding="var(--s1)">
+ * https://every-layout.dev/layouts/cover/
+ */
+
+cover-l {
+  display: flex;
+  flex-direction: column;
+  min-block-size: var(--min-height, 100vh);
+  padding: var(--padding, var(--s1));
+}
+
+/* Add spacing between all children */
+cover-l > * {
+  margin-block: var(--space, var(--s1));
+}
+
+/* Remove top margin from first child unless it's the centered element */
+cover-l > :first-child:not(:nth-child(2)) {
+  margin-block-start: 0;
+}
+
+/* Remove bottom margin from last child unless it's the centered element */
+cover-l > :last-child:not(:nth-child(2)) {
+  margin-block-end: 0;
+}
+
+/* Center the middle child using auto margins
+ * Works with 1, 2, or 3 children automatically
+ */
+cover-l > *:nth-child(2) {
+  margin-block: auto;
+}

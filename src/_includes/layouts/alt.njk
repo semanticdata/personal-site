@@ -41,13 +41,19 @@
 	{%- css -%}
 	{# CUBE CSS Structure #}
 	{%- include "src/assets/css/_variables.css" -%}
+	{%- include "src/assets/css/_components.css" -%}
 	{%- include "src/assets/css/components/_stack.css" -%}
 	{%- include "src/assets/css/components/_center.css" -%}
 	{%- include "src/assets/css/components/_cluster.css" -%}
 	{%- include "src/assets/css/components/_sidebar.css" -%}
 	{%- include "src/assets/css/components/_box.css" -%}
 	{%- include "src/assets/css/components/_icon.css" -%}
-	{%- include "src/assets/css/_components.css" -%}
+	{%- include "src/assets/css/components/_switcher.css" -%}
+	{%- include "src/assets/css/components/_cover.css" -%}
+	{%- include "src/assets/css/components/_grid.css" -%}
+	{%- include "src/assets/css/components/_frame.css" -%}
+	{%- include "src/assets/css/components/_reel.css" -%}
+	{%- include "src/assets/css/components/_impostor.css" -%}
 	{# {%- include "src/assets/css/_custom.css" -%} #}
 	{%- endcss -%}
 
@@ -75,7 +81,7 @@
 </head>
 
 <body>
-	<sidebar-l gap="var(--s1)" min-width="60%">
+	<sidebar-l gap="var(--s1)" min-content-width="60%" center-main>
 		<header>
 			<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 			<stack-l space="var(--s1)">
@@ -105,7 +111,7 @@
 				</div> #}
 
 				<nav aria-label="Main navigation">
-					<cluster-l gap="var(--s0)">
+					<cluster-l gap="var(--s0)" justify="flex-start">
 						{%- for entry in collections.all | eleventyNavigation %}
 						<a class="nav-item" href="{{ entry.url }}" {% if entry.url==page.url %} aria-current="page" {%
 							endif %}>{{
@@ -124,7 +130,7 @@
 					</heading-anchors>
 
 					<footer>
-						<stack-l space="var(--s1)">
+							<stack-l space="var(--s1)">
 							<hr />
 							<cluster-l role="list" justify="center" gap="var(--s1)" align="center" class="footer-links">
 								{% for entry in metadata.footer %}
@@ -136,7 +142,8 @@
 								{% endfor %}
 							</cluster-l>
 
-							<cluster-l role="list" justify="center" gap="0.5rem" class="footer-gifs">
+							<div class="footer-gifs measure">
+								<cluster-l role="list" justify="center" gap="0.5rem">
 								{% for entry in metadata.gifs %}
 								{% if entry.url %}
 								<a role="listitem" href="{{ entry.url }}">{% 88x31 entry.gif,
@@ -145,7 +152,8 @@
 								entry.alt %}
 								{% endif %}
 								{% endfor %}
-							</cluster-l>
+								</cluster-l>
+							</div>
 						</stack-l>
 					</footer>
 				</stack-l>

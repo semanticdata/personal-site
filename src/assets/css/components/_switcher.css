@@ -1,0 +1,40 @@
+/**
+ * SWITCHER COMPONENT - CSS Only
+ * Switches between horizontal and vertical layout at a container-based breakpoint
+ * Intrinsically responsive - no @media queries needed
+ * Usage: <switcher-l threshold="30rem" gap="var(--s1)" min-children="5">
+ * https://every-layout.dev/layouts/switcher/
+ */
+
+switcher-l {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, var(--s1));
+}
+
+/* The Holy Albatross technique: calc() produces very large positive or negative value
+ * Negative = invalid, ignored → horizontal layout (flex-grow takes over)
+ * Positive = very large → vertical layout (each element takes full width)
+ */
+switcher-l > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--threshold, 30rem) - 100%) * 999);
+}
+
+/* Quantity query: switch to vertical when there are N or more children
+ * Prevents items from becoming too narrow in horizontal layout
+ */
+switcher-l[min-children="5"] > :nth-last-child(n+5),
+switcher-l[min-children="5"] > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
+}
+
+switcher-l[min-children="4"] > :nth-last-child(n+4),
+switcher-l[min-children="4"] > :nth-last-child(n+4) ~ * {
+  flex-basis: 100%;
+}
+
+switcher-l[min-children="3"] > :nth-last-child(n+3),
+switcher-l[min-children="3"] > :nth-last-child(n+3) ~ * {
+  flex-basis: 100%;
+}

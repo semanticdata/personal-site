@@ -1,0 +1,30 @@
+/**
+ * FRAME COMPONENT - CSS Only
+ * Crops content to a specific aspect ratio
+ * Supports images, videos, and any HTML content
+ * Usage: <frame-l ratio="16/9"> <img src="..."> </frame-l>
+ * https://every-layout.dev/layouts/frame/
+ */
+
+frame-l {
+  --ratio-n: 16;
+  --ratio-d: 9;
+  aspect-ratio: var(--ratio-n) / var(--ratio-d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Handle replaced elements (images, videos) with object-fit */
+frame-l > img,
+frame-l > video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Support ratio attribute syntax like ratio="16/9" */
+frame-l[ratio] {
+  aspect-ratio: var(--ratio);
+}
