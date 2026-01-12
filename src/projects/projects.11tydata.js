@@ -1,6 +1,6 @@
 export default {
   tags: ["projects"],
-  layout: "layouts/project.njk",
+  layout: "layouts/project.webc",
 
   eleventyComputed: {
     iconLabel: (data) => {

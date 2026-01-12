@@ -17,6 +17,10 @@
     <site-header></site-header>
     <template webc:nokeep @html="this.content"></template>
     <site-footer></site-footer>
+
+    <template webc:type="11ty" 11ty:type="liquid">
+        {% getBundle "fontawesome" %}
+    </template>
 </body>
 
 </html>

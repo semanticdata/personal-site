@@ -1,0 +1,52 @@
+---
+layout: layouts/new.webc
+---
+<h1 @text="title"></h1>
+
+<div class="project-metadata">
+  <!-- 
+    REPO LINK & ICON:
+    Converted to pure WebC. 
+    We assume 'iconLabel' (like 'github') maps to a brand icon. 
+    If you use generic icons here, change 'fa-brands' to 'fa-solid'.
+  -->
+  <span @if="iconLabel">
+    <i :class="`fa-brands fa-${iconLabel}`"></i>
+    <a :href="iconUrl" @text="repoLabel"></a>
+  </span>
+
+  <!-- TAGS -->
+  <p class="project-tags">
+    <a webc:for="tag of tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))"
+       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" 
+       class="post-tag"
+       @text="`#${tag}`"></a>
+  </p>
+</div>
+
+<!-- CONTENT -->
+<div @raw="content"></div>
+
+<hr/>
+
+<!-- NEXT / PREV NAVIGATION (Kept in Nunjucks for the collection filters) -->
+<template webc:type="11ty" 11ty:type="njk">
+  {%- if collections.projects %}
+    {%- set previousProject = collections.projects | getPreviousCollectionItem %}
+    {%- set nextProject = collections.projects | getNextCollectionItem %}
+    {%- if nextProject or previousProject %}
+      <ul class="links-nextprev">
+        {%- if previousProject %}
+          <li class="links-nextprev-prev">← Previous<br>
+            <a href="{{ previousProject.url }}">{{ previousProject.data.title }}</a>
+          </li>
+        {% endif %}
+        {%- if nextProject %}
+          <li class="links-nextprev-next">Next →<br>
+            <a href="{{ nextProject.url }}">{{ nextProject.data.title }}</a>
+          </li>
+        {% endif %}
+      </ul>
+    {%- endif %}
+  {%- endif %}
+</template>

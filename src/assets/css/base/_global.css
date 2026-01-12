@@ -70,3 +70,8 @@ code {
 .centered {
   margin-inline: auto;
 }
+/* Font Awesome Icons */
+svg:has(use) {
+  height: 1rem;
+  width: 1rem;
+}

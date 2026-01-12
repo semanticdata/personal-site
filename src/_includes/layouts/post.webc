@@ -1,0 +1,92 @@
+---
+layout: layouts/new.webc
+---
+
+<!-- CSS BUNDLING -->
+<template webc:type="11ty" 11ty:type="njk">
+  <style>{% include "node_modules/prismjs/themes/prism-tomorrow.css" %}</style>
+  <style>{% include "src/assets/css/prism-diff.css" %}</style>
+  <style>{% include "src/assets/css/markdown-it-callouts.css" %}</style>
+</template>
+
+<!-- TITLE -->
+<h1 @text="title"></h1>
+
+<!-- METADATA -->
+<div class="post-metadata">
+  <p>
+    <!-- Updated to use FontAwesome -->
+    <i class="fa-regular fa-calendar"></i>
+    <time :datetime="date.toISOString()" 
+          @text="new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(date)"></time>
+  </p>
+
+  <p class="post-tags">
+    <a webc:for="tag of tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))"
+       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" 
+       class="post-tag"
+       @text="`#${tag}`"></a>
+  </p>
+</div>
+
+<!-- CONTENT & TOC -->
+<template webc:type="11ty" 11ty:type="njk">
+  {{ content | toc | safe }}
+  {{ content | safe }}
+</template>
+
+<hr/>
+
+<!-- CTA SECTION -->
+<div class="post-cta">
+  <p style="margin-top:0;">
+    <i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
+        href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
+        coffee</a>
+    </i> 💜</p>
+
+  <!-- 
+    SOCIAL ICONS:
+    Converted to pure WebC using webc:for loop.
+    We inject the icon name into the class string.
+  -->
+  <div class="social-links-cta">
+    <a webc:for="entry of metadata.social"
+       rel="noopener noreferrer" 
+       target="_blank" 
+       :href="entry.url" 
+       :aria-label="entry.ariaLabel">
+       
+      <i :class="`fa-brands fa-${entry.icon}`"></i>
+      
+      <span @if="entry.cta" 
+            class="desktop-only-cta" 
+            @text="entry.cta"></span>
+    </a>
+  </div>
+</div>
+
+<!-- NEXT / PREV NAVIGATION -->
+<template webc:type="11ty" 11ty:type="liquid">
+  {% if collections.posts %}
+    {% comment %} Liquid uses 'assign' instead of 'set' {% endcomment %}
+    {% assign previousPost = collections.posts | getPreviousCollectionItem %}
+    {% assign nextPost = collections.posts | getNextCollectionItem %}
+    
+    {% if nextPost or previousPost %}
+      <hr/>
+      <ul class="links-nextprev">
+        {% if previousPost %}
+          <li class="links-nextprev-prev">← Previous<br>
+            <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+          </li>
+        {% endif %}
+        {% if nextPost %}
+          <li class="links-nextprev-next">Next →<br>
+            <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+  {% endif %}
+</template>

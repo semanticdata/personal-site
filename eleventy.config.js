@@ -56,8 +56,8 @@ export default async function (eleventyConfig) {
     preAttributes: { tabindex: 0 },
   });
   eleventyConfig.addPlugin(fontAwesomePlugin, {
-		transform: true,
-		shortcode: "icon",
+		// transform: true,
+		shortcode: false,
 	})
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],

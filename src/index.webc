@@ -43,3 +43,6 @@ numberOfLatestPostsToShow: 7
   more post<span @if="(collections.posts.length - numberOfLatestPostsToShow) !== 1">s</span>
   can be found in <a href="blog.njk">the archive</a>.
 </p>
+
+<i class="fa-solid fa-heart"></i>
+<i class="fa-regular fa-heart"></i>
