@@ -1,4 +1,4 @@
-<footer class="stack">
+<footer webc:root="override" class="stack">
     <ul class="cluster" data-justify="center">
         <template webc:for="entry of $data.metadata.footer" webc:nokeep>
             <li>
@@ -19,17 +19,13 @@
 </footer>
 
 <style webc:scoped>
-    :host div {
+    :host {
         --cluster-gap: 0.25rem;
+        border-block-start: 2px solid black;
     }
 
     :host ul {
         list-style: none;
         padding-inline: 0;
-    }
-
-    :host footer {
-        border-block-start: 2px solid black;
-        /* padding-block: 1rem; */
     }
 </style>

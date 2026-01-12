@@ -1,6 +1,6 @@
-<header class="cluster" data-justify="space-between">
+<header webc:root="override" class="cluster" data-justify="space-between">
     <div>
-        <a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
+        <a href="/" class="box">MiguelPimentel<b class="the-dot">.</b>do</a>
     </div>
 
     <!-- <div class="social-links">
@@ -10,25 +10,28 @@
 
     <nav aria-label="Main navigation" class="">
         <ul class="cluster">
-            <li><a webc:for="entry of eleventyNavigation($data.collections.all)" class="" :href="entry.url"
+            <li class=""><a webc:for="entry of eleventyNavigation($data.collections.all)" class="box" :href="entry.url"
                     :aria-current="entry.url === $data.page.url ? 'page' : null" @text="entry.title"></a></li>
         </ul>
     </nav>
 </header>
 
-<style webc:keep>
-    header .cluster {
-        --cluster-gap: 1rem;
+<style webc:scoped>
+    :host {
+        /* border-block-end: 2px solid black; */
+        /* padding-block: 1rem; */
+        --s1: 1rem;
     }
 
-    header {
-        border-block-end: 2px solid black;
-        padding-block: 1rem;
-    }
-
-    header ul {
+    ul {
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+    ul a {
+        display: inline-block;
+    }
+    a {
+        text-decoration: none;
     }
 </style>
