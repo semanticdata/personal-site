@@ -1,6 +1,14 @@
-<ol reversed>
-  <li webc:for="post of posts">
-    <a :href="post.url" @text="post.data.title"></a>
-    <time :datetime="post.date" @text="post.date.toDateString()"></time>
+<ol class="project-grid" reversed>
+  <li class="box" webc:for="post of posts">
+    <div class="stack">
+      <h3>
+        <a :href="post.url" @text="post.data.title"></a>
+      </h3>
+
+      <div class="meta-footer">
+        <time :datetime="post.date" @text="post.date.toDateString()"></time>
+      </div>
+
+    </div>
   </li>
 </ol>
