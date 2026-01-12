@@ -3,22 +3,22 @@ layout: layouts/new.webc
 ---
 <h1 @text="title"></h1>
 
-<div class="project-metadata">
-  <!-- 
+<div class="project-metadata stack">
+  <!--
     REPO LINK & ICON:
-    Converted to pure WebC. 
-    We assume 'iconLabel' (like 'github') maps to a brand icon. 
+    Converted to pure WebC.
+    We assume 'iconLabel' (like 'github') maps to a brand icon.
     If you use generic icons here, change 'fa-brands' to 'fa-solid'.
   -->
-  <span @if="iconLabel">
+  <span class="cluster" style="--cluster-gap: 0.5rem" @if="iconLabel">
     <i :class="`fa-brands fa-${iconLabel}`"></i>
     <a :href="iconUrl" @text="repoLabel"></a>
   </span>
 
   <!-- TAGS -->
-  <p class="project-tags">
+  <p class="project-tags cluster" style="--cluster-gap: 0.5rem">
     <a webc:for="tag of tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))"
-       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" 
+       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`"
        class="post-tag"
        @text="`#${tag}`"></a>
   </p>

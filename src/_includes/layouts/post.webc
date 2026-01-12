@@ -13,17 +13,17 @@ layout: layouts/new.webc
 <h1 @text="title"></h1>
 
 <!-- METADATA -->
-<div class="post-metadata">
-  <p>
+<div class="post-metadata stack">
+  <p class="cluster" style="--cluster-gap: 0.5rem">
     <!-- Updated to use FontAwesome -->
     <i class="fa-regular fa-calendar"></i>
-    <time :datetime="date.toISOString()" 
+    <time :datetime="date.toISOString()"
           @text="new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(date)"></time>
   </p>
 
-  <p class="post-tags">
+  <p class="post-tags cluster" style="--cluster-gap: 0.5rem">
     <a webc:for="tag of tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))"
-       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" 
+       :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`"
        class="post-tag"
        @text="`#${tag}`"></a>
   </p>
@@ -38,29 +38,29 @@ layout: layouts/new.webc
 <hr/>
 
 <!-- CTA SECTION -->
-<div class="post-cta">
-  <p style="margin-top:0;">
+<div class="post-cta stack">
+  <p>
     <i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
         href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
         coffee</a>
     </i> 💜</p>
 
-  <!-- 
+  <!--
     SOCIAL ICONS:
     Converted to pure WebC using webc:for loop.
     We inject the icon name into the class string.
   -->
-  <div class="social-links-cta">
+  <div class="social-links-cta cluster">
     <a webc:for="entry of metadata.social"
-       rel="noopener noreferrer" 
-       target="_blank" 
-       :href="entry.url" 
+       rel="noopener noreferrer"
+       target="_blank"
+       :href="entry.url"
        :aria-label="entry.ariaLabel">
-       
+
       <i :class="`fa-brands fa-${entry.icon}`"></i>
-      
-      <span @if="entry.cta" 
-            class="desktop-only-cta" 
+
+      <span @if="entry.cta"
+            class="desktop-only-cta"
             @text="entry.cta"></span>
     </a>
   </div>
