@@ -123,3 +123,9 @@ svg:has(use) {
   width: 0.8em;
   height: 0.8em;
 }
+
+.no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

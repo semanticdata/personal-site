@@ -1,4 +1,4 @@
-<ol class="grid" reversed>
+<ol class="grid no-list" reversed>
   <li class="box" webc:for="post of posts">
     <div class="stack">
       <h3>

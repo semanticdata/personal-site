@@ -1,4 +1,4 @@
-<ul class="grid">
+<ul class="grid no-list">
   <li class="box" webc:for="project of projects">
     <div class="stack">
       <h3>
