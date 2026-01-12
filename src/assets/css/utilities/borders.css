@@ -1,0 +1,24 @@
+/* Border Utilities */
+.border-top {
+  border-top: 1px solid var(--line);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--line);
+}
+
+.border-top-soft {
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.border-bottom-soft {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Legacy: Support old variable names during migration */
+.border-top-soft {
+  --border-subtle: var(--line);
+}
+.border-bottom-soft {
+  --border-subtle: var(--line);
+}

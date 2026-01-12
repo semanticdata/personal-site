@@ -1,0 +1,35 @@
+/* Navigation */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s, border 0.3s;
+}
+
+#navbar.scrolled {
+  background: rgba(250, 249, 246, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--text-alt);
+  padding: 0.5em;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+}
+
+.separator {
+  width: 1px;
+  height: 1em;
+  background: var(--line-strong);
+}

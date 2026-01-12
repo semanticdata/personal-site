@@ -1,0 +1,28 @@
+/* Display Utilities */
+.bg-accent {
+  background-color: var(--accent-bg);
+  color: var(--accent-text);
+}
+
+.box-clean {
+  padding: var(--s2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Ensure blockquotes in accent context don't have default borders */
+.bg-accent blockquote {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Selection color override for dark sections */
+.bg-accent ::selection {
+  background-color: var(--surface);
+  color: var(--accent-bg);
+}

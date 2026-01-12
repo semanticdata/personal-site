@@ -1,0 +1,18 @@
+/* Form Components */
+.newsletter-form {
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+}
+
+.input-reset {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: var(--s1);
+  font-family: var(--font-family-monospace);
+  outline: none;
+}
+
+.input-reset:focus {
+  background: rgba(0,0,0,0.02);
+}

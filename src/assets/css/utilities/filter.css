@@ -1,0 +1,29 @@
+/* Filter Buttons */
+.filter-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-alt);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.filter-btn:hover {
+  color: var(--text-main);
+  border-color: var(--line);
+}
+
+.filter-btn.active {
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  border-color: var(--accent-bg);
+}
+
+.interactable {
+  cursor: pointer;
+}
