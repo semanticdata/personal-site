@@ -5,7 +5,8 @@ date: 2025-08-17
 tags:
   - Obsidian
   - PKM
-iconLabel: fab:github
+iconClass: fa-brands
+iconName: fa-github
 iconUrl: https://github.com/semanticdata/obsidian-starter-vault
 repoLabel: semanticdata/obsidian-starter-vault
 draft: true

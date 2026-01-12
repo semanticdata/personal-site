@@ -5,7 +5,8 @@ date: 2018-07-04
 tags:
   - Zola
   - Template
-iconLabel: fab:github
+iconClass: fa-brands
+iconName: fa-github
 iconUrl: https://github.com/semanticdata/mabuya
 repoLabel: semanticdata/mabuya
 featured: true

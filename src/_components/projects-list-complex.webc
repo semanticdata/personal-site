@@ -2,7 +2,7 @@
   <li class="box" webc:for="project of projects">
     <div class="stack">
       <h3>
-        <i class="project-icon" @if="project.data.iconClass" :class="project.data.iconClass + ' ' + project.data.iconName"></i>
+        <span @if="project.data.iconLabel" @text="project.data.iconLabel"></span>
         <a :href="project.url" @text="project.data.title || project.url"></a>
       </h3>
 

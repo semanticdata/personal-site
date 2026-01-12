@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -72,8 +74,8 @@ code {
 }
 /* Font Awesome Icons */
 svg:has(use) {
-  height: 1rem;
-  width: 1rem;
+  height: 1em;
+  width: 1em;
 }
 /* Skip Link */
 .visually-hidden:not(:focus):not(:active) {
@@ -101,39 +103,13 @@ svg:has(use) {
   z-index: 999;
 }
 
-/* Intrinsic Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-  gap: 1.5rem;
-  padding: 0;
-  list-style: none;
-}
-
-/* Make card full height */
-.box {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Inner Stack fills space */
-.box > .stack {
-  flex-grow: 1;
-  --space: 1rem;
-}
-
-/* Footer layout */
 .meta-footer {
   margin-top: auto;
   padding-top: 1rem;
-  --cluster-gap: 1.5rem;
 }
 
-/* Tag adjustments */
 .tags-wrapper {
   --cluster-gap: 0.5rem;
-  align-items: baseline;
 }
 
 .tags-list {
@@ -141,4 +117,9 @@ svg:has(use) {
   padding: 0;
   margin: 0;
   --cluster-gap: 0.5rem;
+}
+
+.project-icon {
+  width: 0.8em;
+  height: 0.8em;
 }

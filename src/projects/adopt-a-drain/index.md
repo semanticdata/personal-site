@@ -6,7 +6,8 @@ tags:
   - Python
   - Streamlit
   - Civic Tech
-iconLabel: fas:chart-line
+iconClass: fa-solid
+iconName: fa-chart-line
 iconUrl: https://github.com/semanticdata/adopt-a-drain
 repoLabel: semanticdata/adopt-a-drain
 featured: true

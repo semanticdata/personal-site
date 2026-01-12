@@ -5,7 +5,8 @@ date: 2024-09-08
 tags:
   - Obsidian
   - Pomodoro
-iconLabel: fab:github
+iconClass: fa-brands
+iconName: fa-github
 iconUrl: https://github.com/semanticdata/obsidian-pomodoro
 repoLabel: semanticdata/obsidian-pomodoro
 featured: true

@@ -6,7 +6,8 @@ tags:
   - Python
   - Streamlit
   - Plotly
-iconLabel: fas:traffic-light
+iconClass: fa-solid
+iconName: fa-traffic-light
 iconUrl: https://github.com/semanticdata/traffic-studies
 repoLabel: semanticdata/traffic-studies
 ---
