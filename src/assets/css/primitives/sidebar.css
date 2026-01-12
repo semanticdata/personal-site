@@ -1,0 +1,25 @@
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1, 1.5rem);
+}
+
+.with-sidebar > :first-child {
+  flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-min-width, 50%);
+}
+
+.with-sidebar[data-order="reverse"] > :last-child {
+  flex-grow: 1;
+}
+
+.with-sidebar[data-order="reverse"] > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-min-width, 50%);
+}

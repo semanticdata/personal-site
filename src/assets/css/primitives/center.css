@@ -1,0 +1,21 @@
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+}
+
+.center[data-full-bleed] {
+  max-inline-size: none;
+}
+.center[data-center-text] {
+  text-align: center;
+}
+.center[data-center="intrinsic"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.center[data-center-gutters] {
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+}

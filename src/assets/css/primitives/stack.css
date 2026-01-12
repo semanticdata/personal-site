@@ -6,8 +6,30 @@
 
 .stack > * {
   margin-block: 0;
-} 
+}
 
 .stack > * + * {
   margin-block-start: var(--space, 1.5rem);
+}
+
+.stack[data-stack="recursive"] * {
+  margin-block: 0;
+}
+
+.stack[data-stack="recursive"] * + * {
+  margin-block-start: var(--space, 1.5rem);
+}
+
+.stack[data-stack-split] {
+  block-size: 100%;
+}
+
+.stack[data-stack-split="2"] > :nth-child(2) {
+  margin-block-end: auto;
+}
+.stack[data-stack-split="3"] > :nth-child(3) {
+  margin-block-end: auto;
+}
+.stack[data-stack-split="4"] > :nth-child(4) {
+  margin-block-end: auto;
 }
