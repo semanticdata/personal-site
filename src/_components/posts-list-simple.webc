@@ -1,6 +1,0 @@
-<ol reversed>
-  <li webc:for="post of posts">
-    <a :href="post.url" @text="post.data.title"></a>
-    <time :datetime="post.date" @text="post.date.toDateString()"></time>
-  </li>
-</ol>

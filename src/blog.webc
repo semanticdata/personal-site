@@ -18,4 +18,4 @@ eleventyNavigation:
   2. .slice() creates a copy of the array (so we don't modify the global list).
   3. .reverse() ensures the newest posts appear at the top.
 -->
-<posts-list :@posts="collections.posts.slice().reverse()"></posts-list>
+<posts-grid :@posts="collections.posts.slice().reverse()"></posts-grid>

@@ -1,13 +1,6 @@
-<ol class="grid no-list" reversed>
-  <li class="box" webc:for="post of posts">
-    <div class="stack">
-      <h3>
-        <a :href="post.url" @text="post.data.title"></a>
-      </h3>
-
-      <p @text="post.data.description"></p>
-
-      <div><time :datetime="post.date" @text="post.date.toDateString()"></time></div>
-    </div>
+<ol class="stack" reversed>
+  <li webc:for="post of posts">
+    <a :href="post.url" @text="post.data.title"></a>
+    <time :datetime="post.date" @text="post.date.toDateString()"></time>
   </li>
 </ol>

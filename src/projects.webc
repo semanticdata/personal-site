@@ -11,5 +11,4 @@ eleventyNavigation:
     href="https://source.tube/database">SourceTube</a>.</p>
 <hr />
 
-<projects-list :@projects="collections.projects"></projects-list>
-<!-- <projects-list :@projects="collections.projects.slice().reverse()"></projects-list> -->
+<projects-grid :@projects="collections.projects"></projects-grid>

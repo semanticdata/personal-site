@@ -1,37 +1,6 @@
-<ul class="grid no-list">
-  <li class="box" webc:for="project of projects">
-    <div class="stack">
-      <h3>
-        <i class="project-icon" @if="project.data.iconClass" :class="project.data.iconClass + ' ' + project.data.iconName"></i>
-        <a :href="project.url" @text="project.data.title || project.url"></a>
-      </h3>
-
-      <p @text="project.data.description"></p>
-
-      <div class="cluster meta-footer" data-align="flex-start" data-justify="space-between">
-        <div @if="project.data.iconUrl">
-          <strong>Repo:</strong>
-          <a :href="project.data.iconUrl" target="_blank" rel="noopener noreferrer"
-            @text="project.data.repoLabel || 'Repository'"></a>
-        </div>
-
-        <div @if="project.data.tags && project.data.tags.length">
-          <div class="cluster tags-wrapper">
-            <strong>Tags:</strong>
-            <ul class="cluster tags-list">
-              <li webc:for="tag of project.data.tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))">
-                <a :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" @text="`#${tag}`"></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div @if="project.data.websiteUrl">
-          <strong>Website:</strong>
-          <a :href="project.data.websiteUrl" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
-
-      </div>
-    </div>
+<ol class="stack" reversed>
+  <li webc:for="project of projects">
+    <a :href="project.url" @text="project.data.title"></a>
+    <p @text="project.data.description"></p>
   </li>
-</ul>
+</ol>
