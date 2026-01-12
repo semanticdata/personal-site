@@ -1,0 +1,7 @@
+<div class="cluster" id="filter-controls" style="--gap: var(--s-1)">
+  <button class="filter-btn active interactable" data-filter="all">All</button>
+  <button webc:for="tag of tags"
+          class="filter-btn interactable"
+          :data-filter="tag"
+          @text="tag"></button>
+</div>

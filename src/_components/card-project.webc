@@ -1,0 +1,37 @@
+<article class="card stack" :data-category="category">
+  <div class="card__content stack">
+    <div class="cluster space-between">
+      <span class="meta" @text="category"></span>
+      <span class="meta" @text="status"></span>
+    </div>
+
+    <div class="cluster" style="--gap: var(--s-2)">
+      <template webc:if="iconClass">
+        <i class="project-icon" :class="iconClass + ' ' + iconName"></i>
+      </template>
+      <h3 class="serif title-md">
+        <a :href="url" @text="title" class="text-main"></a>
+      </h3>
+    </div>
+  </div>
+
+  <div class="card__footer stack">
+    <p class="text-alt" @text="description"></p>
+
+    <div class="stack" style="--gap: var(--s1)">
+      <template webc:if="repoUrl">
+        <div class="cluster space-between border-top-soft" style="padding-top: var(--s1)">
+          <span class="meta text-alt">Repo</span>
+          <a :href="repoUrl" target="_blank" rel="noopener noreferrer" class="meta text-main">View →</a>
+        </div>
+      </template>
+
+      <template webc:if="websiteUrl">
+        <div class="cluster space-between border-top-soft" style="padding-top: var(--s1)">
+          <span class="meta text-alt">Demo</span>
+          <a :href="websiteUrl" target="_blank" rel="noopener noreferrer" class="meta text-main">Visit →</a>
+        </div>
+      </template>
+    </div>
+  </div>
+</article>

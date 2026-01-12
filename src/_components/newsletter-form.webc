@@ -1,0 +1,7 @@
+<form class="with-sidebar newsletter-form" style="--gap: 0">
+  <input type="email"
+         placeholder="EMAIL ADDRESS"
+         class="input-reset interactable"
+         required>
+  <button type="submit" class="btn btn--solid interactable">Subscribe</button>
+</form>

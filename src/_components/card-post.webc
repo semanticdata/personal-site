@@ -1,0 +1,18 @@
+<article class="card stack" :data-category="category">
+  <div class="card__content stack">
+    <div class="cluster space-between">
+      <span class="meta" @text="category"></span>
+      <span class="meta" @text="readingTime"></span>
+    </div>
+    <h3 class="serif title-md">
+      <a :href="url" @text="title" class="text-main"></a>
+    </h3>
+  </div>
+  <div class="card__footer stack">
+    <p class="text-alt" @text="description"></p>
+    <div class="cluster space-between border-top-soft" style="padding-top: var(--s1)">
+      <span class="meta text-alt" @text="date"></span>
+      <span class="meta text-main">Read →</span>
+    </div>
+  </div>
+</article>
