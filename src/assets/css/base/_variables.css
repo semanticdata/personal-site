@@ -11,7 +11,9 @@
   --tag: var(--brand-orange);
 
   --bg: #f8f6f2;
+  --color-light: #f8f6f2;
   --text: #301e0e;
+  --color-dark: #301e0e;
   --accent: #c54a20;
   --border-subtle: #a7a29b;
   --border-strong: #a6593f;
@@ -57,3 +59,18 @@
     --snow-fall-color: unset;
   }
 } */
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --border-thin: 1px;
+}
