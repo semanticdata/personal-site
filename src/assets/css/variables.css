@@ -1,50 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;700&display=swap');
+
 :root {
   /* --------------------------------------------------------------------------
      Typography
      -------------------------------------------------------------------------- */
-  --font-family: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
-  --font-family-serif: "IBM Plex Serif", Georgia, 'Times New Roman', serif;
-  --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
-    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
-    Courier, monospace;
+  --font-serif: 'Crimson Pro', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', Consolas, monospace;
+  --font-family: var(--font-sans);
+  --font-family-serif: var(--font-serif);
+  --font-family-monospace: var(--font-mono);
   --syntax-tab-size: 2;
 
   /* --------------------------------------------------------------------------
-     Colors
+     Colors (Stone Palette)
      -------------------------------------------------------------------------- */
   /* Backgrounds */
-  --bg: #f8f6f2;
+  --bg: #faf9f6;
   --surface: #ffffff;
 
   /* Text */
-  --text-main: #301e0e;
-  --text-alt: #5c5137;
+  --text-main: #1c1917;
+  --text-alt: #57534e;
 
   /* Borders & Lines */
   --line: #e7e5e4;
-  --line-strong: #a6593f;
-  --line-emphasis: #2d1810;
+  --line-strong: #d6d3d1;
 
   /* Accent */
-  --accent: #c54a20;
-  --accent-bg: #301e0e;
-  --accent-text: #f8f6f2;
+  --accent-bg: #1c1917;
+  --accent-text: #faf9f6;
 
-  /* Branding */
-  --brand-orange: #f08a42;
-  --social-mastodon: #8373e7;
+  /* Legacy/Compat */
+  --accent: #1c1917;
+  --brand-orange: #1c1917;
+  --text-heading: #1c1917;
+  --text-emphasis: #1c1917;
+  --border-highlight: #d6d3d1;
 
   /* Links */
-  --link: #275d27;
-  --link-visited: #5c3770;
-  --link-active: #662512;
+  --link: #1c1917;
+  --link-visited: #57534e;
+  --link-active: #1c1917;
 
   /* Component-specific */
-  --blockquote-bg: #f2efe8;
-  --blockquote-text: #5d3d32;
-  --table-header-bg: #f1ece2;
-  --table-row-stripe-bg: #f4f1eb;
+  --blockquote-bg: #f5f5f4;
+  --blockquote-text: #44403c;
+  --table-header-bg: #f5f5f4;
+  --table-row-stripe-bg: #fafaf9;
 
   /* --------------------------------------------------------------------------
      Spacing (Utopia Scale - Major Third: 1.25)
@@ -71,15 +74,12 @@
      Layout
      -------------------------------------------------------------------------- */
   --measure: 65ch;
-  --bg-alt: #f0ede6;
+  --bg-alt: #faf9f6;
 
   /* --------------------------------------------------------------------------
      Utilities
      -------------------------------------------------------------------------- */
-  --tag: var(--brand-orange);
-  --text-heading: #bd4d28;
-  --text-emphasis: #3fa63f;
-  --border-highlight: var(--accent);
+  --tag: var(--text-alt);
 
   /* --------------------------------------------------------------------------
      Legacy Tokens (Deprecated - For Migration Only)
@@ -97,23 +97,17 @@
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #10141b;
-    --text-main: #e9e2d7;
-    --accent: #e88f63;
-    --line: #4b566e;
-    --line-strong: #d18661;
-
-    --link: #7dcd8a;
-    --link-visited: #b990d6;
-    --link-active: #ff9b4f;
-
-    --blockquote-bg: #191f2b;
-    --blockquote-text: #dfd3c3;
-    --table-header-bg: #1e2430;
-    --table-row-stripe-bg: #131720;
-
-    --text-heading: #f0a07e;
-    --text-alt: #bca98f;
-    --text-emphasis: #8cd899;
+    --bg: #0c0a09;
+    --surface: #1c1917;
+    --text-main: #e7e5e4;
+    --text-alt: #a8a29e;
+    --line: #44403c;
+    --line-strong: #d6d3d1;
+    --accent-bg: #e7e5e4;
+    --accent-text: #1c1917;
+    --blockquote-bg: #1c1917;
+    --blockquote-text: #d6d3d3;
+    --table-header-bg: #292524;
+    --table-row-stripe-bg: #1c1917;
   }
 } */

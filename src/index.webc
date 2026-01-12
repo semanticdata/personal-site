@@ -1,56 +1,68 @@
 ---
-eleventyNavigation:
-  key: Home
-  order: 1
-numberOfLatestPostsToShow: 7
+title: Home
 ---
 
-<main>
-
+<div id="main">
   <!-- Hero Section -->
-  <section-hero
-      title="Hi, I'm Miguel."
-      subtitle="Engineering civil infrastructure and digital tools.">
-  </section-hero>
+  <header class="region section-space stack" style="position: relative; overflow: hidden;">
+    <div class="stack" style="--gap: var(--s3); position: relative; z-index: 1;">
+      <h1 class="display serif">MiguelPimentel.do</h1>
 
-  <hr/>
+      <div class="with-sidebar align-end" style="--sidebar-width: 25rem; --gap: var(--s3)">
+        <p class="lead serif text-alt">
+          A notebook on software craft, engineering, and personal projects.
+        </p>
 
-  <!-- About Section -->
-  <section class="region section-space border-top">
-    <div class="stack center-content" style="max-inline-size: 65ch;">
-      <p>I'm an Engineering Project Manager in Minnesota, focusing on public infrastructure like roads and utilities. I apply
-        that same engineering discipline to software. As a self-taught developer, I build tools to solve practical
-        problems—ranging from Python-based dashboards for traffic analysis to Obsidian plugins and browser extensions that
-        streamline my workflow.</p>
-
-      <p>This site is my public workshop for documenting my process and sharing what I learn. It's where I explore how civil
-        engineering logic can be used in automation, usually with a playlist in the background.</p>
-    </div>
-  </section>
-
-  <hr/>
-
-  <!-- Latest Posts Section -->
-  <section class="region section-space">
-    <div class="stack center-content">
-      <div class="cluster space-between">
-        <h2 class="title-lg">Latest Posts</h2>
-        <span class="box" data-size="large">
-          <span @text="Math.min(collections.posts.length, numberOfLatestPostsToShow)"></span>
-        </span>
+        <!-- Filter Controls -->
+        <div class="cluster" id="filter-controls" style="--gap: var(--s-1)">
+          <button class="filter-btn active interactable" data-filter="all">All</button>
+          <button class="filter-btn interactable" data-filter="design">Design</button>
+          <button class="filter-btn interactable" data-filter="engineering">Engineering</button>
+          <button class="filter-btn interactable" data-filter="technology">Technology</button>
+          <button class="filter-btn interactable" data-filter="philosophy">Philosophy</button>
+          <button class="filter-btn interactable" data-filter="culture">Culture</button>
+        </div>
       </div>
+    </div>
+  </header>
 
-      <posts-list :@posts="collections.posts.slice(-numberOfLatestPostsToShow).reverse()"></posts-list>
-
-      <p @if="(collections.posts.length - numberOfLatestPostsToShow) > 0"
-         class="cluster"
-         style="--gap: var(--s-1)">
-        <span @text="collections.posts.length - numberOfLatestPostsToShow"></span>
-        more post<span @if="(collections.posts.length - numberOfLatestPostsToShow) !== 1">s</span>
-        can be found in
-        <a href="blog.njk" class="box" data-size="compact">the archive</a>.
-      </p>
+  <!-- Intrinsic Grid (Full Bleed) -->
+  <section id="journal" style="margin-bottom: var(--s5);">
+    <div class="grid-intrinsic">
+      <!-- Filtered Posts Grid -->
+      <posts-filter-grid></posts-filter-grid>
     </div>
   </section>
+</div>
 
-</main>
+<script webc:keep>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('.card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // UI Toggle
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        articles.forEach(article => {
+          const articleCategory = article.getAttribute('data-category-lower');
+          const isMatch = filterValue === 'all' || articleCategory === filterValue;
+
+          if (isMatch) {
+            // If it was hidden, show it
+            if (article.classList.contains('hidden')) {
+              article.classList.remove('hidden');
+            }
+          } else {
+            // Hide non-matching
+            article.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+</script>

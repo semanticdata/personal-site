@@ -42,7 +42,7 @@
     <template webc:type="11ty" 11ty:type="liquid">
         {% getBundle "fontawesome" %}
     </template>
-
+<script webc:keep @raw="getBundle('js')"></script>
 </body>
 
 </html>

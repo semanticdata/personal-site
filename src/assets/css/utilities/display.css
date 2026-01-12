@@ -8,6 +8,11 @@
   padding: var(--s2);
   background: var(--surface);
   border: 1px solid var(--line);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.box-clean:hover {
+  transform: translateY(-2px);
 }
 
 .hidden {
@@ -25,4 +30,31 @@
 .bg-accent ::selection {
   background-color: var(--surface);
   color: var(--accent-bg);
+}
+
+/* Full Bleed */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Section Bleed */
+.section-bleed {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Surface background */
+.bg-surface {
+  background-color: var(--surface);
+}
+
+/* Full Bleed - Forces container to span the full viewport width */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }

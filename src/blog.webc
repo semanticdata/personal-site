@@ -5,27 +5,26 @@ eleventyNavigation:
   order: 2
 ---
 
-<header class="region section-space stack">
-  <div class="stack center-content" style="max-inline-size: 65ch;">
-    <h1 class="display serif">Blog</h1>
+<div id="main">
+  <header class="region section-space stack" style="position: relative; overflow: hidden;">
+    <div class="stack" style="--gap: var(--s3); position: relative; z-index: 1;">
+      <h1 class="display serif">Journal</h1>
 
-    <div class="stack" style="--gap: var(--s1)">
-      <p>
-          Observations on software, civil infrastructure, and the philosophy behind tools. Topics range from CSS view
-          transitions and Regex tutorials to managing burnout and mental health.
+      <div class="stack" style="--gap: var(--s2); max-inline-size: 65ch;">
+        <p class="lead serif text-alt">
+          Observations on software, civil infrastructure, and philosophy behind tools.
         </p>
-      <p>
+        <p>
           I write for utility and clarity. New posts are added as I learn and solve problems in my own workflow.
         </p>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<hr class="border-bottom" style="margin: var(--s3) 0;"/>
-
-<!-- Lessons learned:
-  1. We access 'collections' directly in the attribute.
-  2. .slice() creates a copy of the array (so we don't modify the global list).
-  3. .reverse() ensures newest posts appear at the top.
--->
-<posts-grid :@posts="collections.posts.slice().reverse()"></posts-grid>
+  <!-- Full Bleed Intrinsic Grid -->
+  <section class="full-bleed" style="margin-bottom: var(--s5);">
+    <div class="grid-intrinsic">
+      <posts-grid :@posts="collections.posts.slice().reverse()"></posts-grid>
+    </div>
+  </section>
+</div>

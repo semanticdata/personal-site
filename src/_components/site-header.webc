@@ -1,63 +1,87 @@
 <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-<header webc:root="override">
-    <div class="cluster header-brutal" data-justify="space-between" data-align="center">
-        <a href="/" 
-           class="box" 
-           style="--box-font-weight: 700; --box-decoration: none; --box-padding: 0; --box-border-width: 0; --box-bg: transparent;">
-            MiguelPimentel<b class="the-dot">.</b>do
-        </a>
 
-        <nav aria-label="Main navigation">
-            <ul class="cluster header-brutal-nav">
-                <li webc:for="entry of eleventyNavigation($data.collections.all)">
-                    <a class="box" data-size="compact"
-                       :data-invert="entry.url === $data.page.url ? '' : null"
-                       :href="entry.url"
-                       :aria-current="entry.url === $data.page.url ? 'page' : null"
-                       @text="entry.title"></a>
-                </li>
-            </ul>
-        </nav>
+<nav id="navbar" class="region text-size-0">
+  <div class="cluster" style="--justify: space-between; padding-block: var(--s0);">
+    <a href="/" class="brand serif font-bold interactable">MiguelPimentel<b class="the-dot">.</b>do</a>
+
+    <div class="cluster" style="--gap: var(--s1)">
+      <a href="/blog/" class="nav-link interactable">Journal</a>
+      <a href="/about/" class="nav-link interactable">About</a>
+      <span class="separator" aria-hidden="true"></span>
+      <a href="/rss.xml" class="btn btn--minimal interactable">Subscribe</a>
     </div>
-</header>
+  </div>
+</nav>
 
 <style webc:scoped>
-    :host {
-        border-block-end: var(--border-thin) solid var(--line-strong);
-        padding-block: var(--s1);
-    }
+  :host {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    transition: background 0.3s, border 0.3s;
+  }
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+  :host.scrolled {
+    background: rgba(250, 249, 246, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
 
-    .header-brutal {
-        --cluster-gap: var(--s1);
-    }
+  #skip-link {
+    text-decoration: none;
+    background: var(--bg);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+  }
 
-    .header-brutal-nav {
-        --cluster-gap: var(--s-1);
-    }
+  #skip-link.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 
-    .the-dot {
-        color: var(--accent);
-    }
+  #skip-link.visually-hidden:focus {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-start: 1rem;
+    z-index: 999;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
+    clip: auto;
+    overflow: visible;
+    white-space: normal;
+  }
 
-    #skip-link {
-        text-decoration: none;
-        background: var(--bg);
-        color: var(--text-main);
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--line-strong);
-        border-radius: 2px;
-    }
+  .brand {
+    font-size: var(--step-1);
+    color: var(--text-main);
+    text-decoration: none;
+  }
 
-    #skip-link.visually-hidden:focus {
-        position: absolute;
-        inset-block-start: 1rem;
-        inset-inline-start: 1rem;
-        z-index: 999;
-    }
+  .the-dot {
+    color: var(--accent);
+  }
 </style>
+
+<script webc:keep>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  });
+</script>

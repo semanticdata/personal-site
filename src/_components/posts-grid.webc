@@ -1,13 +1,18 @@
-<ol class="grid-intrinsic no-list" reversed data-columns="3">
-  <li webc:for="post of posts">
-    <div class="stack" style="--gap: var(--s1)">
-      <small class="post-grid-meta">
+<div class="grid-intrinsic">
+  <article webc:for="post of posts"
+           class="card stack interactable"
+           :data-category="(post.data.tags || []).filter(t => t !== 'posts')[0] || 'Engineering'"
+           :data-category-lower="((post.data.tags || []).filter(t => t !== 'posts')[0] || 'Engineering').toLowerCase()">
+    <div class="card__content stack">
+      <small class="meta text-alt">
         <time :datetime="post.date" @text="post.date.toDateString()"></time>
       </small>
-      <h3>
-        <a :href="post.url" @text="post.data.title"></a>
+      <h3 class="serif title-md">
+        <a :href="post.url" @text="post.data.title" class="text-main"></a>
       </h3>
-      <p @text="post.data.description"></p>
     </div>
-  </li>
-</ol>
+    <div class="card__footer stack">
+      <p class="text-alt" @text="post.data.description"></p>
+    </div>
+  </article>
+</div>

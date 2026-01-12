@@ -1,0 +1,23 @@
+<div class="grid-intrinsic">
+  <article webc:for="post of (posts || $data.collections.posts.slice(-8).reverse())"
+           class="card stack interactable"
+           :data-category="(post.data.tags || []).filter(t => t !== 'posts')[0] || 'Engineering'"
+           :data-category-lower="((post.data.tags || []).filter(t => t !== 'posts')[0] || 'Engineering').toLowerCase()">
+    <div class="card__content stack">
+      <div class="cluster space-between">
+        <span class="meta" :text="(post.data.tags || []).filter(t => t !== 'posts')[0] || 'Engineering'"></span>
+        <span class="meta" :text="Math.max(1, Math.ceil((post.templateContent?.length || 1000) / 1000)) + ' min'"></span>
+      </div>
+      <h3 class="serif title-md">
+        <a :href="post.url" @text="post.data.title" class="text-main"></a>
+      </h3>
+    </div>
+    <div class="card__footer stack">
+      <p class="text-alt" @text="post.data.description"></p>
+      <div class="cluster space-between border-top-soft" style="padding-top: var(--s1)">
+        <time class="meta text-alt" :datetime="post.date.toISOString()" :text="post.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })"></time>
+        <a :href="post.url" class="meta text-main">Read →</a>
+      </div>
+    </div>
+  </article>
+</div>

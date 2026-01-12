@@ -3,16 +3,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1px;
-  background-color: var(--line-strong);
-  border: 1px solid var(--line-strong);
+  background-color: var(--line);
+  border: 1px solid var(--line);
   container-type: inline-size;
   container-name: grid;
 }
 
 .grid-intrinsic > * {
   background-color: var(--surface);
-  padding: var(--s2);
   min-height: 100%;
+}
+
+/* Grid cards shouldn't have extra padding since it's handled by card.css */
+.grid-intrinsic .card {
+  background: var(--surface);
 }
 
 /* Container Queries for spanning */
@@ -40,10 +44,4 @@
   .grid-intrinsic {
     grid-template-columns: 1fr;
   }
-}
-
-/* Legacy: Support old variable names during migration */
-.grid-intrinsic {
-  --border-strong: var(--line-strong);
-  --color-light: var(--surface);
 }

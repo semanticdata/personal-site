@@ -1,38 +1,13 @@
-<footer webc:root="override" class="stack footer-brutal">
-    <div class="cluster" data-justify="center">
-        <template webc:for="entry of $data.metadata.footer" webc:nokeep>
-            <a class="box" data-size="compact"
-               :href="entry.url"
-               :target="entry.external ? '_blank' : null"
-               :rel="entry.external ? 'noopener noreferrer' : null"
-               @text="entry.label"></a>
-        </template>
+<footer class="border-top" style="margin-top: var(--s5)">
+  <div class="with-sidebar" style="padding-block: var(--s3); --gap: var(--s2)">
+    <div class="stack" style="--gap: var(--s-2)">
+      <span class="meta text-main">© 2026 MiguelPimentel.do</span>
+      <span class="meta text-alt">Built with Intention.</span>
     </div>
-
-    <div class="cluster footer-brutal-gifs" data-justify="center">
-        <template webc:for="entry of $data.metadata.gifs" webc:nokeep>
-            <a webc:if="entry.url" :href="entry.url">
-                <template webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
-            </a>
-            <template webc:else webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
-        </template>
+    <div class="cluster" style="justify-content: flex-end; --gap: var(--s1)">
+      <a href="/contact/" class="nav-link interactable">Contact</a>
+      <a href="/colophon/" class="nav-link interactable">Colophon</a>
+      <a href="/rss.xml" class="nav-link interactable">RSS</a>
     </div>
+  </div>
 </footer>
-
-<style webc:scoped>
-    :host {
-        --space: var(--s1);
-        border-block-start: var(--border-thin) solid var(--line-strong);
-        padding-block: var(--s1);
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .footer-brutal-gifs {
-        --cluster-gap: var(--s-1);
-    }
-</style>
