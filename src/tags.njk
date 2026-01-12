@@ -19,7 +19,7 @@ title: Tags
   {% for tag in uniqueTags %}
     {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li>
-      <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+      <a href="{{ tagUrl }}" class="box" data-size="compact">{{ tag }}</a>
     </li>
   {% endfor %}
 </ul>

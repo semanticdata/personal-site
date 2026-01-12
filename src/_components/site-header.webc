@@ -41,10 +41,14 @@
         --cluster-gap: var(--s-1);
     }
 
+    .the-dot {
+        color: var(--accent);
+    }
+
     #skip-link {
         text-decoration: none;
         background: var(--bg);
-        color: var(--text);
+        color: var(--text-main);
         padding: 0.5rem 1rem;
         border: 1px solid var(--line-strong);
         border-radius: 2px;
