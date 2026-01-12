@@ -24,7 +24,8 @@ layout: layouts/new.webc
   <p class="post-tags cluster" style="--cluster-gap: 0.5rem">
     <a webc:for="tag of tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))"
        :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`"
-       class="post-tag"
+       class="box"
+       data-size="compact"
        @text="`#${tag}`"></a>
   </p>
 </div>
@@ -39,30 +40,30 @@ layout: layouts/new.webc
 
 <!-- CTA SECTION -->
 <div class="post-cta stack">
-  <p>
-    <i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
-        href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
-        coffee</a>
-    </i> 💜</p>
+  <div class="box">
+    <p style="margin: 0">
+      <i>If you like this post or one of my <a href="/projects/">projects</a> you can <a
+          href="https://buymeacoffee.com/semanticdata" target="_blank" rel="noopener noreferrer">buy me a
+          coffee</a>
+      </i> 💜</p>
 
-  <!--
-    SOCIAL ICONS:
-    Converted to pure WebC using webc:for loop.
-    We inject the icon name into the class string.
-  -->
-  <div class="social-links-cta cluster">
-    <a webc:for="entry of metadata.social"
-       rel="noopener noreferrer"
-       target="_blank"
-       :href="entry.url"
-       :aria-label="entry.ariaLabel">
+    <!-- SOCIAL ICONS -->
+    <div class="cluster" style="--cluster-gap: var(--s-1); margin-block-start: var(--s1)">
+      <a webc:for="entry of metadata.social"
+         class="box"
+         data-size="compact"
+         rel="noopener noreferrer"
+         target="_blank"
+         :href="entry.url"
+         :aria-label="entry.ariaLabel">
 
-      <i :class="`fa-brands fa-${entry.icon}`"></i>
+        <i :class="`fa-brands fa-${entry.icon}`"></i>
 
-      <span @if="entry.cta"
-            class="desktop-only-cta"
-            @text="entry.cta"></span>
-    </a>
+        <span @if="entry.cta"
+              class="desktop-only-cta"
+              @text="entry.cta"></span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -75,18 +76,50 @@ layout: layouts/new.webc
     
     {% if nextPost or previousPost %}
       <hr/>
-      <ul class="links-nextprev">
+      <ul class="cluster links-nextprev" style="--cluster-gap: var(--s1)">
         {% if previousPost %}
-          <li class="links-nextprev-prev">← Previous<br>
-            <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+          <li class="stack" style="--space: var(--s-1)">
+            <small>← Previous</small>
+            <a href="{{ previousPost.url }}" class="box" data-size="compact">{{ previousPost.data.title }}</a>
           </li>
         {% endif %}
         {% if nextPost %}
-          <li class="links-nextprev-next">Next →<br>
-            <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+          <li class="stack" style="--space: var(--s-1)">
+            <small>Next →</small>
+            <a href="{{ nextPost.url }}" class="box" data-size="compact">{{ nextPost.data.title }}</a>
           </li>
         {% endif %}
       </ul>
     {% endif %}
   {% endif %}
 </template>
+
+<style>
+  .post-cta {
+    --space: var(--s2);
+  }
+
+  .post-cta p {
+    margin: 0;
+  }
+
+  .post-cta .desktop-only-cta {
+    margin-inline-start: var(--s-1);
+  }
+
+  .links-nextprev {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .links-nextprev li {
+    flex: 1;
+  }
+
+  .links-nextprev small {
+    font-family: var(--font-family-monospace);
+    font-size: var(--step--2);
+    color: var(--text-muted);
+  }
+</style>

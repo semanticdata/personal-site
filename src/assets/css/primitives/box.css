@@ -1,18 +1,40 @@
 .box {
-  padding: var(--s1);
-  border: var(--border-thin) solid;
-  /* --color-light: #fff; */
-  /* --color-dark: #000; */
-  color: var(--color-dark);
-  background-color: var(--color-light);
+  padding: var(--box-padding, var(--s1));
+  border: var(--box-border-width, var(--border-thin)) solid var(--box-border-color, var(--border-color));
+  border-radius: var(--box-radius, 0);
+  color: var(--box-color, var(--color-dark));
+  background-color: var(--box-bg, var(--color-light));
+  font-family: var(--box-font-family, inherit);
+  font-size: var(--box-font-size, inherit);
+  font-weight: var(--box-font-weight, inherit);
+  text-decoration: var(--box-decoration, inherit);
 }
 
 .box * {
   color: inherit;
 }
 
-.box:hover,
-.box.invert {
-  color: var(--color-light);
-  background-color: var(--color-dark);
+.box[data-invert] {
+  --box-color: var(--color-light);
+  --box-bg: var(--color-dark);
+}
+
+.box[data-border="strong"] {
+  --box-border-color: var(--border-strong);
+}
+
+.box[data-size="compact"] {
+  --box-padding: var(--s-2) var(--s-1);
+  --box-font-family: var(--font-family-monospace);
+  --box-font-size: var(--step--1);
+  --box-decoration: none;
+  --box-border-color: var(--border-strong);
+}
+
+.box[data-size="large"] {
+  --box-padding: var(--s1);
+  --box-font-family: var(--font-family-monospace);
+  --box-font-size: var(--step-2);
+  --box-font-weight: 700;
+  --box-border-color: var(--border-strong);
 }

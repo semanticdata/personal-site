@@ -1,27 +1,30 @@
 <a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
-<header webc:root="override" class="cluster" data-justify="space-between">
-    <div>
-        <a href="/" class="box">MiguelPimentel<b class="the-dot">.</b>do</a>
+<header webc:root="override">
+    <div class="cluster header-brutal" data-justify="space-between" data-align="center">
+        <a href="/" 
+           class="box" 
+           style="--box-font-weight: 700; --box-decoration: none; --box-padding: 0; --box-border-width: 0; --box-bg: transparent;">
+            MiguelPimentel<b class="the-dot">.</b>do
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul class="cluster header-brutal-nav">
+                <li webc:for="entry of eleventyNavigation($data.collections.all)">
+                    <a class="box" data-size="compact"
+                       :data-invert="entry.url === $data.page.url ? '' : null"
+                       :href="entry.url"
+                       :aria-current="entry.url === $data.page.url ? 'page' : null"
+                       @text="entry.title"></a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <!-- <div class="social-links">
-        <a webc:for="entry of $data.metadata.social" rel="noopener noreferrer" target="_blank" :href="entry.url"
-            :aria-label="entry.ariaLabel" @text="entry.label"></a>
-    </div> -->
-
-    <nav aria-label="Main navigation" class="">
-        <ul class="cluster">
-            <li class=""><a webc:for="entry of eleventyNavigation($data.collections.all)" class="box" :href="entry.url"
-                    :aria-current="entry.url === $data.page.url ? 'page' : null" @text="entry.title"></a></li>
-        </ul>
-    </nav>
 </header>
 
 <style webc:scoped>
     :host {
-        /* border-block-end: 2px solid black; */
-        /* padding-block: 1rem; */
-        --s1: 1rem;
+        border-block-end: var(--border-thin) solid var(--border-strong);
+        padding-block: var(--s1);
     }
 
     ul {
@@ -29,10 +32,28 @@
         margin: 0;
         padding: 0;
     }
-    ul a {
-        display: inline-block;
+
+    .header-brutal {
+        --cluster-gap: var(--s1);
     }
-    a {
+
+    .header-brutal-nav {
+        --cluster-gap: var(--s-1);
+    }
+
+    #skip-link {
         text-decoration: none;
+        background: var(--bg);
+        color: var(--text);
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border-strong);
+        border-radius: 2px;
+    }
+
+    #skip-link.visually-hidden:focus {
+        position: absolute;
+        inset-block-start: 1rem;
+        inset-inline-start: 1rem;
+        z-index: 999;
     }
 </style>

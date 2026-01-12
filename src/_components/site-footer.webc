@@ -1,14 +1,15 @@
-<footer webc:root="override" class="stack">
-    <ul class="cluster" data-justify="center">
-        <template webc:for="entry of $data.metadata.footer" webc:nokeep>
-            <li>
-                <a :href="entry.url" :target="entry.external ? '_blank' : null"
-                    :rel="entry.external ? 'noopener noreferrer' : null" @text="entry.label"></a>
-            </li>
-        </template>
-    </ul>
-
+<footer webc:root="override" class="stack footer-brutal">
     <div class="cluster" data-justify="center">
+        <template webc:for="entry of $data.metadata.footer" webc:nokeep>
+            <a class="box" data-size="compact"
+               :href="entry.url"
+               :target="entry.external ? '_blank' : null"
+               :rel="entry.external ? 'noopener noreferrer' : null"
+               @text="entry.label"></a>
+        </template>
+    </div>
+
+    <div class="cluster footer-brutal-gifs" data-justify="center">
         <template webc:for="entry of $data.metadata.gifs" webc:nokeep>
             <a webc:if="entry.url" :href="entry.url">
                 <template webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
@@ -20,12 +21,18 @@
 
 <style webc:scoped>
     :host {
-        --cluster-gap: 0.25rem;
-        border-block-start: 2px solid black;
+        --space: var(--s1);
+        border-block-start: var(--border-thin) solid var(--border-strong);
+        padding-block: var(--s1);
     }
 
-    :host ul {
+    ul {
         list-style: none;
-        padding-inline: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-brutal-gifs {
+        --cluster-gap: var(--s-1);
     }
 </style>
