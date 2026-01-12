@@ -60,3 +60,13 @@ pre:not([class*="language-"]) {
 code {
   word-break: break-all;
 }
+
+.measured {
+  max-inline-size: var(--measure);
+}
+.padded {
+  padding-inline: 1rem;
+}
+.centered {
+  margin-inline: auto;
+}

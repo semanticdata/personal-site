@@ -30,9 +30,10 @@
   --text-emphasis: #3fa63f;
 
   --snow-fall-color: rebeccapurple;
+  --measure: 65ch;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg: #10141b;
     --text: #e9e2d7;
@@ -55,4 +56,4 @@
 
     --snow-fall-color: unset;
   }
-}
+} */

@@ -1,36 +1,35 @@
-<footer class="footer stack">
-  <ul class="footer-links cluster">
-    <!--- We use (entry, index) to track the position for the dot separator --->
-    <template webc:for="(entry, index) of $data.metadata.footer" webc:nokeep>
-      <li>
-        <a 
-          :href="entry.url" 
-          :target="entry.external ? '_blank' : null" 
-          :rel="entry.external ? 'noopener noreferrer' : null"
-          @text="entry.label"
-        ></a>
-      </li>
-      <!--- Check if it's NOT the last item to show the dot --->
-      <li 
-        webc:if="index < $data.metadata.footer.length - 1" 
-        aria-hidden="true"
-      >·</li>
-    </template>
-  </ul>
+<footer class="stack">
+    <ul class="cluster" data-justify="center">
+        <template webc:for="entry of $data.metadata.footer" webc:nokeep>
+            <li>
+                <a :href="entry.url" :target="entry.external ? '_blank' : null"
+                    :rel="entry.external ? 'noopener noreferrer' : null" @text="entry.label"></a>
+            </li>
+        </template>
+    </ul>
 
-  <div class="footer-gifs cluster">
-    <template webc:for="entry of $data.metadata.gifs" webc:nokeep>
-      <!-- If entry has a URL, wrap the shortcode in an anchor -->
-      <a webc:if="entry.url" :href="entry.url">
-        <template webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
-      </a>
-      
-      <!-- Else, just render the shortcode -->
-      <template 
-        webc:else 
-        webc:nokeep 
-        @raw="this['88x31'](entry.gif, entry.alt)"
-      ></template>
-    </template>
-  </div>
+    <div class="cluster" data-justify="center">
+        <template webc:for="entry of $data.metadata.gifs" webc:nokeep>
+            <a webc:if="entry.url" :href="entry.url">
+                <template webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
+            </a>
+            <template webc:else webc:nokeep @raw="this['88x31'](entry.gif, entry.alt)"></template>
+        </template>
+    </div>
 </footer>
+
+<style webc:scoped>
+    :host div {
+        --cluster-gap: 0.25rem;
+    }
+
+    :host ul {
+        list-style: none;
+        padding-inline: 0;
+    }
+
+    :host footer {
+        border-block-start: 2px solid black;
+        /* padding-block: 1rem; */
+    }
+</style>

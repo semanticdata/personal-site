@@ -1,0 +1,21 @@
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, 1rem);
+  justify-content: var(--cluster-justify, flex-start);
+  align-items: var(--cluster-align, center);
+}
+
+.cluster[data-orient="vertical"] {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.cluster[data-align="flex-start"] {
+  align-items: flex-start;
+}
+.cluster[data-justify="center"] {
+  justify-content: center;
+}
+.cluster[data-justify="space-between"] {
+  justify-content: space-between;
+}
