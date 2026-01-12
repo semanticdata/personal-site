@@ -5,94 +5,52 @@ eleventyNavigation:
 numberOfLatestPostsToShow: 7
 ---
 
-<main class="index-brutal" data-center-gutters>
+<main>
 
   <!-- Hero Section -->
-  <header class="index-brutal-hero center" data-full-bleed>
-    <h1 class="display-hero">Hi, I'm Miguel.</h1>
-
-    <div class="cluster" data-justify="space-between" data-align="flex-end">
-      <p class="subtitle">
-        Engineering civil infrastructure and digital tools.
-      </p>
-
-      <div class="box" data-size="large">
-        <small>STATUS</small><br/>
-        <span class="index-brutal-status-dot"></span>
-        <span>Building in public</span>
-      </div>
-    </div>
-  </header>
+  <section-hero
+      title="Hi, I'm Miguel."
+      subtitle="Engineering civil infrastructure and digital tools.">
+  </section-hero>
 
   <hr/>
 
   <!-- About Section -->
-  <section class="stack index-brutal-about center">
-    <p>I'm an Engineering Project Manager in Minnesota, focusing on public infrastructure like roads and utilities. I apply
-      that same engineering discipline to software. As a self-taught developer, I build tools to solve practical
-      problems—ranging from Python-based dashboards for traffic analysis to Obsidian plugins and browser extensions that
-      streamline my workflow.</p>
+  <section class="region section-space border-top">
+    <div class="stack center-content" style="max-inline-size: 65ch;">
+      <p>I'm an Engineering Project Manager in Minnesota, focusing on public infrastructure like roads and utilities. I apply
+        that same engineering discipline to software. As a self-taught developer, I build tools to solve practical
+        problems—ranging from Python-based dashboards for traffic analysis to Obsidian plugins and browser extensions that
+        streamline my workflow.</p>
 
-    <p>This site is my public workshop for documenting my process and sharing what I learn. It's where I explore how civil
-      engineering logic can be used in automation, usually with a playlist in the background.</p>
+      <p>This site is my public workshop for documenting my process and sharing what I learn. It's where I explore how civil
+        engineering logic can be used in automation, usually with a playlist in the background.</p>
+    </div>
   </section>
 
   <hr/>
 
   <!-- Latest Posts Section -->
-  <section class="stack center">
-    <div class="cluster" data-justify="space-between" data-align="baseline">
-      <h2>Latest Posts</h2>
-      <span class="box" data-size="large">
-        <span @text="Math.min(collections.posts.length, numberOfLatestPostsToShow)"></span>
-      </span>
+  <section class="region section-space">
+    <div class="stack center-content">
+      <div class="cluster space-between">
+        <h2 class="title-lg">Latest Posts</h2>
+        <span class="box" data-size="large">
+          <span @text="Math.min(collections.posts.length, numberOfLatestPostsToShow)"></span>
+        </span>
+      </div>
+
+      <posts-list :@posts="collections.posts.slice(-numberOfLatestPostsToShow).reverse()"></posts-list>
+
+      <p @if="(collections.posts.length - numberOfLatestPostsToShow) > 0"
+         class="cluster"
+         style="--gap: var(--s-1)">
+        <span @text="collections.posts.length - numberOfLatestPostsToShow"></span>
+        more post<span @if="(collections.posts.length - numberOfLatestPostsToShow) !== 1">s</span>
+        can be found in
+        <a href="blog.njk" class="box" data-size="compact">the archive</a>.
+      </p>
     </div>
-
-    <posts-list :@posts="collections.posts.slice(-numberOfLatestPostsToShow).reverse()"></posts-list>
-
-    <p @if="(collections.posts.length - numberOfLatestPostsToShow) > 0"
-       class="cluster index-brutal-archive"
-       style="--cluster-gap: var(--s-1)">
-      <span @text="collections.posts.length - numberOfLatestPostsToShow"></span>
-      more post<span @if="(collections.posts.length - numberOfLatestPostsToShow) !== 1">s</span>
-      can be found in
-      <a href="blog.njk" class="box" data-size="compact">the archive</a>.
-    </p>
   </section>
 
 </main>
-
-<style>
-  /* .index-brutal {
-    --space: var(--s3);
-  } */
-
-  .index-brutal-hero h1 {
-    margin: 0;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-  }
-
-  .index-brutal-hero .subtitle {
-    font-size: var(--step-2);
-    font-family: var(--font-family-serif);
-    font-style: italic;
-  }
-
-  .index-brutal-status small {
-    color: var(--text-alt);
-  }
-
-  .index-brutal-status-dot {
-    display: inline-block;
-    inline-size: 0.5em;
-    block-size: 0.5em;
-    background-color: var(--text-emphasis);
-    border-radius: 50%;
-    margin-inline: var(--s-2);
-  }
-
-  .index-brutal-archive {
-    font-size: var(--step-0);
-  }
-</style>

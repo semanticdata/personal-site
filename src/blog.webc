@@ -5,49 +5,27 @@ eleventyNavigation:
   order: 2
 ---
 
-<header class="page-header stack" style="--space: var(--s2)">
-  <h1 class="display-large">Blog</h1>
+<header class="region section-space stack">
+  <div class="stack center-content" style="max-inline-size: 65ch;">
+    <h1 class="display serif">Blog</h1>
 
-  <div class="stack" style="--space: var(--s1)">
-    <p>
-      Observations on software, civil infrastructure, and the person behind the tools. Topics range from CSS view
-      transitions and Regex tutorials to managing burnout and mental health.
-    </p>
-    <p>
-      I write for utility and clarity. New posts are added as I learn and solve problems in my own workflow.
-    </p>
+    <div class="stack" style="--gap: var(--s1)">
+      <p>
+          Observations on software, civil infrastructure, and the philosophy behind tools. Topics range from CSS view
+          transitions and Regex tutorials to managing burnout and mental health.
+        </p>
+      <p>
+          I write for utility and clarity. New posts are added as I learn and solve problems in my own workflow.
+        </p>
+    </div>
   </div>
 </header>
 
-<hr class="page-divider" />
+<hr class="border-bottom" style="margin: var(--s3) 0;"/>
 
-<!--
-  LESSONS LEARNED:
+<!-- Lessons learned:
   1. We access 'collections' directly in the attribute.
   2. .slice() creates a copy of the array (so we don't modify the global list).
-  3. .reverse() ensures the newest posts appear at the top.
+  3. .reverse() ensures newest posts appear at the top.
 -->
 <posts-grid :@posts="collections.posts.slice().reverse()"></posts-grid>
-
-<style>
-  .page-header {
-    padding-block: var(--s3);
-  }
-
-  .page-header h1 {
-    margin: 0;
-    line-height: 1;
-  }
-
-  .page-header p {
-    font-size: var(--step-1);
-    color: var(--text-alt);
-    max-width: 60ch;
-  }
-
-  .page-divider {
-    border: none;
-    border-block-start: 2px solid var(--line-strong);
-    margin: var(--s3) 0;
-  }
-</style>

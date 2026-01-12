@@ -1,6 +1,6 @@
 <ol class="grid-intrinsic no-list" reversed data-columns="3">
   <li webc:for="post of posts">
-    <div class="stack" style="--space: var(--s1)">
+    <div class="stack" style="--gap: var(--s1)">
       <small class="post-grid-meta">
         <time :datetime="post.date" @text="post.date.toDateString()"></time>
       </small>
