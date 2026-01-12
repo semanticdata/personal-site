@@ -1,0 +1,16 @@
+/* Bleed Utilities */
+
+/* Section-bleed: Remove max-width constraint from region */
+.section-bleed {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-bleed: Force container to span full viewport width */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}

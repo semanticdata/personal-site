@@ -1,0 +1,21 @@
+/* Region: Consistent horizontal constraints for page sections */
+.region {
+  width: 100%;
+  max-inline-size: 1400px;
+  margin-inline: auto;
+  padding-inline: var(--s1);
+}
+
+.region[data-region="measure"] {
+  max-inline-size: var(--measure);
+}
+
+.region[data-region="full-bleed"] {
+  max-width: none;
+  padding-inline: 0;
+}
+
+.region[data-center-gutters] {
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+}
