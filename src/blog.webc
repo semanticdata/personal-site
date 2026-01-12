@@ -41,13 +41,13 @@ eleventyNavigation:
 
   .page-header p {
     font-size: var(--step-1);
-    color: var(--text-muted);
+    color: var(--text-alt);
     max-width: 60ch;
   }
 
   .page-divider {
     border: none;
-    border-block-start: 2px solid var(--border-strong);
+    border-block-start: 2px solid var(--line-strong);
     margin: var(--s3) 0;
   }
 </style>

@@ -1,9 +1,10 @@
+/* Box: Simple container with padding, border, background */
 .box {
   padding: var(--box-padding, var(--s1));
-  border: var(--box-border-width, var(--border-thin)) solid var(--box-border-color, var(--border-color));
+  border: var(--box-border-width, var(--border-thin)) solid var(--box-border-color, var(--line));
   border-radius: var(--box-radius, 0);
-  color: var(--box-color, var(--color-dark));
-  background-color: var(--box-bg, var(--color-light));
+  color: var(--box-color, var(--text-main));
+  background-color: var(--box-bg, var(--surface));
   font-family: var(--box-font-family, inherit);
   font-size: var(--box-font-size, inherit);
   font-weight: var(--box-font-weight, inherit);
@@ -14,21 +15,28 @@
   color: inherit;
 }
 
+/* Behavior modifiers */
 .box[data-invert] {
-  --box-color: var(--color-light);
-  --box-bg: var(--color-dark);
+  --box-color: var(--accent-text);
+  --box-bg: var(--accent-bg);
 }
 
 .box[data-border="strong"] {
-  --box-border-color: var(--border-strong);
+  --box-border-color: var(--line-strong);
 }
 
+/* Size presets (convenience shortcuts) */
 .box[data-size="compact"] {
-  --box-padding: var(--s-2) var(--s-1);
+  --box-padding: var(--s-1) var(--s0);
   --box-font-family: var(--font-family-monospace);
   --box-font-size: var(--step--1);
   --box-decoration: none;
-  --box-border-color: var(--border-strong);
+  --box-border-color: var(--line-strong);
+}
+
+.box[data-size="compact"][data-invert] {
+  --box-bg: var(--accent-bg);
+  --box-color: var(--accent-text);
 }
 
 .box[data-size="large"] {
@@ -36,5 +44,13 @@
   --box-font-family: var(--font-family-monospace);
   --box-font-size: var(--step-2);
   --box-font-weight: 700;
-  --box-border-color: var(--border-strong);
+  --box-border-color: var(--line-strong);
+}
+
+/* Legacy: Support old variable names during migration */
+.box {
+  --color-dark: var(--text-main);
+  --color-light: var(--surface);
+  --border-color: var(--line);
+  --border-strong: var(--line-strong);
 }

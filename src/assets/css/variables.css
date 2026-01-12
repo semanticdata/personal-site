@@ -1,4 +1,7 @@
 :root {
+  /* --------------------------------------------------------------------------
+     Typography
+     -------------------------------------------------------------------------- */
   --font-family: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
   --font-family-serif: "IBM Plex Serif", Georgia, 'Times New Roman', serif;
   --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
@@ -7,65 +10,46 @@
     Courier, monospace;
   --syntax-tab-size: 2;
 
+  /* --------------------------------------------------------------------------
+     Colors
+     -------------------------------------------------------------------------- */
+  /* Backgrounds */
+  --bg: #f8f6f2;
+  --surface: #ffffff;
+
+  /* Text */
+  --text-main: #301e0e;
+  --text-alt: #5c5137;
+
+  /* Borders & Lines */
+  --line: #e7e5e4;
+  --line-strong: #a6593f;
+  --line-emphasis: #2d1810;
+
+  /* Accent */
+  --accent: #c54a20;
+  --accent-bg: #301e0e;
+  --accent-text: #f8f6f2;
+
+  /* Branding */
   --brand-orange: #f08a42;
   --social-mastodon: #8373e7;
-  --tag: var(--brand-orange);
 
-  --bg: #f8f6f2;
-  --color-light: #f8f6f2;
-  --text: #301e0e;
-  --color-dark: #301e0e;
-  --accent: #c54a20;
-  --border-subtle: #a7a29b;
-  --border-strong: #a6593f;
-
-  --link-visited: #5c3770;
+  /* Links */
   --link: #275d27;
+  --link-visited: #5c3770;
   --link-active: #662512;
 
+  /* Component-specific */
   --blockquote-bg: #f2efe8;
   --blockquote-text: #5d3d32;
   --table-header-bg: #f1ece2;
   --table-row-stripe-bg: #f4f1eb;
 
-  --text-heading: #bd4d28;
-  --text-muted: #5c5137;
-  --text-emphasis: #3fa63f;
-
-  --snow-fall-color: rebeccapurple;
-  --measure: 65ch;
-
-  --border-emphasis: #2d1810;
-  --border-highlight: var(--accent);
-  --bg-alt: #f0ede6;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #10141b;
-    --text: #e9e2d7;
-    --accent: #e88f63;
-    --border-subtle: #4b566e;
-    --border-strong: #d18661;
-
-    --link-visited: #b990d6;
-    --link: #7dcd8a;
-    --link-active: #ff9b4f;
-
-    --blockquote-bg: #191f2b;
-    --blockquote-text: #dfd3c3;
-    --table-header-bg: #1e2430;
-    --table-row-stripe-bg: #131720;
-
-    --text-heading: #f0a07e;
-    --text-muted: #bca98f;
-    --text-emphasis: #8cd899;
-
-    --snow-fall-color: unset;
-  }
-} */
-:root {
-  --ratio: 1.5;
+  /* --------------------------------------------------------------------------
+     Spacing (Utopia Scale - Major Third: 1.25)
+     -------------------------------------------------------------------------- */
+  --ratio: 1.25;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -77,5 +61,59 @@
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
+
+  /* --------------------------------------------------------------------------
+     Border Width
+     -------------------------------------------------------------------------- */
   --border-thin: 1px;
+
+  /* --------------------------------------------------------------------------
+     Layout
+     -------------------------------------------------------------------------- */
+  --measure: 65ch;
+  --bg-alt: #f0ede6;
+
+  /* --------------------------------------------------------------------------
+     Utilities
+     -------------------------------------------------------------------------- */
+  --tag: var(--brand-orange);
+  --text-heading: #bd4d28;
+  --text-emphasis: #3fa63f;
+  --border-highlight: var(--accent);
+
+  /* --------------------------------------------------------------------------
+     Legacy Tokens (Deprecated - For Migration Only)
+     -------------------------------------------------------------------------- */
+  /* Will be removed in Phase 3: Cleanup */
+  --color-light: var(--surface);
+  --color-dark: var(--text-main);
+  --border-subtle: var(--line);
+  --border-strong: var(--line-strong);
+  --border-emphasis: var(--line-emphasis);
+  --text: var(--text-main);
+  --text-muted: var(--text-alt);
+  --border-color: var(--line);
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10141b;
+    --text-main: #e9e2d7;
+    --accent: #e88f63;
+    --line: #4b566e;
+    --line-strong: #d18661;
+
+    --link: #7dcd8a;
+    --link-visited: #b990d6;
+    --link-active: #ff9b4f;
+
+    --blockquote-bg: #191f2b;
+    --blockquote-text: #dfd3c3;
+    --table-header-bg: #1e2430;
+    --table-row-stripe-bg: #131720;
+
+    --text-heading: #f0a07e;
+    --text-alt: #bca98f;
+    --text-emphasis: #8cd899;
+  }
+} */

@@ -3,29 +3,36 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 1px;
-  background-color: var(--border-strong);
-  border: 1px solid var(--border-strong);
+  background-color: var(--line-strong);
+  border: 1px solid var(--line-strong);
+  container-type: inline-size;
+  container-name: grid;
 }
 
 .grid-intrinsic > * {
-  background-color: var(--color-light);
+  background-color: var(--surface);
   padding: var(--s2);
   min-height: 100%;
 }
 
-/* Responsive column control */
-@media (min-width: 768px) {
-  .grid-intrinsic[data-columns="2"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid-intrinsic[data-columns="3"] {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .grid-intrinsic > [data-span="2"] {
+/* Container Queries for spanning */
+@container grid (min-width: 900px) {
+  .grid-intrinsic .wide {
     grid-column: span 2;
   }
+}
+
+.grid-intrinsic .tall {
+  grid-row: span 2;
+}
+
+/* Responsive column control */
+.grid-intrinsic[data-columns="2"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+}
+
+.grid-intrinsic[data-columns="3"] {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 
 /* Mobile fallback */
@@ -33,4 +40,10 @@
   .grid-intrinsic {
     grid-template-columns: 1fr;
   }
+}
+
+/* Legacy: Support old variable names during migration */
+.grid-intrinsic {
+  --border-strong: var(--line-strong);
+  --color-light: var(--surface);
 }

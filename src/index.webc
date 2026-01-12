@@ -80,7 +80,7 @@ numberOfLatestPostsToShow: 7
   }
 
   .index-brutal-status small {
-    color: var(--text-muted);
+    color: var(--text-alt);
   }
 
   .index-brutal-status-dot {

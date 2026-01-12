@@ -8,7 +8,7 @@ html,
 body {
   margin: 0;
   font-family: var(--font-family);
-  color: var(--text);
+  color: var(--text-main);
   background-color: var(--bg);
   inline-size: 100%;
   min-block-size: 100vh;
@@ -29,7 +29,7 @@ table {
 table th,
 table td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--line);
 }
 
 table th {
@@ -89,9 +89,9 @@ svg:has(use) {
 #skip-link {
   text-decoration: none;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-main);
   padding: 0.5rem 1rem;
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--line-strong);
   border-radius: 2px;
 }
 
@@ -133,7 +133,7 @@ svg:has(use) {
 .post-grid-meta {
   font-family: var(--font-family-monospace);
   font-size: var(--step--2);
-  color: var(--text-muted);
+  color: var(--text-alt);
   text-transform: uppercase;
 }
 
@@ -155,5 +155,5 @@ svg:has(use) {
 .projects-grid strong {
   font-family: var(--font-family-monospace);
   font-size: var(--step--2);
-  color: var(--text-muted);
+  color: var(--text-alt);
 }

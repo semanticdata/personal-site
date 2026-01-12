@@ -9,7 +9,7 @@
 }
 
 .stack > * + * {
-  margin-block-start: var(--space, 1.5rem);
+  margin-block-start: var(--gap, 1.5rem);
 }
 
 .stack[data-stack="recursive"] * {
@@ -17,7 +17,12 @@
 }
 
 .stack[data-stack="recursive"] * + * {
-  margin-block-start: var(--space, 1.5rem);
+  margin-block-start: var(--gap, 1.5rem);
+}
+
+/* Legacy: Support old variable name during migration */
+.stack {
+  --space: var(--gap, 1.5rem);
 }
 
 .stack[data-stack-split] {

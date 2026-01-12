@@ -120,6 +120,6 @@ layout: layouts/new.webc
   .links-nextprev small {
     font-family: var(--font-family-monospace);
     font-size: var(--step--2);
-    color: var(--text-muted);
+    color: var(--text-alt);
   }
 </style>

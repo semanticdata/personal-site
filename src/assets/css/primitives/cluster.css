@@ -1,21 +1,32 @@
+/* Cluster: Horizontal wrapping groups */
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--cluster-gap, 1rem);
-  justify-content: var(--cluster-justify, flex-start);
-  align-items: var(--cluster-align, center);
+  gap: var(--gap, var(--s1));
+  justify-content: var(--justify, flex-start);
+  align-items: var(--align, center);
 }
 
 .cluster[data-orient="vertical"] {
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
 .cluster[data-align="flex-start"] {
   align-items: flex-start;
 }
+
 .cluster[data-justify="center"] {
   justify-content: center;
 }
+
 .cluster[data-justify="space-between"] {
   justify-content: space-between;
+}
+
+/* Legacy: Support old variable names during migration */
+.cluster {
+  --cluster-gap: var(--gap, var(--s1));
+  --cluster-justify: var(--justify, flex-start);
+  --cluster-align: var(--align, center);
 }

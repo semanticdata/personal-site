@@ -23,7 +23,7 @@
 
 <style webc:scoped>
     :host {
-        border-block-end: var(--border-thin) solid var(--border-strong);
+        border-block-end: var(--border-thin) solid var(--line-strong);
         padding-block: var(--s1);
     }
 
@@ -46,7 +46,7 @@
         background: var(--bg);
         color: var(--text);
         padding: 0.5rem 1rem;
-        border: 1px solid var(--border-strong);
+        border: 1px solid var(--line-strong);
         border-radius: 2px;
     }
 

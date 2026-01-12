@@ -14,7 +14,7 @@
 /* Specific element overrides */
 hr {
   border: none;
-  border-block-start: 1px dashed var(--border-subtle);
+  border-block-start: 1px dashed var(--line);
   margin: var(--s2) 0;
 }
 
@@ -32,6 +32,6 @@ svg:has(use) {
 /* Subtitle specific styling */
 .subtitle {
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--text-alt);
   font-family: var(--font-family-monospace);
 }
