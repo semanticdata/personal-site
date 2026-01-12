@@ -12,5 +12,10 @@ eleventyNavigation:
 <p>I write for utility and clarity. New posts are added as I learn and solve problems in my own workflow.</p>
 <hr />
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<!-- 
+  LESSONS LEARNED:
+  1. We access 'collections' directly in the attribute.
+  2. .slice() creates a copy of the array (so we don't modify the global list).
+  3. .reverse() ensures the newest posts appear at the top.
+-->
+<posts-list :@posts="collections.posts.slice().reverse()"></posts-list>

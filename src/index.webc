@@ -1,0 +1,45 @@
+---
+eleventyNavigation:
+  key: Home
+  order: 1
+numberOfLatestPostsToShow: 7
+---
+<h1>Hi, I’m Miguel.</h1>
+<p class="subtitle">Engineering civil infrastructure and digital tools.</p>
+
+<p>I’m an Engineering Project Manager in Minnesota, focusing on public infrastructure like roads and utilities. I apply
+  that same engineering discipline to software. As a self-taught developer, I build tools to solve practical
+  problems—ranging from Python-based dashboards for traffic analysis to Obsidian plugins and browser extensions that
+  streamline my workflow.</p>
+
+<p>This site is my public workshop for documenting my process and sharing what I learn. It’s where I explore how civil
+  engineering logic can be used in automation, usually with a playlist in the background.</p>
+
+<!-- 
+  LESSONS LEARNED:
+  We perform the math directly in the @text attributes.
+  Math.min() ensures we don't say "7 Posts" if you only have 3.
+-->
+<h2>
+  Latest
+  <span @text="Math.min(collections.posts.length, numberOfLatestPostsToShow)"></span>
+  Post<span @if="Math.min(collections.posts.length, numberOfLatestPostsToShow) !== 1">s</span>
+</h2>
+
+<!-- 
+  POSTS LIST:
+  We pass the posts directly to the component.
+  1. .slice(-numberOfLatestPostsToShow) takes the last N items (the newest ones).
+  2. .reverse() puts them in Newest -> Oldest order.
+-->
+<posts-list :@posts="collections.posts.slice(-numberOfLatestPostsToShow).reverse()"></posts-list>
+
+<!-- 
+  FOOTER LINK:
+  We check if there are more posts than what we showed.
+-->
+<p @if="(collections.posts.length - numberOfLatestPostsToShow) > 0">
+  <span @text="collections.posts.length - numberOfLatestPostsToShow"></span>
+  more post<span @if="(collections.posts.length - numberOfLatestPostsToShow) !== 1">s</span>
+  can be found in <a href="blog.njk">the archive</a>.
+</p>

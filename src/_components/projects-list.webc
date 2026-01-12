@@ -1,0 +1,59 @@
+<ul class="projectlist">
+  <li class="projectlist-item" webc:for="project of projects">
+    <div class="projectlist-text-content">
+      
+      <!-- Title Area -->
+      <h3 class="projectlist-title">
+        <!-- Optional Icon Slot (restored from comments) -->
+        <span @if="project.data.iconLabel" @text="project.data.iconLabel"></span>
+        
+        <a :href="project.url" 
+           @text="project.data.title || project.url"></a>
+      </h3>
+
+      <!-- Description -->
+      <p class="projectlist-description" 
+         @text="project.data.description"></p>
+
+      <!-- Metadata Section -->
+      <div class="projectlist-metadata">
+        
+        <!-- Repository Link -->
+        <!-- Note: Using 'iconUrl' as the repo link based on your previous code -->
+        <div @if="project.data.iconUrl">
+          <span>Repository:</span>
+          <a :href="project.data.iconUrl" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             @text="project.data.repoLabel || 'Repository'"></a>
+        </div>
+
+        <!-- Tags List -->
+        <!-- 
+           Logic: 
+           1. Check if tags exist.
+           2. Filter out system tags like 'all', 'posts', etc.
+        -->
+        <div @if="project.data.tags && project.data.tags.length">
+          <span>Tags:</span>
+          <ul class="post-metadata">
+            <li webc:for="tag of project.data.tags.filter(t => !['all', 'nav', 'post', 'posts'].includes(t))">
+              <!-- Simple slugify: lowercase and replace spaces with dashes -->
+              <a :href="`/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`" 
+                 @text="`#${tag}`"></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Live Website Link -->
+        <div @if="project.data.websiteUrl">
+          <span>Website:</span>
+          <a :href="project.data.websiteUrl" 
+             target="_blank" 
+             rel="noopener noreferrer">Live Demo</a>
+        </div>
+
+      </div>
+    </div>
+  </li>
+</ul>
