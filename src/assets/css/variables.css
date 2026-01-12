@@ -1,5 +1,6 @@
 :root {
   --font-family: "IBM Plex Sans", -apple-system, system-ui, sans-serif;
+  --font-family-serif: "IBM Plex Serif", Georgia, 'Times New Roman', serif;
   --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
     Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
@@ -33,6 +34,10 @@
 
   --snow-fall-color: rebeccapurple;
   --measure: 65ch;
+
+  --border-emphasis: #2d1810;
+  --border-highlight: var(--accent);
+  --bg-alt: #f0ede6;
 }
 
 /* @media (prefers-color-scheme: dark) {

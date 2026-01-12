@@ -1,14 +1,16 @@
-<ul class="grid no-list">
-  <li class="box" webc:for="project of projects">
-    <div class="stack">
-      <h3>
+<ul class="grid-intrinsic no-list projects-grid" data-columns="3">
+  <li webc:for="project of projects">
+    <div class="stack" style="--space: var(--s1)">
+      <div class="cluster" style="--cluster-gap: 0.5rem">
         <i class="project-icon" @if="project.data.iconClass" :class="project.data.iconClass + ' ' + project.data.iconName"></i>
-        <a :href="project.url" @text="project.data.title || project.url"></a>
-      </h3>
+        <h3>
+          <a :href="project.url" @text="project.data.title || project.url"></a>
+        </h3>
+      </div>
 
       <p @text="project.data.description"></p>
 
-      <div class="cluster meta-footer" data-align="flex-start" data-justify="space-between">
+      <div class="cluster meta-footer" data-align="flex-start" data-justify="space-between" style="--space: var(--s1)">
         <div @if="project.data.iconUrl">
           <strong>Repo:</strong>
           <a :href="project.data.iconUrl" target="_blank" rel="noopener noreferrer"

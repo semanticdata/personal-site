@@ -1,0 +1,36 @@
+/* Intrinsic Grid - gap creates visible border lines */
+.grid-intrinsic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1px;
+  background-color: var(--border-strong);
+  border: 1px solid var(--border-strong);
+}
+
+.grid-intrinsic > * {
+  background-color: var(--color-light);
+  padding: var(--s2);
+  min-height: 100%;
+}
+
+/* Responsive column control */
+@media (min-width: 768px) {
+  .grid-intrinsic[data-columns="2"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-intrinsic[data-columns="3"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-intrinsic > [data-span="2"] {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile fallback */
+@media (max-width: 767px) {
+  .grid-intrinsic {
+    grid-template-columns: 1fr;
+  }
+}

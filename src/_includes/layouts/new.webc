@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="../../assets/css/primitives/cluster.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/box.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/grid.css" />
+    <link rel="stylesheet" href="../../assets/css/primitives/grid-intrinsic.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/sidebar.css" />
+
     <style webc:keep @raw="getBundle('css')"></style>
 </head>
 
@@ -27,6 +29,7 @@
     <template webc:type="11ty" 11ty:type="liquid">
         {% getBundle "fontawesome" %}
     </template>
+
 </body>
 
 </html>
