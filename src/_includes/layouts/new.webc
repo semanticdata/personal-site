@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="../../assets/css/base.css" />
     <link rel="stylesheet" href="../../assets/css/overrides.css" />
     <link rel="stylesheet" href="../../assets/css/typography.css" />
+    <link rel="stylesheet" href="../../assets/css/primitives/center.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/stack.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/cluster.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/box.css" />
     <link rel="stylesheet" href="../../assets/css/primitives/grid.css" />
+    <link rel="stylesheet" href="../../assets/css/primitives/sidebar.css" />
     <style webc:keep @raw="getBundle('css')"></style>
 </head>
 

@@ -6,13 +6,12 @@
 
 html,
 body {
-  /* padding: 0; */
   margin: 0;
   font-family: var(--font-family);
   color: var(--text);
   background-color: var(--bg);
-  width: 100%;
-  min-height: 100vh;
+  inline-size: 100%;
+  min-block-size: 100vh;
 }
 
 html {
@@ -21,8 +20,8 @@ html {
 }
 
 table {
-  width: 100%;
-  margin: 2rem 0;
+  inline-size: 100%;
+  margin: var(--s2) 0;
   border-collapse: collapse;
   text-align: left;
 }
@@ -74,18 +73,18 @@ code {
 }
 /* Font Awesome Icons */
 svg:has(use) {
-  height: 1em;
-  width: 1em;
+  block-size: 1em;
+  inline-size: 1em;
 }
 /* Skip Link */
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  height: 1px;
+  block-size: 1px;
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 1px;
+  inline-size: 1px;
 }
 #skip-link {
   text-decoration: none;
@@ -98,14 +97,14 @@ svg:has(use) {
 
 #skip-link.visually-hidden:focus {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  inset-block-start: 1rem;
+  inset-inline-start: 1rem;
   z-index: 999;
 }
 
 .meta-footer {
-  margin-top: auto;
-  padding-top: 1rem;
+  margin-block-start: auto;
+  padding-block-start: 1rem;
 }
 
 .tags-wrapper {
@@ -120,8 +119,8 @@ svg:has(use) {
 }
 
 .project-icon {
-  width: 0.8em;
-  height: 0.8em;
+  inline-size: 0.8em;
+  block-size: 0.8em;
 }
 
 .no-list {
