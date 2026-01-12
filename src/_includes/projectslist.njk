@@ -4,7 +4,7 @@
 			<div class="projectlist-text-content">
 				<h3 class="projectlist-title">
 					{% if project.data.iconLabel %}
-						{% icon project.data.iconLabel %}
+						{# {% icon project.data.iconLabel %} #}
 					{% endif %}
 					<a href="{{ project.url }}">
 						{{ project.data.title or project.url }}

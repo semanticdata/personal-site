@@ -1,0 +1,17 @@
+<header class="header cluster">
+    <div>
+        <a href="/" class="home-link">MiguelPimentel<b class="the-dot">.</b>do</a>
+    </div>
+
+    <!-- <div class="social-links">
+        <a webc:for="entry of $data.metadata.social" rel="noopener noreferrer" target="_blank" :href="entry.url"
+            :aria-label="entry.ariaLabel" @text="entry.label"></a>
+    </div> -->
+    
+    <nav aria-label="Main navigation" class="main-nav nav-layout cluster">
+        <div class="nav cluster">
+            <a webc:for="entry of eleventyNavigation($data.collections.all)" class="nav-item" :href="entry.url"
+            :aria-current="entry.url === $data.page.url ? 'page' : null" @text="entry.title"></a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>WebC Example</title>
+    <link rel="stylesheet" href="../../assets/css/base/_variables.css" />
+    <link rel="stylesheet" href="../../assets/css/base/_global.css" />
+    <style webc:keep @raw="getBundle('css')"></style>
+</head>
+
+<body>
+    <header-c></header-c>
+    <div webc:nokeep @html="this.content"></div>
+    <footer-c></footer-c>
+</body>
+
+</html>

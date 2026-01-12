@@ -10,6 +10,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import fontAwesomePlugin from "@11ty/font-awesome";
 import markdownItObsidianCallouts from "markdown-it-obsidian-callouts";
 import markdownItFootnote from "markdown-it-footnote";
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 import pluginFilters from "./src/_config/filters.js";
 import pluginShortcodes from "./src/_config/shortcodes.js";
@@ -43,6 +44,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpg,jpeg,gif}");
   // eleventyConfig.addWatchTarget("src/**/*.{md,njk,11ty.js}");
 
+  eleventyConfig.addPlugin(pluginWebc, {
+    components: "src/_components/**/*.webc",
+  });
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
   eleventyConfig.addPlugin(IdAttributePlugin, {});
@@ -52,9 +56,9 @@ export default async function (eleventyConfig) {
     preAttributes: { tabindex: 0 },
   });
   eleventyConfig.addPlugin(fontAwesomePlugin, {
-    transform: true,
-    shortcode: "icon",
-  });
+		transform: true,
+		shortcode: "icon",
+	})
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "auto"],
     widths: ["auto"],
@@ -94,7 +98,7 @@ export default async function (eleventyConfig) {
 }
 
 export const config = {
-  templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],
+  templateFormats: ["md", "njk", "html", "liquid", "11ty.js", "webc"],
   markdownTemplateEngine: "njk",
   htmlTemplateEngine: "njk",
 
