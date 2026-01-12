@@ -1,0 +1,17 @@
+<section class="region section-space border-top">
+  <div class="stack" style="--gap: var(--s4); max-inline-size: 1100px; margin-inline: auto;">
+
+    <header class="stack" style="--gap: var(--s2)">
+      <h2 class="display serif text-center" @text="title"></h2>
+      <div class="stack text-center center-content" style="max-width: 65ch;">
+        <p class="lead serif italic" @text="subtitle"></p>
+      </div>
+    </header>
+
+    <!-- The Switcher Layout -->
+    <div class="switcher" style="padding-block: var(--s3);">
+      <slot></slot> <!-- Feature items go here -->
+    </div>
+
+  </div>
+</section>

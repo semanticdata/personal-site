@@ -1,0 +1,8 @@
+<section class="region section-space border-top">
+  <div class="stack center-content text-center" style="max-inline-size: 600px;">
+    <h2 class="serif title-lg" @text="title"></h2>
+    <p class="text-alt" @text="description"></p>
+
+    <slot name="form"></slot>
+  </div>
+</section>

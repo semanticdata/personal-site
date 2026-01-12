@@ -1,0 +1,16 @@
+<header class="region section-space stack"
+        style="position: relative; overflow: hidden;">
+
+  <div class="stack" style="--gap: var(--s3); position: relative; z-index: 1;">
+    <h1 class="display serif" @text="title"></h1>
+
+    <div class="with-sidebar align-end" style="--sidebar-width: 25rem; --gap: var(--s3)">
+      <p class="lead serif text-alt" @text="subtitle"></p>
+
+      <!-- Optional: Filter controls -->
+      <template webc:if="showFilters">
+        <slot name="filters"></slot>
+      </template>
+    </div>
+  </div>
+</header>

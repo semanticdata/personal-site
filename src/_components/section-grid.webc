@@ -1,0 +1,5 @@
+<section class="section-bleed" style="margin-bottom: var(--s5);">
+  <div class="intrinsic-grid">
+    <slot></slot> <!-- Cards go here -->
+  </div>
+</section>
