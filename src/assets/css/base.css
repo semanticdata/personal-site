@@ -75,3 +75,28 @@ svg:has(use) {
   height: 1rem;
   width: 1rem;
 }
+/* Skip Link */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+#skip-link {
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+#skip-link.visually-hidden:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 999;
+}

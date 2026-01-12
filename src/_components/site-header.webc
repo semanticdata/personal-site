@@ -1,3 +1,4 @@
+<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 <header webc:root="override" class="cluster" data-justify="space-between">
     <div>
         <a href="/" class="box">MiguelPimentel<b class="the-dot">.</b>do</a>
