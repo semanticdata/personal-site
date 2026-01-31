@@ -11,7 +11,7 @@ export default {
   },
   analytics: {
     umamiWebsiteId: "e8f4b407-ecac-420c-9951-83e9c8d44169",
-    umamiScriptUrl: "https://umami.itscattime.com/script.js",
+    umamiScriptUrl: "https://umami.database.omg.lol/script.js",
   },
   social: [
     {
